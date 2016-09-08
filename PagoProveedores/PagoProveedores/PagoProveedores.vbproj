@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{49F97C51-ECBE-41BB-8D0A-2D1CE26E0CB1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>PagoProveedores.My.MyApplication</StartupObject>
+    <RootNamespace>PagoProveedores</RootNamespace>
+    <AssemblyName>PagoProveedores</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>PagoProveedores.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>PagoProveedores.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BDHelper\DBConn.vb" />
+    <Compile Include="BDHelper\DBHProveedor.vb" />
+    <Compile Include="BDHelper\DBHBanco.vb" />
+    <Compile Include="BDHelper\QueryBuilder\Escaper.vb" />
+    <Compile Include="BDHelper\QueryBuilder\Examples.vb" />
+    <Compile Include="BDHelper\QueryBuilder\Exceptions\QueryBuilderException.vb" />
+    <Compile Include="BDHelper\QueryBuilder\Operaciones\InsertOperation.vb" />
+    <Compile Include="BDHelper\QueryBuilder\Operaciones\Operacion.vb" />
+    <Compile Include="BDHelper\QueryBuilder\Operaciones\SelectOperation.vb" />
+    <Compile Include="BDHelper\QueryBuilder\Operaciones\UpdateOperation.vb" />
+    <Compile Include="BDHelper\QueryBuilder\QueryBuilder.vb" />
+    <Compile Include="BDHelper\QueryBuilder\TableSelected.vb" />
+    <Compile Include="BDHelper\QueryBuilder\WhereClausule.vb" />
+    <Compile Include="GUILayer\Banco\frmConsultaBanco.Designer.vb">
+      <DependentUpon>frmConsultaBanco.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Banco\frmConsultaBanco.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Banco\frmModifBanco.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Banco\frmModifBanco.Designer.vb">
+      <DependentUpon>frmModifBanco.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Principal.Designer.vb">
+      <DependentUpon>Principal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Principal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Proveedores\frmProveedorModificacion.Designer.vb">
+      <DependentUpon>frmProveedorModificacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Proveedores\frmProveedorModificacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Proveedores\frmProveedorConsulta.Designer.vb">
+      <DependentUpon>frmProveedorConsulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Proveedores\frmProveedorConsulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Proveedores\frmProveedorNuevo.Designer.vb">
+      <DependentUpon>frmProveedorNuevo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Proveedores\frmProveedorNuevo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ObjectLayer\Mail.vb" />
+    <Compile Include="ObjectLayer\Proveedor.vb" />
+    <Compile Include="ObjectLayer\Telefono.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GUILayer\Banco\frmConsultaBanco.resx">
+      <DependentUpon>frmConsultaBanco.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Banco\frmModifBanco.resx">
+      <DependentUpon>frmModifBanco.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Principal.resx">
+      <DependentUpon>Principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Proveedores\frmProveedorModificacion.resx">
+      <DependentUpon>frmProveedorModificacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Proveedores\frmProveedorConsulta.resx">
+      <DependentUpon>frmProveedorConsulta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Proveedores\frmProveedorNuevo.resx">
+      <DependentUpon>frmProveedorNuevo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BDHelper\QueryBuilder\desktop.ini" />
+    <None Include="BDHelper\QueryBuilder\Exceptions\desktop.ini" />
+    <None Include="BDHelper\QueryBuilder\Operaciones\desktop.ini" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GUILayer\Cheques\" />
+    <Folder Include="GUILayer\Cuentas\" />
+    <Folder Include="GUILayer\Facturas\" />
+    <Folder Include="GUILayer\Titulares\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
