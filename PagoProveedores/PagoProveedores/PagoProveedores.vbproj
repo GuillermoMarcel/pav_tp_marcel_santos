@@ -138,6 +138,7 @@
     <Compile Include="ObjectLayer\Mail.vb" />
     <Compile Include="ObjectLayer\Proveedor.vb" />
     <Compile Include="ObjectLayer\Telefono.vb" />
+    <Compile Include="Utils\DBUtils.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="GUILayer\Banco\frmConsultaBanco.resx">

@@ -15,8 +15,8 @@
         p.table("Proveedores").insert({
                                       {"razon_social", razonSocial},
                                       {"cuit", cuit},
-                                      {"direccion", direccion},
-                                      {"observaciones", observacion}
+                                      {"direccion", DBUtils.ifEmptyNULL(direccion)},
+                                      {"observaciones", DBUtils.ifEmptyNULL(observacion)}
                                   })
         Dim v As String = "DECLARE @ProvId INT = @@IDENTITY"
 
@@ -26,13 +26,15 @@
 
         For Each t As Telefono In telefonos
             Dim b As String = "Insert into Proveedor_Telefonos (id_proveedor,telefono, observaciones)" & _
-                                "values (@ProvId, '" & t.Numero & "' , '" & t.Observacion & "')"
+                                "values (@ProvId, '" & t.Numero & "' , " _
+                                & DBUtils.escape(t.Observacion) & ")"
             com(i) = b
             i += 1
         Next
         For Each m As Mail In mails
             Dim b As String = "Insert into Proveedor_Mails (id_proveedor,mail, observaciones)" & _
-                                "values (@ProvId, '" & m.Direccion & "' , '" & m.Observacion & "')"
+                                "values (@ProvId, '" & m.Direccion & "' , " _
+                                & DBUtils.escape(m.Observacion) & ")"
             com(i) = b
             i += 1
         Next
@@ -46,9 +48,9 @@
         q.table("Proveedores").seleccionar.where("@id_proveedor", id)
         Dim b As Data.DataTable = DBConn.executeSQL(q.build)
         Dim rs As String = b.Rows(0).Item("razon_social"),
-            direccion As String = b.Rows(0).Item("direccion"),
+            direccion As Object = DBUtils.ifNULLEmpty(b.Rows(0).Item("direccion")),
             cuit As Integer = b.Rows(0).Item("cuit"),
-            observacion As String = b.Rows(0).Item("observaciones")
+            observacion As String = DBUtils.ifNULLEmpty(b.Rows(0).Item("observaciones"))
 
 
         Dim mails As List(Of Mail) = getMailsProveedor(id)
@@ -97,8 +99,8 @@
         Dim mails As New List(Of Mail)
         For Each r As Data.DataRow In b.Rows
             Dim m As New Mail
-            m.Direccion = r.Item("mail")
-            m.Observacion = r.Item("observaciones")
+            m.Direccion = DBUtils.ifNULLEmpty(r.Item("mail"))
+            m.Observacion = DBUtils.ifNULLEmpty(r.Item("observaciones"))
             mails.Add(m)
         Next
         Return mails
@@ -111,8 +113,8 @@
         Dim telefonos As New List(Of Telefono)
         For Each r As Data.DataRow In b.Rows
             Dim t As New Telefono
-            t.Numero = r.Item("telefono")
-            t.Observacion = r.Item("observaciones")
+            t.Numero = DBUtils.ifNULLEmpty(r.Item("telefono"))
+            t.Observacion = DBUtils.ifNULLEmpty(r.Item("observaciones"))
             telefonos.Add(t)
         Next
         Return telefonos

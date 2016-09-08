@@ -19,4 +19,9 @@
 
 
     End Sub
+
+    Private Sub lst_telefono_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles lst_telefono.MouseDoubleClick
+        Dim t As Telefono = lst_telefono.SelectedItem
+        MsgBox(t.Observacion)
+    End Sub
 End Class

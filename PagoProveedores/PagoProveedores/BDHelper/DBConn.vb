@@ -52,7 +52,7 @@ Public Class DBConn
     Public Shared Function executeTransaction(sqls As String()) As Boolean
         Dim final_command As String = ""
         For Each c As String In sqls
-            final_command &= c & "; " & vbCrLf
+            If c <> "" Then final_command &= c & "; " & vbCrLf
         Next
         Dim connection As New SqlConnection(constr)
         Dim transaction As SqlTransaction

@@ -112,14 +112,14 @@ Partial Class frmProveedorNuevo
         Me.txt_razon_social.Location = New System.Drawing.Point(84, 28)
         Me.txt_razon_social.Name = "txt_razon_social"
         Me.txt_razon_social.Size = New System.Drawing.Size(100, 20)
-        Me.txt_razon_social.TabIndex = 7
+        Me.txt_razon_social.TabIndex = 0
         '
         'txt_direccion
         '
         Me.txt_direccion.Location = New System.Drawing.Point(84, 71)
         Me.txt_direccion.Name = "txt_direccion"
         Me.txt_direccion.Size = New System.Drawing.Size(100, 20)
-        Me.txt_direccion.TabIndex = 10
+        Me.txt_direccion.TabIndex = 1
         '
         'lst_telefono
         '
@@ -152,7 +152,7 @@ Partial Class frmProveedorNuevo
         Me.txt_cuit.Mask = "00-00000000-0"
         Me.txt_cuit.Name = "txt_cuit"
         Me.txt_cuit.Size = New System.Drawing.Size(100, 20)
-        Me.txt_cuit.TabIndex = 14
+        Me.txt_cuit.TabIndex = 2
         Me.txt_cuit.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
         'txt_observacion
@@ -160,7 +160,7 @@ Partial Class frmProveedorNuevo
         Me.txt_observacion.Location = New System.Drawing.Point(242, 71)
         Me.txt_observacion.Name = "txt_observacion"
         Me.txt_observacion.Size = New System.Drawing.Size(100, 42)
-        Me.txt_observacion.TabIndex = 15
+        Me.txt_observacion.TabIndex = 3
         Me.txt_observacion.Text = ""
         '
         'btn_agregar_telefono
@@ -168,7 +168,7 @@ Partial Class frmProveedorNuevo
         Me.btn_agregar_telefono.Location = New System.Drawing.Point(123, 314)
         Me.btn_agregar_telefono.Name = "btn_agregar_telefono"
         Me.btn_agregar_telefono.Size = New System.Drawing.Size(28, 23)
-        Me.btn_agregar_telefono.TabIndex = 16
+        Me.btn_agregar_telefono.TabIndex = 4
         Me.btn_agregar_telefono.Text = "+"
         Me.btn_agregar_telefono.UseVisualStyleBackColor = True
         '
@@ -177,7 +177,7 @@ Partial Class frmProveedorNuevo
         Me.btn_agregar_mail.Location = New System.Drawing.Point(280, 314)
         Me.btn_agregar_mail.Name = "btn_agregar_mail"
         Me.btn_agregar_mail.Size = New System.Drawing.Size(28, 23)
-        Me.btn_agregar_mail.TabIndex = 17
+        Me.btn_agregar_mail.TabIndex = 6
         Me.btn_agregar_mail.Text = "+"
         Me.btn_agregar_mail.UseVisualStyleBackColor = True
         '
@@ -186,7 +186,7 @@ Partial Class frmProveedorNuevo
         Me.btn_borrar_mail.Location = New System.Drawing.Point(314, 314)
         Me.btn_borrar_mail.Name = "btn_borrar_mail"
         Me.btn_borrar_mail.Size = New System.Drawing.Size(28, 23)
-        Me.btn_borrar_mail.TabIndex = 18
+        Me.btn_borrar_mail.TabIndex = 7
         Me.btn_borrar_mail.Text = "-"
         Me.btn_borrar_mail.UseVisualStyleBackColor = True
         '
@@ -195,7 +195,7 @@ Partial Class frmProveedorNuevo
         Me.btn_borrar_telefono.Location = New System.Drawing.Point(157, 314)
         Me.btn_borrar_telefono.Name = "btn_borrar_telefono"
         Me.btn_borrar_telefono.Size = New System.Drawing.Size(28, 23)
-        Me.btn_borrar_telefono.TabIndex = 19
+        Me.btn_borrar_telefono.TabIndex = 5
         Me.btn_borrar_telefono.Text = "-"
         Me.btn_borrar_telefono.UseVisualStyleBackColor = True
         '
