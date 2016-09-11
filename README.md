@@ -2,4 +2,4 @@
 Trabajo Practico de Programacion de Aplicacion Visuales
 
 for credential use
- git config --global credential.helper wincred
+git config --global credential.helper wincred
