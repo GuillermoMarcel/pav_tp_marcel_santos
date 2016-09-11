@@ -1,9 +1,9 @@
-﻿Imports PagoProveedores.QueryBuilder
+﻿Imports PagoProveedores.QB
 Public Class Examples
     Public Shared Function main()
 
         'Se llama la constructor sin singun atributo
-        Dim q As New QueryBuilder.QueryBuilder
+        Dim q As New QB.QueryBuilder
 
         Try
             'La mayoria de las acciones se pueden encadenar.
@@ -30,13 +30,13 @@ Public Class Examples
         Catch ex As DomainNotMatchException
             'No deberia aparece nunca. Si aparece es porque hay problemas con el dominio entre inserciones multiples
             Return ex.Message
-        Catch ex As QueryBuilder.QueryBuilderException
+        Catch ex As QB.QueryBuilderException
             'Interceptamos cualquier tipo de excepcion del QueryBuilder
             Return ex.Message
         End Try
     End Function
 
-    Public Shared Function ejemplos_con_select(q As QueryBuilder.QueryBuilder) As QueryBuilder.QueryBuilder
+    Public Shared Function ejemplos_con_select(q As QB.QueryBuilder) As QB.QueryBuilder
         'Todos los elementos de la tabla Alumnos
         q.table("Alumnos").seleccionar()
 
@@ -76,7 +76,7 @@ Public Class Examples
         Return q
     End Function
 
-    Public Shared Function ejemplos_con_join(q As QueryBuilder.QueryBuilder) As QueryBuilder.QueryBuilder
+    Public Shared Function ejemplos_con_join(q As QB.QueryBuilder) As QB.QueryBuilder
         'NO ANIDAR DESPUES DE HACER UN JOIN, PUEDE MAL ENTENDERSE.
 
         'Todos los elementos de la tabla Alumnos con los de la tabla carrera unidos por el elemento id_carrera en ambas
@@ -146,7 +146,7 @@ Public Class Examples
         Return q
     End Function
 
-    Public Shared Function ejemplos_con_update(q As QueryBuilder.QueryBuilder) As QueryBuilder.QueryBuilder
+    Public Shared Function ejemplos_con_update(q As QB.QueryBuilder) As QB.QueryBuilder
         ' __________________________________________________________
         '|                                                          |
         '|               Actualizacion de datos                     |
@@ -192,7 +192,7 @@ Public Class Examples
         Return q
     End Function
 
-    Public Shared Function ejemplos_con_insert(q As QueryBuilder.QueryBuilder) As QueryBuilder.QueryBuilder
+    Public Shared Function ejemplos_con_insert(q As QB.QueryBuilder) As QB.QueryBuilder
         ' __________________________________________________________
         '|                                                          |
         '|                   Inercion de datos                      | 

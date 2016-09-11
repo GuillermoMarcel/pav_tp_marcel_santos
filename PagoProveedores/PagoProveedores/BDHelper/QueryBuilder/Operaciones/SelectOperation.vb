@@ -1,4 +1,4 @@
-﻿Namespace QueryBuilder
+﻿Namespace QB
     Public Class SelectOperation
         Implements Operacion
         Private prim As TableSelected

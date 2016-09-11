@@ -1,4 +1,4 @@
-﻿Namespace QueryBuilder
+﻿Namespace QB
     Public Class InsertOperation
         Implements Operacion
         Private table As String
@@ -93,7 +93,7 @@
                 Next
 
                 If thereAreNewOnes Then redimActuales()
-                
+
             End If
 
         End Sub

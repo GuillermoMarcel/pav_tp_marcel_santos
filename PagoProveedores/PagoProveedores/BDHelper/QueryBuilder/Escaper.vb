@@ -60,6 +60,7 @@ Public Class Escaper
 
     Private Shared Function isEspecialNull(asdf As Object) As Boolean
         If asdf Is Nothing Then Return True
+        If asdf = "" Then Return True
         If isEspecial(asdf) And getEspecial(asdf) = "null" Then Return True
         Return False
     End Function

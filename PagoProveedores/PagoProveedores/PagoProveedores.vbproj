@@ -167,9 +167,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="BDHelper\QueryBuilder\desktop.ini" />
-    <None Include="BDHelper\QueryBuilder\Exceptions\desktop.ini" />
-    <None Include="BDHelper\QueryBuilder\Operaciones\desktop.ini" />
     <None Include="ClassDiagram1.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

@@ -9,17 +9,18 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim cmds As String() = {
-            "INSERT INTO Proveedores (razon_social) VALUES('aasd')",
-            "DECLARE @PID INT = @@IDENTITY",
-            "INSERT INTO Proveedor_Mails (id_proveedor, mail) VALUES (@PID, 'asdf@qq.com')",
-            "INSERT INTO Proveedor_Mails (id_proveedor, mail) VALUES (@PID, '456@qq.com')"
-        }
-        If DBConn.executeTransaction(cmds) Then
-            MsgBox("exito")
-        Else
-            MsgBox(DBConn.lastex.Message)
-        End If
+        Dim rs As String = "alguien sa",
+            dir = "calle nro",
+            cuit = 1234
+        Dim t As New Telefono With {.Numero = "125 412", .Observacion = ""}
+        Dim m As New Mail With {.Direccion = "asf@asdf", .Observacion = ""}
+        Dim lt As New List(Of Telefono)
+        lt.Add(t)
+        Dim lm As New List(Of Mail)
+        lm.Add(m)
+
+        DBHProveedor.addProveedor(rs, cuit, dir, "", lt, lm)
+
 
     End Sub
 End Class

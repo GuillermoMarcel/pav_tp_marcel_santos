@@ -1,4 +1,4 @@
-﻿Namespace QueryBuilder
+﻿Namespace QB
     Public Class QueryBuilderException
         Inherits Exception
         Sub New(m As String)

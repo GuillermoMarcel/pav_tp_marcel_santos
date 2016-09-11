@@ -1,4 +1,4 @@
-﻿Namespace QueryBuilder
+﻿Namespace QB
     Public Class TableSelected
         Implements Joinable
 

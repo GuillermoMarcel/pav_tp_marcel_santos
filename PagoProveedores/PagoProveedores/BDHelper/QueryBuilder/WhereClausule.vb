@@ -1,4 +1,4 @@
-﻿Namespace QueryBuilder
+﻿Namespace QB
     Public Class WhereClausule
         Public field, value As String
         Public op As String

@@ -1,4 +1,4 @@
-﻿Namespace QueryBuilder
+﻿Namespace QB
 
     Public Class QueryBuilder
         Private op As Operacion
@@ -97,30 +97,68 @@
             Return op.join(table, items, a, b, t)
         End Function
 
+        ''' <summary>
+        ''' Ingresa una clausula where de igualdad
+        ''' </summary>
+        ''' <param name="field">campo</param>
+        ''' <param name="value">valor</param>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
         Public Function where(field As String, value As String) As QueryBuilder
             Me.op.where(New WhereClausule(field, value))
             Return Me
         End Function
+        ''' <summary>
+        ''' Agrega una clausula where con el campo, la operacion y el valor.
+        ''' </summary>
+        ''' <param name="field">campo</param>
+        ''' <param name="op">operacion</param>
+        ''' <param name="value">valor</param>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
         Public Function where(field As String, op As String, value As String) As QueryBuilder
             Dim w As New WhereClausule(field, value) With {.op = op}
             Me.op.where(w)
             Return Me
         End Function
+        ''' <summary>
+        ''' Ingresa un arreglo de pares campos, valores.
+        ''' </summary>
+        ''' <param name="keyvalues"></param>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
         Public Function values(keyvalues As String(,)) As QueryBuilder
             op.values(keyvalues)
             Return Me
         End Function
+        ''' <summary>
+        ''' Inserta un unico par de campo, valor
+        ''' </summary>
+        ''' <param name="singleKeyValue"></param>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
         Public Function values(singleKeyValue As String()) As QueryBuilder
             Return Me.values({{singleKeyValue(0), singleKeyValue(1)}})
         End Function
 
+        ''' <summary>
+        ''' Contruye el codigo SQL correspondinete
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
         Public Function build() As String
             Return op.build
         End Function
 
-
-
-
+        ''' <summary>
+        ''' Limpia el QueryBuilder para poder volver a utilizarlo.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Function clear() As QueryBuilder
+            Me.op = Nothing
+            Return Me
+        End Function
 
 
 

@@ -1,4 +1,4 @@
-﻿Namespace QueryBuilder
+﻿Namespace QB
     Public Class UpdateOperation
         Implements Operacion
         Private table As String
