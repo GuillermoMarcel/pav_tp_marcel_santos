@@ -51,7 +51,7 @@ Partial Class frm_principal
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(101, 23)
         Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Test Proveedor"
+        Me.Button1.Text = "Test Proveedor 1"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'frm_principal
