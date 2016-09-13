@@ -40,6 +40,8 @@ Partial Class frmProveedorModificacion
         Me.lbl_razon_social = New System.Windows.Forms.Label()
         Me.btn_cancel = New System.Windows.Forms.Button()
         Me.btn_accept = New System.Windows.Forms.Button()
+        Me.btn_edit_mail = New System.Windows.Forms.Button()
+        Me.btn_edit_telefono = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn_borrar_telefono
@@ -199,11 +201,33 @@ Partial Class frmProveedorModificacion
         Me.btn_accept.Text = "Aceptar"
         Me.btn_accept.UseVisualStyleBackColor = True
         '
+        'btn_edit_mail
+        '
+        Me.btn_edit_mail.BackgroundImage = Global.PagoProveedores.My.Resources.Resources.lapiz
+        Me.btn_edit_mail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_edit_mail.Location = New System.Drawing.Point(289, 309)
+        Me.btn_edit_mail.Name = "btn_edit_mail"
+        Me.btn_edit_mail.Size = New System.Drawing.Size(33, 23)
+        Me.btn_edit_mail.TabIndex = 39
+        Me.btn_edit_mail.UseVisualStyleBackColor = True
+        '
+        'btn_edit_telefono
+        '
+        Me.btn_edit_telefono.BackgroundImage = Global.PagoProveedores.My.Resources.Resources.lapiz
+        Me.btn_edit_telefono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_edit_telefono.Location = New System.Drawing.Point(131, 310)
+        Me.btn_edit_telefono.Name = "btn_edit_telefono"
+        Me.btn_edit_telefono.Size = New System.Drawing.Size(33, 23)
+        Me.btn_edit_telefono.TabIndex = 38
+        Me.btn_edit_telefono.UseVisualStyleBackColor = True
+        '
         'frmProveedorModificacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(522, 412)
+        Me.Controls.Add(Me.btn_edit_mail)
+        Me.Controls.Add(Me.btn_edit_telefono)
         Me.Controls.Add(Me.btn_borrar_telefono)
         Me.Controls.Add(Me.btn_borrar_mail)
         Me.Controls.Add(Me.btn_agregar_mail)
@@ -223,7 +247,7 @@ Partial Class frmProveedorModificacion
         Me.Controls.Add(Me.btn_cancel)
         Me.Controls.Add(Me.btn_accept)
         Me.Name = "frmProveedorModificacion"
-        Me.Text = "Form1"
+        Me.Text = "Moficar Proveedor"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -246,4 +270,6 @@ Partial Class frmProveedorModificacion
     Friend WithEvents lbl_razon_social As System.Windows.Forms.Label
     Friend WithEvents btn_cancel As System.Windows.Forms.Button
     Friend WithEvents btn_accept As System.Windows.Forms.Button
+    Friend WithEvents btn_edit_mail As System.Windows.Forms.Button
+    Friend WithEvents btn_edit_telefono As System.Windows.Forms.Button
 End Class

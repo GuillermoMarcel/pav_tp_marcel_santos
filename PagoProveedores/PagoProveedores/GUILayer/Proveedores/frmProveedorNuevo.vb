@@ -51,18 +51,61 @@
     End Sub
 
     Private Sub btn_accept_Click(sender As Object, e As EventArgs) Handles btn_accept.Click
-        Dim b As Boolean = DBHProveedor.addProveedor(txt_razon_social.Text, 1234,
+        Dim cuit As Long
+        If Not txt_cuit.MaskFull Then
+            If MsgBox("CUIT NO VALIDO ¿Quiere agregar CUIT vacio?", MsgBoxStyle.YesNo) = MsgBoxResult.No Then
+                Return
+            End If
+            cuit = Nothing
+        Else
+            cuit = Long.Parse(txt_cuit.Text)
+        End If
+
+        Dim b As Boolean = DBHProveedor.addProveedor(txt_razon_social.Text, cuit,
                                   txt_direccion.Text, txt_observacion.Text, telefonos, mails)
 
         If b Then
             MsgBox("Se ha agregado un nuevo PROVEEDOR")
+            Me.Close()
         Else
             MsgBox(DBConn.lastex.Message)
         End If
+
     End Sub
 
+    Private Sub lst_telefono_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles lst_telefono.MouseDoubleClick
+        Dim t As Telefono = lst_telefono.SelectedItem
+        MsgBox(t.Observacion)
+    End Sub
 
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         Me.Close()
+    End Sub
+
+    Private Sub lst_mail_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles lst_mail.MouseDoubleClick
+        Dim m As Mail = lst_mail.SelectedItem
+        MsgBox(m.Observacion)
+    End Sub
+
+    Private Sub btn_edit_telefono_Click(sender As Object, e As EventArgs) Handles btn_edit_telefono.Click
+        Dim t As Telefono = lst_telefono.SelectedItem
+        If t Is Nothing Then
+            MsgBox("No hay ninguno seleccionado")
+            Return
+        End If
+        lst_telefono.DataSource = Nothing
+        t.Numero = InputBox("Ingrese un numero", DefaultResponse:=t.Numero)
+        lst_telefono.DataSource = telefonos
+    End Sub
+
+    Private Sub btn_edit_mail_Click(sender As Object, e As EventArgs) Handles btn_edit_mail.Click
+        Dim m As Mail = lst_mail.SelectedItem
+        If m Is Nothing Then
+            MsgBox("No hay ninguno seleccionado")
+            Return
+        End If
+        lst_mail.DataSource = Nothing
+        m.Direccion = InputBox("Ingrese un mail", DefaultResponse:=m.Direccion)
+        lst_mail.DataSource = telefonos
     End Sub
 End Class

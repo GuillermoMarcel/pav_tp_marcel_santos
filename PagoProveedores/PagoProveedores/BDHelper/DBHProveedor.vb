@@ -7,14 +7,16 @@ Public Class DBHProveedor
         Return DBConn.executeSQL(p.build)
     End Function
 
-    Public Shared Function addProveedor(razonSocial As String, cuit As Integer, direccion As String, observacion As String, telefonos As List(Of Telefono), mails As List(Of Mail)) As Boolean
+    Public Shared Function addProveedor(razonSocial As String, cuit As Long, direccion As String, observacion As String, telefonos As List(Of Telefono), mails As List(Of Mail)) As Boolean
         Dim p As New QueryBuilder
 
         Dim com As New List(Of String)
+        Dim c As String = cuit.ToString
+        If cuit = 0 Then c = "@null"
 
         p.table("Proveedores").insert({
                                       {"razon_social", razonSocial},
-                                      {"cuit", cuit},
+                                      {"cuit", c},
                                       {"direccion", direccion},
                                       {"observaciones", observacion}
                                   })
