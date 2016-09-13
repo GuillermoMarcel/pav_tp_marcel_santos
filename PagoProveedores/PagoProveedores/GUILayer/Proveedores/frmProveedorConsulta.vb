@@ -11,6 +11,7 @@
 
     Private Sub btn_new_Click(sender As Object, e As EventArgs) Handles btn_new.Click
         frmProveedorNuevo.ShowDialog()
+        actualizar()
     End Sub
 
     Private Sub frmProveedorConsulta_Load(sender As Object, e As EventArgs) Handles MyBase.Load

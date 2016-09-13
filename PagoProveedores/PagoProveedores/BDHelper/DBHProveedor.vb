@@ -54,7 +54,7 @@ Public Class DBHProveedor
 
         Dim rs As String = b.Rows(0).Item("razon_social"),
             direccion As Object = DBUtils.ifNULLEmpty(b.Rows(0).Item("direccion")),
-            cuit As Integer = b.Rows(0).Item("cuit"),
+            cuit As Long = b.Rows(0).Item("cuit"),
             observacion As String = DBUtils.ifNULLEmpty(b.Rows(0).Item("observaciones"))
 
 
@@ -75,26 +75,23 @@ Public Class DBHProveedor
         Dim q As New QueryBuilder
         q.table("Proveedor_Mails").insert({
                                           {"id_proveedor", id},
-                                          {"direccion", mail},
+                                          {"mail", mail},
                                           {"observaciones", texto}
                                       })
-        If DBConn.executeOnlySQL(q.build) Then
-            Return getMailsProveedor(id)
-        End If
-        Return Nothing
+        DBConn.executeOnlySQL(q.build)
+        Return getMailsProveedor(id)
     End Function
 
     Public Shared Function agregarTelefonoProveedor(id As Integer, numero As String, texto As String) As List(Of Telefono)
         Dim q As New QueryBuilder
         q.table("Proveedor_Telefonos").insert({
                                           {"id_proveedor", id},
-                                          {"numero", numero},
+                                          {"telefono", numero},
                                           {"observaciones", texto}
                                       })
-        If DBConn.executeOnlySQL(q.build) Then
-            Return getTelefonosProveedor(id)
-        End If
-        Return Nothing
+        DBConn.executeOnlySQL(q.build)
+        Return getTelefonosProveedor(id)
+
     End Function
 
     Public Shared Function getMailsProveedor(id As Integer) As List(Of Mail)
