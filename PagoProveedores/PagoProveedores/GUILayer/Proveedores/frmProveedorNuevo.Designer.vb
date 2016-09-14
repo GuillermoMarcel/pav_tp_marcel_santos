@@ -47,7 +47,7 @@ Partial Class frmProveedorNuevo
         'btn_accept
         '
         Me.btn_accept.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_accept.Location = New System.Drawing.Point(186, 380)
+        Me.btn_accept.Location = New System.Drawing.Point(218, 359)
         Me.btn_accept.Name = "btn_accept"
         Me.btn_accept.Size = New System.Drawing.Size(75, 23)
         Me.btn_accept.TabIndex = 12
@@ -57,7 +57,7 @@ Partial Class frmProveedorNuevo
         'btn_cancel
         '
         Me.btn_cancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_cancel.Location = New System.Drawing.Point(267, 380)
+        Me.btn_cancel.Location = New System.Drawing.Point(299, 359)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(75, 23)
         Me.btn_cancel.TabIndex = 13
@@ -67,7 +67,7 @@ Partial Class frmProveedorNuevo
         'lbl_razon_social
         '
         Me.lbl_razon_social.AutoSize = True
-        Me.lbl_razon_social.Location = New System.Drawing.Point(81, 12)
+        Me.lbl_razon_social.Location = New System.Drawing.Point(25, 12)
         Me.lbl_razon_social.Name = "lbl_razon_social"
         Me.lbl_razon_social.Size = New System.Drawing.Size(70, 13)
         Me.lbl_razon_social.TabIndex = 2
@@ -85,7 +85,7 @@ Partial Class frmProveedorNuevo
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(81, 132)
+        Me.Label3.Location = New System.Drawing.Point(25, 132)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(54, 13)
         Me.Label3.TabIndex = 4
@@ -103,7 +103,7 @@ Partial Class frmProveedorNuevo
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(81, 55)
+        Me.Label5.Location = New System.Drawing.Point(25, 55)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(52, 13)
         Me.Label5.TabIndex = 6
@@ -111,24 +111,24 @@ Partial Class frmProveedorNuevo
         '
         'txt_razon_social
         '
-        Me.txt_razon_social.Location = New System.Drawing.Point(84, 28)
+        Me.txt_razon_social.Location = New System.Drawing.Point(28, 28)
         Me.txt_razon_social.Name = "txt_razon_social"
-        Me.txt_razon_social.Size = New System.Drawing.Size(100, 20)
+        Me.txt_razon_social.Size = New System.Drawing.Size(156, 20)
         Me.txt_razon_social.TabIndex = 0
         '
         'txt_direccion
         '
-        Me.txt_direccion.Location = New System.Drawing.Point(84, 71)
+        Me.txt_direccion.Location = New System.Drawing.Point(28, 71)
         Me.txt_direccion.Name = "txt_direccion"
-        Me.txt_direccion.Size = New System.Drawing.Size(100, 20)
+        Me.txt_direccion.Size = New System.Drawing.Size(156, 20)
         Me.txt_direccion.TabIndex = 1
         '
         'lst_telefono
         '
         Me.lst_telefono.FormattingEnabled = True
-        Me.lst_telefono.Location = New System.Drawing.Point(84, 148)
+        Me.lst_telefono.Location = New System.Drawing.Point(28, 148)
         Me.lst_telefono.Name = "lst_telefono"
-        Me.lst_telefono.Size = New System.Drawing.Size(100, 160)
+        Me.lst_telefono.Size = New System.Drawing.Size(156, 160)
         Me.lst_telefono.TabIndex = 4
         '
         'lst_mail
@@ -136,7 +136,7 @@ Partial Class frmProveedorNuevo
         Me.lst_mail.FormattingEnabled = True
         Me.lst_mail.Location = New System.Drawing.Point(242, 148)
         Me.lst_mail.Name = "lst_mail"
-        Me.lst_mail.Size = New System.Drawing.Size(100, 160)
+        Me.lst_mail.Size = New System.Drawing.Size(166, 160)
         Me.lst_mail.TabIndex = 8
         '
         'Label6
@@ -161,7 +161,7 @@ Partial Class frmProveedorNuevo
         '
         Me.txt_observacion.Location = New System.Drawing.Point(242, 71)
         Me.txt_observacion.Name = "txt_observacion"
-        Me.txt_observacion.Size = New System.Drawing.Size(100, 42)
+        Me.txt_observacion.Size = New System.Drawing.Size(166, 58)
         Me.txt_observacion.TabIndex = 3
         Me.txt_observacion.Text = ""
         '
@@ -225,7 +225,7 @@ Partial Class frmProveedorNuevo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(420, 415)
+        Me.ClientSize = New System.Drawing.Size(452, 394)
         Me.Controls.Add(Me.btn_edit_mail)
         Me.Controls.Add(Me.btn_edit_telefono)
         Me.Controls.Add(Me.btn_borrar_telefono)

@@ -122,4 +122,37 @@ Public Class DBHProveedor
         Return telefonos
     End Function
 
+    Public Shared Function modificarTelefonoProveedor(id As Integer, telefono As String, ntelefono As String, nobservacion As String) As List(Of Telefono)
+        Dim q As New QueryBuilder
+        q.table("Proveedor_Telefonos").update({
+                                              {"telefono", ntelefono},
+                                              {"observaciones", nobservacion}
+                                          }).
+        where("@id_proveedor", id).
+        where("@telefono", telefono)
+
+        Dim com As String = q.build
+        DBConn.executeOnlySQL(com)
+        Return getTelefonosProveedor(id)
+    End Function
+
+    Shared Function modificarMailProveedor(id As Integer, mail As String, nmail As String, nobservacion As String) As List(Of Mail)
+        Dim q As New QueryBuilder
+        q.table("Proveedor_Mails").update({
+                                              {"mail", nmail},
+                                              {"observaciones", nobservacion}
+                                          }).
+        where("@id_proveedor", id).
+        where("@mail", mail)
+
+        Dim com As String = q.build
+        DBConn.executeOnlySQL(com)
+        Return getMailsProveedor(id)
+    End Function
+
+    Shared Function eliminarTelefonoProveedor(id As Integer, telefono As String) As List(Of Telefono)
+        Dim q As New QueryBuilder
+        'q.table("Proveedor_Telefonos").
+        Return getTelefonosProveedor(id)
+    End Function
 End Class
