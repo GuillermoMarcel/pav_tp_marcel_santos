@@ -7,7 +7,7 @@
     End Property
     Public Property RazonSocial As String
     Public Property Direccion As String
-    Public Property Cuit As Integer
+    Public Property Cuit As Long
     Public Property Observacion As String
     Public Property Telefonos As List(Of Telefono)
     Public Property Mails As List(Of Mail)

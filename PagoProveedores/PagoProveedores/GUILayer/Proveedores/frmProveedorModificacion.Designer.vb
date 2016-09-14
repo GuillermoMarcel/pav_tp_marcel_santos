@@ -22,10 +22,7 @@ Partial Class frmProveedorModificacion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btn_borrar_telefono = New System.Windows.Forms.Button()
         Me.btn_borrar_mail = New System.Windows.Forms.Button()
-        Me.btn_agregar_mail = New System.Windows.Forms.Button()
-        Me.btn_agregar_telefono = New System.Windows.Forms.Button()
         Me.txt_observacion = New System.Windows.Forms.RichTextBox()
         Me.txt_cuit = New System.Windows.Forms.MaskedTextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -42,16 +39,10 @@ Partial Class frmProveedorModificacion
         Me.btn_accept = New System.Windows.Forms.Button()
         Me.btn_edit_mail = New System.Windows.Forms.Button()
         Me.btn_edit_telefono = New System.Windows.Forms.Button()
+        Me.btn_borrar_telefono = New System.Windows.Forms.Button()
+        Me.btn_agregar_mail = New System.Windows.Forms.Button()
+        Me.btn_agregar_telefono = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'btn_borrar_telefono
-        '
-        Me.btn_borrar_telefono.Location = New System.Drawing.Point(204, 310)
-        Me.btn_borrar_telefono.Name = "btn_borrar_telefono"
-        Me.btn_borrar_telefono.Size = New System.Drawing.Size(28, 23)
-        Me.btn_borrar_telefono.TabIndex = 37
-        Me.btn_borrar_telefono.Text = "-"
-        Me.btn_borrar_telefono.UseVisualStyleBackColor = True
         '
         'btn_borrar_mail
         '
@@ -62,29 +53,11 @@ Partial Class frmProveedorModificacion
         Me.btn_borrar_mail.Text = "-"
         Me.btn_borrar_mail.UseVisualStyleBackColor = True
         '
-        'btn_agregar_mail
-        '
-        Me.btn_agregar_mail.Location = New System.Drawing.Point(327, 310)
-        Me.btn_agregar_mail.Name = "btn_agregar_mail"
-        Me.btn_agregar_mail.Size = New System.Drawing.Size(28, 23)
-        Me.btn_agregar_mail.TabIndex = 35
-        Me.btn_agregar_mail.Text = "+"
-        Me.btn_agregar_mail.UseVisualStyleBackColor = True
-        '
-        'btn_agregar_telefono
-        '
-        Me.btn_agregar_telefono.Location = New System.Drawing.Point(170, 310)
-        Me.btn_agregar_telefono.Name = "btn_agregar_telefono"
-        Me.btn_agregar_telefono.Size = New System.Drawing.Size(28, 23)
-        Me.btn_agregar_telefono.TabIndex = 34
-        Me.btn_agregar_telefono.Text = "+"
-        Me.btn_agregar_telefono.UseVisualStyleBackColor = True
-        '
         'txt_observacion
         '
         Me.txt_observacion.Location = New System.Drawing.Point(289, 67)
         Me.txt_observacion.Name = "txt_observacion"
-        Me.txt_observacion.Size = New System.Drawing.Size(100, 42)
+        Me.txt_observacion.Size = New System.Drawing.Size(201, 58)
         Me.txt_observacion.TabIndex = 33
         Me.txt_observacion.Text = ""
         '
@@ -111,35 +84,35 @@ Partial Class frmProveedorModificacion
         Me.lst_mail.FormattingEnabled = True
         Me.lst_mail.Location = New System.Drawing.Point(289, 144)
         Me.lst_mail.Name = "lst_mail"
-        Me.lst_mail.Size = New System.Drawing.Size(100, 160)
+        Me.lst_mail.Size = New System.Drawing.Size(201, 160)
         Me.lst_mail.TabIndex = 30
         '
         'lst_telefono
         '
         Me.lst_telefono.FormattingEnabled = True
-        Me.lst_telefono.Location = New System.Drawing.Point(131, 144)
+        Me.lst_telefono.Location = New System.Drawing.Point(44, 144)
         Me.lst_telefono.Name = "lst_telefono"
-        Me.lst_telefono.Size = New System.Drawing.Size(100, 160)
+        Me.lst_telefono.Size = New System.Drawing.Size(187, 160)
         Me.lst_telefono.TabIndex = 29
         '
         'txt_direccion
         '
-        Me.txt_direccion.Location = New System.Drawing.Point(131, 67)
+        Me.txt_direccion.Location = New System.Drawing.Point(44, 67)
         Me.txt_direccion.Name = "txt_direccion"
-        Me.txt_direccion.Size = New System.Drawing.Size(100, 20)
+        Me.txt_direccion.Size = New System.Drawing.Size(187, 20)
         Me.txt_direccion.TabIndex = 28
         '
         'txt_razon_social
         '
-        Me.txt_razon_social.Location = New System.Drawing.Point(131, 24)
+        Me.txt_razon_social.Location = New System.Drawing.Point(44, 24)
         Me.txt_razon_social.Name = "txt_razon_social"
-        Me.txt_razon_social.Size = New System.Drawing.Size(100, 20)
+        Me.txt_razon_social.Size = New System.Drawing.Size(187, 20)
         Me.txt_razon_social.TabIndex = 27
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(128, 51)
+        Me.Label5.Location = New System.Drawing.Point(41, 51)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(52, 13)
         Me.Label5.TabIndex = 26
@@ -157,7 +130,7 @@ Partial Class frmProveedorModificacion
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(128, 128)
+        Me.Label3.Location = New System.Drawing.Point(41, 128)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(54, 13)
         Me.Label3.TabIndex = 24
@@ -175,7 +148,7 @@ Partial Class frmProveedorModificacion
         'lbl_razon_social
         '
         Me.lbl_razon_social.AutoSize = True
-        Me.lbl_razon_social.Location = New System.Drawing.Point(128, 8)
+        Me.lbl_razon_social.Location = New System.Drawing.Point(41, 9)
         Me.lbl_razon_social.Name = "lbl_razon_social"
         Me.lbl_razon_social.Size = New System.Drawing.Size(70, 13)
         Me.lbl_razon_social.TabIndex = 22
@@ -220,6 +193,33 @@ Partial Class frmProveedorModificacion
         Me.btn_edit_telefono.Size = New System.Drawing.Size(33, 23)
         Me.btn_edit_telefono.TabIndex = 38
         Me.btn_edit_telefono.UseVisualStyleBackColor = True
+        '
+        'btn_borrar_telefono
+        '
+        Me.btn_borrar_telefono.Location = New System.Drawing.Point(204, 310)
+        Me.btn_borrar_telefono.Name = "btn_borrar_telefono"
+        Me.btn_borrar_telefono.Size = New System.Drawing.Size(28, 23)
+        Me.btn_borrar_telefono.TabIndex = 37
+        Me.btn_borrar_telefono.Text = "-"
+        Me.btn_borrar_telefono.UseVisualStyleBackColor = True
+        '
+        'btn_agregar_mail
+        '
+        Me.btn_agregar_mail.Location = New System.Drawing.Point(327, 310)
+        Me.btn_agregar_mail.Name = "btn_agregar_mail"
+        Me.btn_agregar_mail.Size = New System.Drawing.Size(28, 23)
+        Me.btn_agregar_mail.TabIndex = 35
+        Me.btn_agregar_mail.Text = "+"
+        Me.btn_agregar_mail.UseVisualStyleBackColor = True
+        '
+        'btn_agregar_telefono
+        '
+        Me.btn_agregar_telefono.Location = New System.Drawing.Point(170, 310)
+        Me.btn_agregar_telefono.Name = "btn_agregar_telefono"
+        Me.btn_agregar_telefono.Size = New System.Drawing.Size(28, 23)
+        Me.btn_agregar_telefono.TabIndex = 34
+        Me.btn_agregar_telefono.Text = "+"
+        Me.btn_agregar_telefono.UseVisualStyleBackColor = True
         '
         'frmProveedorModificacion
         '

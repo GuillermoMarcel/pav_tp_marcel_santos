@@ -15,7 +15,15 @@
 
     Private Sub btn_agregar_telefono_Click(sender As Object, e As EventArgs) Handles btn_agregar_telefono.Click
         Dim numero As String = InputBox("Ingrese número")
+        If numero = String.Empty Then
+            MsgBox("Error, número vacío")
+            Return
+        End If
         Dim observacion As String = InputBox("Ingrese observación")
+        If MsgBox("¿Desea agregar un nuevo teléfono?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            Dim telefonos As List(Of Telefono) = DBHProveedor.agregarTelefonoProveedor(p.Id, numero, observacion)
+            lst_telefono.DataSource = telefonos
+        End If
     End Sub
 
     Private Sub lst_telefono_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles lst_telefono.MouseDoubleClick
@@ -26,5 +34,72 @@
     Private Sub lst_mail_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles lst_mail.MouseDoubleClick
         Dim m As Mail = lst_mail.SelectedItem
         MsgBox(m.Observacion)
+    End Sub
+
+    Private Sub btn_agregar_mail_Click(sender As Object, e As EventArgs) Handles btn_agregar_mail.Click
+        Dim mail As String = InputBox("Ingrese mail")
+        If mail = String.Empty Then
+            MsgBox("Error, mail vacío")
+            Return
+        End If
+        Dim observacion As String = InputBox("Ingrese observación")
+        If MsgBox("¿Desea agregar un nuevo mail?", MsgBoxStyle.YesNo) = MsgBoxResult.No Then Return
+        Dim mails As List(Of Mail) = DBHProveedor.agregarMailProveedor(p.Id, mail, observacion)
+        lst_mail.DataSource = mails
+    End Sub
+
+    Private Sub btn_edit_telefono_Click(sender As Object, e As EventArgs) Handles btn_edit_telefono.Click
+        If lst_telefono.SelectedItem Is Nothing Then
+            MsgBox("No hay teléfono seleccionado.")
+            Return
+        End If
+        Dim telefono As Telefono = lst_telefono.SelectedItem
+        Dim ntelefono As String = InputBox("Ingrese teléfono", DefaultResponse:=telefono.Numero)
+        If ntelefono = String.Empty Then
+            MsgBox("Debe ingresar un teléfono")
+            Return
+        End If
+        Dim nobservacion As String = InputBox("Ingrese observación", DefaultResponse:=telefono.Observacion)
+        Dim r As MsgBoxResult =
+            MsgBox("¿Desea confirmar modificacion?", MsgBoxStyle.YesNo)
+        If r = MsgBoxResult.Yes Then
+            lst_telefono.DataSource = DBHProveedor.modificarTelefonoProveedor(p.Id, telefono.Numero, ntelefono, nobservacion)
+        End If
+    End Sub
+
+    Private Sub btn_edit_mail_Click(sender As Object, e As EventArgs) Handles btn_edit_mail.Click
+        If lst_mail.SelectedItem Is Nothing Then
+            MsgBox("No hay mail seleccionado.")
+            Return
+        End If
+        Dim mail As Mail = lst_mail.SelectedItem
+        Dim nmail As String = InputBox("Ingrese mail", DefaultResponse:=mail.Direccion)
+        If nmail = String.Empty Then
+            MsgBox("Debe ingresar un mail")
+            Return
+        End If
+        Dim nobservacion As String = InputBox("Ingrese observación", DefaultResponse:=mail.Observacion)
+        Dim r As MsgBoxResult =
+            MsgBox("¿Desea confirmar modificacion?", MsgBoxStyle.YesNo)
+        If r = MsgBoxResult.Yes Then
+            lst_mail.DataSource = DBHProveedor.modificarMailProveedor(p.Id, mail.Direccion, nmail, nobservacion)
+        End If
+    End Sub
+
+    Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
+        Me.Close()
+    End Sub
+
+    Private Sub btn_accept_Click(sender As Object, e As EventArgs) Handles btn_accept.Click
+
+    End Sub
+
+    Private Sub btn_borrar_telefono_Click(sender As Object, e As EventArgs) Handles btn_borrar_telefono.Click
+        If lst_telefono.SelectedItem Is Nothing Then
+            MsgBox("No hay teléfono seleccionado")
+            Return
+        End If
+        Dim telefono As Telefono = lst_telefono.SelectedItem
+
     End Sub
 End Class
