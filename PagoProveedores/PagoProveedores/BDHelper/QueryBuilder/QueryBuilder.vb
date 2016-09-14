@@ -42,6 +42,15 @@
             Return Me
         End Function
         ''' <summary>
+        ''' Definir una eliminacion simple o multiple.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Function delete() As QueryBuilder
+            If op Is Nothing Then op = New DeleteOperation().setTable(t)
+            Return Me
+        End Function
+        ''' <summary>
         ''' Definir una actualizacion.
         ''' </summary>
         ''' <param name="values">Doble array con los campos a modificar y sus valores. Acepta campo especial @</param>
