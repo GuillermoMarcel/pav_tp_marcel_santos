@@ -80,6 +80,7 @@
     <Compile Include="BDHelper\QueryBuilder\Operaciones\Operacion.vb" />
     <Compile Include="BDHelper\QueryBuilder\Operaciones\SelectOperation.vb" />
     <Compile Include="BDHelper\QueryBuilder\Operaciones\UpdateOperation.vb" />
+	<Compile Include="BDHelper\QueryBuilder\Operaciones\DeleteOperation.vb" />
     <Compile Include="BDHelper\QueryBuilder\QueryBuilder.vb" />
     <Compile Include="BDHelper\QueryBuilder\TableSelected.vb" />
     <Compile Include="BDHelper\QueryBuilder\WhereClausule.vb" />
