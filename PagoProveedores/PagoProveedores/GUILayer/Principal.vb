@@ -12,8 +12,8 @@
         Dim rs As String = "alguien sa",
             dir = "calle nro",
             cuit = 1234
-        Dim t As New Telefono With {.Numero = "125 412", .Observacion = ""}
-        Dim m As New Mail With {.Direccion = "asf@asdf", .Observacion = ""}
+        Dim t As New Telefono With {.Telefono = "125 412", .Observacion = ""}
+        Dim m As New Mail With {.Mail = "asf@asdf", .Observacion = ""}
         Dim lt As New List(Of Telefono)
         lt.Add(t)
         Dim lm As New List(Of Mail)

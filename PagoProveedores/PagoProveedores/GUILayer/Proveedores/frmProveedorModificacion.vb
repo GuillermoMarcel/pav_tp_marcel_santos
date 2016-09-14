@@ -54,7 +54,7 @@
             Return
         End If
         Dim telefono As Telefono = lst_telefono.SelectedItem
-        Dim ntelefono As String = InputBox("Ingrese teléfono", DefaultResponse:=telefono.Numero)
+        Dim ntelefono As String = InputBox("Ingrese teléfono", DefaultResponse:=telefono.Telefono)
         If ntelefono = String.Empty Then
             MsgBox("Debe ingresar un teléfono")
             Return
@@ -63,7 +63,7 @@
         Dim r As MsgBoxResult =
             MsgBox("¿Desea confirmar modificacion?", MsgBoxStyle.YesNo)
         If r = MsgBoxResult.Yes Then
-            lst_telefono.DataSource = DBHProveedor.modificarTelefonoProveedor(p.Id, telefono.Numero, ntelefono, nobservacion)
+            lst_telefono.DataSource = DBHProveedor.modificarTelefonoProveedor(p.Id, telefono.Telefono, ntelefono, nobservacion)
         End If
     End Sub
 
@@ -73,7 +73,7 @@
             Return
         End If
         Dim mail As Mail = lst_mail.SelectedItem
-        Dim nmail As String = InputBox("Ingrese mail", DefaultResponse:=mail.Direccion)
+        Dim nmail As String = InputBox("Ingrese mail", DefaultResponse:=mail.Mail)
         If nmail = String.Empty Then
             MsgBox("Debe ingresar un mail")
             Return
@@ -82,7 +82,7 @@
         Dim r As MsgBoxResult =
             MsgBox("¿Desea confirmar modificacion?", MsgBoxStyle.YesNo)
         If r = MsgBoxResult.Yes Then
-            lst_mail.DataSource = DBHProveedor.modificarMailProveedor(p.Id, mail.Direccion, nmail, nobservacion)
+            lst_mail.DataSource = DBHProveedor.modificarMailProveedor(p.Id, mail.Mail, nmail, nobservacion)
         End If
     End Sub
 
@@ -91,6 +91,23 @@
     End Sub
 
     Private Sub btn_accept_Click(sender As Object, e As EventArgs) Handles btn_accept.Click
+        If txt_razon_social Is Nothing Then
+            MsgBox("La razón social no puede ser vacía", MsgBoxStyle.Exclamation)
+            Return
+        End If
+        Dim cuit As Long
+        If Not txt_cuit.MaskFull Then
+            If MsgBox("CUIT NO VALIDO ¿Quiere agregar CUIT vacio?", MsgBoxStyle.YesNo) = MsgBoxResult.No Then
+                Return
+            End If
+            cuit = Nothing
+        Else
+            cuit = Long.Parse(txt_cuit.Text)
+        End If
+        If DBHProveedor.confirmarModificacionProveedor(p.Id, txt_razon_social.Text, cuit, txt_direccion.Text, txt_observacion.Text) Then
+            MsgBox("ÉXITO")
+            Me.Close()
+        End If
 
     End Sub
 
@@ -100,6 +117,21 @@
             Return
         End If
         Dim telefono As Telefono = lst_telefono.SelectedItem
+        Dim r As New MsgBoxResult
+        r = MsgBox("¿Desea eliminar este teléfono?", MsgBoxStyle.YesNo)
+        If r = MsgBoxResult.No Then Return
+        lst_telefono.DataSource = DBHProveedor.eliminarTelefonoProveedor(p.Id, telefono.Telefono)
+    End Sub
 
+    Private Sub btn_borrar_mail_Click(sender As Object, e As EventArgs) Handles btn_borrar_mail.Click
+        If lst_mail.SelectedItem Is Nothing Then
+            MsgBox("No hay mail seleccionado")
+            Return
+        End If
+        Dim mail As Mail = lst_mail.SelectedItem
+        Dim r As New MsgBoxResult
+        r = MsgBox("¿Desea eliminar este mail?", MsgBoxStyle.YesNo)
+        If r = MsgBoxResult.No Then Return
+        lst_mail.DataSource = DBHProveedor.eliminarMailProveedor(p.Id, mail.Mail)
     End Sub
 End Class

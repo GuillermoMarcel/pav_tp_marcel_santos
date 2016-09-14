@@ -20,8 +20,8 @@
 
     Private Sub btn_modify_Click(sender As Object, e As EventArgs) Handles btn_modify.Click
         Dim curid As Integer = dgv_proveedores.CurrentRow.Cells("id_proveedor").Value
-
         Dim f As New frmProveedorModificacion(DBHProveedor.modificarProveedor(curid))
         f.ShowDialog()
+        actualizar()
     End Sub
 End Class

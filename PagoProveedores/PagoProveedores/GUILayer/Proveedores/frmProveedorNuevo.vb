@@ -19,7 +19,7 @@
 
     Private Sub btn_telefono_Click(sender As Object, e As EventArgs) Handles btn_agregar_telefono.Click
         Dim tel As New Telefono
-        tel.Numero = InputBox("Ingrese teléfono")
+        tel.Telefono = InputBox("Ingrese teléfono")
         tel.Observacion = InputBox("Ingrese observación")
         lst_telefono.DataSource = Nothing
         telefonos.Add(tel)
@@ -29,7 +29,7 @@
 
     Private Sub btn_mail_Click(sender As Object, e As EventArgs) Handles btn_agregar_mail.Click
         Dim mail As New Mail
-        mail.Direccion = InputBox("Ingrese Mail")
+        mail.Mail = InputBox("Ingrese Mail")
         mail.Observacion = InputBox("Ingrese observación")
         lst_mail.DataSource = Nothing
         mails.Add(mail)
@@ -51,6 +51,11 @@
     End Sub
 
     Private Sub btn_accept_Click(sender As Object, e As EventArgs) Handles btn_accept.Click
+        If txt_razon_social Is Nothing Then
+            MsgBox("La razón social no puede ser vacía", MsgBoxStyle.Exclamation)
+            Return
+        End If
+
         Dim cuit As Long
         If Not txt_cuit.MaskFull Then
             If MsgBox("CUIT NO VALIDO ¿Quiere agregar CUIT vacio?", MsgBoxStyle.YesNo) = MsgBoxResult.No Then
@@ -94,7 +99,7 @@
             Return
         End If
         lst_telefono.DataSource = Nothing
-        t.Numero = InputBox("Ingrese un numero", DefaultResponse:=t.Numero)
+        t.Telefono = InputBox("Ingrese un numero", DefaultResponse:=t.Telefono)
         lst_telefono.DataSource = telefonos
     End Sub
 
@@ -105,7 +110,7 @@
             Return
         End If
         lst_mail.DataSource = Nothing
-        m.Direccion = InputBox("Ingrese un mail", DefaultResponse:=m.Direccion)
+        m.Mail = InputBox("Ingrese un mail", DefaultResponse:=m.Mail)
         lst_mail.DataSource = telefonos
     End Sub
 End Class

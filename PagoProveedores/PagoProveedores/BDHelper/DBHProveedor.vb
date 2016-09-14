@@ -28,7 +28,7 @@ Public Class DBHProveedor
         For Each t As Telefono In telefonos
             p.clear.table("Proveedor_Telefonos").insert({
                                                   {"id_proveedor", "@@ProvId"},
-                                                  {"telefono", t.Numero},
+                                                  {"telefono", t.Telefono},
                                                   {"observaciones", t.Observacion}
                                               })
             com.Add(p.build)
@@ -36,7 +36,7 @@ Public Class DBHProveedor
         For Each m As Mail In mails
             p.clear.table("Proveedor_Mails").insert({
                                                 {"id_proveedor", "@@ProvId"},
-                                                {"mail", m.Direccion},
+                                                {"mail", m.Mail},
                                                 {"observaciones", m.Observacion}
                                             })
 
@@ -71,6 +71,19 @@ Public Class DBHProveedor
         Return p
     End Function
 
+    Public Shared Function confirmarModificacionProveedor(id As String, razonSocial As String, cuit As Long, direccion As String, observacion As String) As Boolean
+        Dim q As New QueryBuilder
+        q.table("Proveedores").update({
+                                     {"razon_social", razonSocial},
+                                     {"cuit", cuit},
+                                     {"observaciones", observacion},
+                                     {"direccion", direccion}
+                                 }).
+                         where("@id_proveedor", id)
+        Dim com As String = q.build
+        Return DBConn.executeOnlySQL(com)
+    End Function
+
     Public Shared Function agregarMailProveedor(id As Integer, mail As String, texto As String) As List(Of Mail)
         Dim q As New QueryBuilder
         q.table("Proveedor_Mails").insert({
@@ -101,7 +114,7 @@ Public Class DBHProveedor
         Dim mails As New List(Of Mail)
         For Each r As Data.DataRow In b.Rows
             Dim m As New Mail
-            m.Direccion = DBUtils.ifNULLEmpty(r.Item("mail"))
+            m.Mail = DBUtils.ifNULLEmpty(r.Item("mail"))
             m.Observacion = DBUtils.ifNULLEmpty(r.Item("observaciones"))
             mails.Add(m)
         Next
@@ -115,7 +128,7 @@ Public Class DBHProveedor
         Dim telefonos As New List(Of Telefono)
         For Each r As Data.DataRow In b.Rows
             Dim t As New Telefono
-            t.Numero = DBUtils.ifNULLEmpty(r.Item("telefono"))
+            t.Telefono = DBUtils.ifNULLEmpty(r.Item("telefono"))
             t.Observacion = DBUtils.ifNULLEmpty(r.Item("observaciones"))
             telefonos.Add(t)
         Next
@@ -136,6 +149,17 @@ Public Class DBHProveedor
         Return getTelefonosProveedor(id)
     End Function
 
+    Shared Function eliminarTelefonoProveedor(id As Integer, telefono As String) As List(Of Telefono)
+        Dim q As New QueryBuilder
+        'q.table("Proveedor_Telefonos").delete.where("@id_proveedor", id).where("@telefono", telefono)
+        q.table("Proveedor_Telefonos").update({"deleted_at", "@getdate()"}).
+            where("@id_proveedor", id).
+            where("@telefono", telefono)
+        Dim com As String = q.build
+        DBConn.executeOnlySQL(com)
+        Return getTelefonosProveedor(id)
+    End Function
+
     Shared Function modificarMailProveedor(id As Integer, mail As String, nmail As String, nobservacion As String) As List(Of Mail)
         Dim q As New QueryBuilder
         q.table("Proveedor_Mails").update({
@@ -150,9 +174,15 @@ Public Class DBHProveedor
         Return getMailsProveedor(id)
     End Function
 
-    Shared Function eliminarTelefonoProveedor(id As Integer, telefono As String) As List(Of Telefono)
+    Shared Function eliminarMailProveedor(id As Integer, mail As String) As List(Of Mail)
         Dim q As New QueryBuilder
-        'q.table("Proveedor_Telefonos").
-        Return getTelefonosProveedor(id)
+        'q.table("Proveedor_Telefonos").delete.where("@id_proveedor", id).where("@telefono", telefono)
+        q.table("Proveedor_Mails").update({"deleted_at", "@getdate()"}).
+            where("@id_proveedor", id).
+            where("@mail", mail)
+        Dim com As String = q.build
+        DBConn.executeOnlySQL(com)
+        Return getMailsProveedor(id)
     End Function
+
 End Class

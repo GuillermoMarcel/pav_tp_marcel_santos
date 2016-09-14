@@ -1,7 +1,7 @@
 ﻿Public Class Telefono
-    Public Property Numero As String
+    Public Property Telefono As String
     Public Property Observacion As String
     Public Overrides Function ToString() As String
-        Return Numero
+        Return Telefono
     End Function
 End Class

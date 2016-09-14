@@ -27,7 +27,7 @@
             build &= " WHERE "
 
             For i = 0 To whereclaus.Count - 1
-                If i <> 0 Then build &= "AND "
+                If i <> 0 Then build &= " AND "
                 build &= whereclaus(i).build()
             Next
 
