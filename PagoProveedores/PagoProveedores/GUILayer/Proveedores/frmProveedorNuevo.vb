@@ -6,14 +6,14 @@
         mails = New List(Of Mail)
         telefonos = New List(Of Telefono)
 
-        Dim bs1 As New BindingSource(mails, "Direccion")
+        Dim bs1 As New BindingSource(mails, "Mail")
         lst_mail.DataSource = bs1
 
 
         Dim bs2 As New BindingSource
         bs2.DataSource = telefonos
         lst_telefono.DataSource = bs2
-        lst_telefono.DisplayMember = "Numero"
+        lst_telefono.DisplayMember = "Telefono"
 
     End Sub
 

@@ -10,7 +10,9 @@
     End Sub
 
     Private Sub btn_new_Click(sender As Object, e As EventArgs) Handles btn_new.Click
-        frmProveedorNuevo.ShowDialog()
+        Dim f As New frmProveedorNuevo
+        f.ShowDialog()
+        'frmProveedorNuevo.ShowDialog()
         actualizar()
     End Sub
 
