@@ -27,4 +27,9 @@
     Private Sub btn_titulares_Click(sender As Object, e As EventArgs) Handles btn_titulares.Click
         frmTitularesConsulta.ShowDialog()
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim f As New frmNuevaFactura
+        f.ShowDialog()
+    End Sub
 End Class

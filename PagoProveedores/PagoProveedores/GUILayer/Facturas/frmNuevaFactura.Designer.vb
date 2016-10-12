@@ -22,8 +22,168 @@ Partial Class frmNuevaFactura
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cmb_proveedor = New System.Windows.Forms.ComboBox()
+        Me.dtp_fecha = New System.Windows.Forms.DateTimePicker()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cmb_tipo = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txt_monto = New System.Windows.Forms.TextBox()
+        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.txt_montodec = New System.Windows.Forms.TextBox()
+        Me.SuspendLayout()
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(12, 46)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(56, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Proveedor"
+        '
+        'cmb_proveedor
+        '
+        Me.cmb_proveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_proveedor.FormattingEnabled = True
+        Me.cmb_proveedor.Location = New System.Drawing.Point(85, 43)
+        Me.cmb_proveedor.Name = "cmb_proveedor"
+        Me.cmb_proveedor.Size = New System.Drawing.Size(200, 21)
+        Me.cmb_proveedor.TabIndex = 0
+        '
+        'dtp_fecha
+        '
+        Me.dtp_fecha.Location = New System.Drawing.Point(85, 149)
+        Me.dtp_fecha.Name = "dtp_fecha"
+        Me.dtp_fecha.Size = New System.Drawing.Size(200, 20)
+        Me.dtp_fecha.TabIndex = 5
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(12, 155)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(37, 13)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Fecha"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(12, 73)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(67, 13)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Tipo Factura"
+        '
+        'cmb_tipo
+        '
+        Me.cmb_tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_tipo.FormattingEnabled = True
+        Me.cmb_tipo.Location = New System.Drawing.Point(85, 70)
+        Me.cmb_tipo.Name = "cmb_tipo"
+        Me.cmb_tipo.Size = New System.Drawing.Size(200, 21)
+        Me.cmb_tipo.TabIndex = 1
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(12, 100)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(63, 13)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Nro Factura"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(12, 126)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(37, 13)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Monto"
+        '
+        'txt_monto
+        '
+        Me.txt_monto.Location = New System.Drawing.Point(85, 123)
+        Me.txt_monto.Name = "txt_monto"
+        Me.txt_monto.Size = New System.Drawing.Size(155, 20)
+        Me.txt_monto.TabIndex = 3
+        '
+        'MaskedTextBox1
+        '
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(85, 97)
+        Me.MaskedTextBox1.Mask = "0000-00000000"
+        Me.MaskedTextBox1.Name = "MaskedTextBox1"
+        Me.MaskedTextBox1.Size = New System.Drawing.Size(200, 20)
+        Me.MaskedTextBox1.TabIndex = 2
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.Location = New System.Drawing.Point(273, 221)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 7
+        Me.Button1.Text = "Cancelar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.Location = New System.Drawing.Point(192, 221)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 6
+        Me.Button2.Text = "Aceptar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'txt_montodec
+        '
+        Me.txt_montodec.Location = New System.Drawing.Point(246, 123)
+        Me.txt_montodec.Name = "txt_montodec"
+        Me.txt_montodec.Size = New System.Drawing.Size(39, 20)
+        Me.txt_montodec.TabIndex = 4
+        '
+        'frmNuevaFactura
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(360, 256)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.MaskedTextBox1)
+        Me.Controls.Add(Me.txt_montodec)
+        Me.Controls.Add(Me.txt_monto)
+        Me.Controls.Add(Me.dtp_fecha)
+        Me.Controls.Add(Me.cmb_tipo)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.cmb_proveedor)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Name = "frmNuevaFactura"
         Me.Text = "frmNuevaFactura"
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
     End Sub
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents cmb_proveedor As System.Windows.Forms.ComboBox
+    Friend WithEvents dtp_fecha As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents cmb_tipo As System.Windows.Forms.ComboBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents txt_monto As System.Windows.Forms.TextBox
+    Friend WithEvents MaskedTextBox1 As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents txt_montodec As System.Windows.Forms.TextBox
 End Class

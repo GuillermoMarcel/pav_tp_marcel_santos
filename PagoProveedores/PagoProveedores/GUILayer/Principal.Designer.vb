@@ -26,6 +26,7 @@ Partial Class frm_principal
         Me.btn_proveedor = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btn_titulares = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn_banco
@@ -64,11 +65,21 @@ Partial Class frm_principal
         Me.btn_titulares.Text = "Titulares"
         Me.btn_titulares.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(12, 118)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(112, 23)
+        Me.Button2.TabIndex = 4
+        Me.Button2.Text = "Nueva Factura"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'frm_principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(292, 273)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.btn_titulares)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btn_proveedor)
@@ -82,4 +93,5 @@ Partial Class frm_principal
     Friend WithEvents btn_proveedor As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents btn_titulares As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class

@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDHelper\DBConn.vb" />
+    <Compile Include="BDHelper\DBHFactura.vb" />
     <Compile Include="BDHelper\DBHProveedor.vb" />
     <Compile Include="BDHelper\DBHBanco.vb" />
     <Compile Include="BDHelper\DBHTitular.vb" />
@@ -96,6 +97,12 @@
     </Compile>
     <Compile Include="GUILayer\Banco\frmBancoModif.Designer.vb">
       <DependentUpon>frmBancoModif.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Facturas\frmNuevaFactura.Designer.vb">
+      <DependentUpon>frmNuevaFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Facturas\frmNuevaFactura.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUILayer\Principal.Designer.vb">
@@ -161,6 +168,9 @@
     <EmbeddedResource Include="GUILayer\Banco\frmBancoModif.resx">
       <DependentUpon>frmBancoModif.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Facturas\frmNuevaFactura.resx">
+      <DependentUpon>frmNuevaFactura.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
@@ -202,7 +212,6 @@
   <ItemGroup>
     <Folder Include="GUILayer\Cheques\" />
     <Folder Include="GUILayer\Cuentas\" />
-    <Folder Include="GUILayer\Facturas\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lapiz.png" />
