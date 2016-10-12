@@ -73,6 +73,7 @@
     <Compile Include="BDHelper\DBConn.vb" />
     <Compile Include="BDHelper\DBHProveedor.vb" />
     <Compile Include="BDHelper\DBHBanco.vb" />
+    <Compile Include="BDHelper\DBHTitular.vb" />
     <Compile Include="BDHelper\QueryBuilder\Escaper.vb" />
     <Compile Include="BDHelper\QueryBuilder\Examples.vb" />
     <Compile Include="BDHelper\QueryBuilder\Exceptions\QueryBuilderException.vb" />
@@ -80,21 +81,21 @@
     <Compile Include="BDHelper\QueryBuilder\Operaciones\Operacion.vb" />
     <Compile Include="BDHelper\QueryBuilder\Operaciones\SelectOperation.vb" />
     <Compile Include="BDHelper\QueryBuilder\Operaciones\UpdateOperation.vb" />
-	<Compile Include="BDHelper\QueryBuilder\Operaciones\DeleteOperation.vb" />
+    <Compile Include="BDHelper\QueryBuilder\Operaciones\DeleteOperation.vb" />
     <Compile Include="BDHelper\QueryBuilder\QueryBuilder.vb" />
     <Compile Include="BDHelper\QueryBuilder\TableSelected.vb" />
     <Compile Include="BDHelper\QueryBuilder\WhereClausule.vb" />
-    <Compile Include="GUILayer\Banco\frmConsultaBanco.Designer.vb">
-      <DependentUpon>frmConsultaBanco.vb</DependentUpon>
+    <Compile Include="GUILayer\Banco\frmBancoConsulta.Designer.vb">
+      <DependentUpon>frmBancoConsulta.vb</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\Banco\frmConsultaBanco.vb">
+    <Compile Include="GUILayer\Banco\frmBancoConsulta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\Banco\frmModifBanco.vb">
+    <Compile Include="GUILayer\Banco\frmBancoModif.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\Banco\frmModifBanco.Designer.vb">
-      <DependentUpon>frmModifBanco.vb</DependentUpon>
+    <Compile Include="GUILayer\Banco\frmBancoModif.Designer.vb">
+      <DependentUpon>frmBancoModif.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUILayer\Principal.Designer.vb">
@@ -121,6 +122,18 @@
     <Compile Include="GUILayer\Proveedores\frmProveedorNuevo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUILayer\Titulares\frmTitularesConsulta.Designer.vb">
+      <DependentUpon>frmTitularesConsulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Titulares\frmTitularesConsulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Titulares\frmTitularesNuevo.Designer.vb">
+      <DependentUpon>frmTitularesNuevo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Titulares\frmTitularesNuevo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -142,11 +155,11 @@
     <Compile Include="Utils\DBUtils.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="GUILayer\Banco\frmConsultaBanco.resx">
-      <DependentUpon>frmConsultaBanco.vb</DependentUpon>
+    <EmbeddedResource Include="GUILayer\Banco\frmBancoConsulta.resx">
+      <DependentUpon>frmBancoConsulta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUILayer\Banco\frmModifBanco.resx">
-      <DependentUpon>frmModifBanco.vb</DependentUpon>
+    <EmbeddedResource Include="GUILayer\Banco\frmBancoModif.resx">
+      <DependentUpon>frmBancoModif.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
@@ -159,6 +172,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Proveedores\frmProveedorNuevo.resx">
       <DependentUpon>frmProveedorNuevo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Titulares\frmTitularesConsulta.resx">
+      <DependentUpon>frmTitularesConsulta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Titulares\frmTitularesNuevo.resx">
+      <DependentUpon>frmTitularesNuevo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -184,7 +203,6 @@
     <Folder Include="GUILayer\Cheques\" />
     <Folder Include="GUILayer\Cuentas\" />
     <Folder Include="GUILayer\Facturas\" />
-    <Folder Include="GUILayer\Titulares\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lapiz.png" />

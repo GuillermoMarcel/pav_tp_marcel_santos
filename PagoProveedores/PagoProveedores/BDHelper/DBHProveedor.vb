@@ -84,6 +84,17 @@ Public Class DBHProveedor
         Return DBConn.executeOnlySQL(com)
     End Function
 
+    Public Shared Function eliminarProveedor(id As String) As Boolean
+        Dim q As New QueryBuilder
+        q.table("Proveedores").update({
+                                      {"deleted_at", "@getDate()"}
+                                  }).
+                          where("@id_proveedor", id)
+        Return DBConn.executeOnlySQL(q.build)
+    End Function
+
+    'TELEFONOS Y MAILS
+
     Public Shared Function agregarMailProveedor(id As Integer, mail As String, texto As String) As List(Of Mail)
         Dim q As New QueryBuilder
         q.table("Proveedor_Mails").insert({

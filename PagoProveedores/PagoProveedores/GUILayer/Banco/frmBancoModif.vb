@@ -1,4 +1,4 @@
-﻿Public Class frmModifBanco
+﻿Public Class frmBancoModif
 
     Private Sub btn_aceptar_Click(sender As Object, e As EventArgs) Handles btn_aceptar.Click
         Me.DialogResult = Windows.Forms.DialogResult.OK

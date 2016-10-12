@@ -5,7 +5,7 @@
     End Sub
 
     Private Sub btn_banco_Click(sender As Object, e As EventArgs) Handles btn_banco.Click
-        frmConsultaBanco.Show()
+        frmBancoConsulta.Show()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -22,5 +22,9 @@
         DBHProveedor.addProveedor(rs, cuit, dir, "", lt, lm)
 
 
+    End Sub
+
+    Private Sub btn_titulares_Click(sender As Object, e As EventArgs) Handles btn_titulares.Click
+        frmTitularesConsulta.ShowDialog()
     End Sub
 End Class

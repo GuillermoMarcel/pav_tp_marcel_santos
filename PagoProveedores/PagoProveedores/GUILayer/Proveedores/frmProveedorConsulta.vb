@@ -24,4 +24,12 @@
         f.ShowDialog()
         actualizar()
     End Sub
+
+    Private Sub btn_delete_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
+        Dim id As String = dgv_proveedores.CurrentRow.Cells("id_proveedor").Value
+        If DBHProveedor.eliminarProveedor(id) Then
+            MsgBox("EXITO")
+        End If
+        actualizar()
+    End Sub
 End Class
