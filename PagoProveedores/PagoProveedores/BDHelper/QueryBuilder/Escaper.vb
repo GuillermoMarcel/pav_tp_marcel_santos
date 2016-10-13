@@ -47,6 +47,12 @@ Public Class Escaper
     ''' <remarks></remarks>
     Public Shared Function escapeAndClose(asdf As Object) As String
         If isEspecialNull(asdf) Then Return "null"
+
+        Dim d As Date
+        If Date.TryParse(asdf, d) Then
+            Dim r As String = "'" & d.ToString("yyyy-MM-dd HH:MM:ss") & "'"
+            Return r
+        End If
         If IsNumeric(asdf) Then
             Return numToString(asdf)
         Else

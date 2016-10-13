@@ -31,10 +31,9 @@ Partial Class frmNuevaFactura
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txt_monto = New System.Windows.Forms.TextBox()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.txt_montodec = New System.Windows.Forms.TextBox()
+        Me.txt_nro = New System.Windows.Forms.MaskedTextBox()
+        Me.cancelar_btn = New System.Windows.Forms.Button()
+        Me.btn_aceptar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -111,53 +110,47 @@ Partial Class frmNuevaFactura
         '
         Me.txt_monto.Location = New System.Drawing.Point(85, 123)
         Me.txt_monto.Name = "txt_monto"
-        Me.txt_monto.Size = New System.Drawing.Size(155, 20)
+        Me.txt_monto.Size = New System.Drawing.Size(200, 20)
         Me.txt_monto.TabIndex = 3
         '
-        'MaskedTextBox1
+        'txt_nro
         '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(85, 97)
-        Me.MaskedTextBox1.Mask = "0000-00000000"
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(200, 20)
-        Me.MaskedTextBox1.TabIndex = 2
+        Me.txt_nro.Location = New System.Drawing.Point(85, 97)
+        Me.txt_nro.Mask = "0000-00000000"
+        Me.txt_nro.Name = "txt_nro"
+        Me.txt_nro.Size = New System.Drawing.Size(200, 20)
+        Me.txt_nro.TabIndex = 2
+        Me.txt_nro.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
-        'Button1
+        'cancelar_btn
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(273, 221)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "Cancelar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.cancelar_btn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cancelar_btn.Location = New System.Drawing.Point(273, 221)
+        Me.cancelar_btn.Name = "cancelar_btn"
+        Me.cancelar_btn.Size = New System.Drawing.Size(75, 23)
+        Me.cancelar_btn.TabIndex = 7
+        Me.cancelar_btn.Text = "Cancelar"
+        Me.cancelar_btn.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btn_aceptar
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(192, 221)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 6
-        Me.Button2.Text = "Aceptar"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'txt_montodec
-        '
-        Me.txt_montodec.Location = New System.Drawing.Point(246, 123)
-        Me.txt_montodec.Name = "txt_montodec"
-        Me.txt_montodec.Size = New System.Drawing.Size(39, 20)
-        Me.txt_montodec.TabIndex = 4
+        Me.btn_aceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_aceptar.Location = New System.Drawing.Point(192, 221)
+        Me.btn_aceptar.Name = "btn_aceptar"
+        Me.btn_aceptar.Size = New System.Drawing.Size(75, 23)
+        Me.btn_aceptar.TabIndex = 6
+        Me.btn_aceptar.Text = "Aceptar"
+        Me.btn_aceptar.UseVisualStyleBackColor = True
         '
         'frmNuevaFactura
         '
+        Me.AcceptButton = Me.btn_aceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(360, 256)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.MaskedTextBox1)
-        Me.Controls.Add(Me.txt_montodec)
+        Me.Controls.Add(Me.btn_aceptar)
+        Me.Controls.Add(Me.cancelar_btn)
+        Me.Controls.Add(Me.txt_nro)
         Me.Controls.Add(Me.txt_monto)
         Me.Controls.Add(Me.dtp_fecha)
         Me.Controls.Add(Me.cmb_tipo)
@@ -182,8 +175,7 @@ Partial Class frmNuevaFactura
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents txt_monto As System.Windows.Forms.TextBox
-    Friend WithEvents MaskedTextBox1 As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents txt_montodec As System.Windows.Forms.TextBox
+    Friend WithEvents txt_nro As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents cancelar_btn As System.Windows.Forms.Button
+    Friend WithEvents btn_aceptar As System.Windows.Forms.Button
 End Class

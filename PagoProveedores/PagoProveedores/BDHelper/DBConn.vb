@@ -71,6 +71,7 @@ Public Class DBConn
         Catch ex As Exception
             transaction.Rollback()
             lastex = ex
+            MsgBox(ex.Message)
             Return False
         End Try
     End Function

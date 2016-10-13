@@ -2,8 +2,8 @@
 Public Class DBHProveedor
     Public Shared Function getProveedores() As DataTable
         Dim p As New QB.QueryBuilder
-        Dim campos As String() = {"id_proveedor", "razon_social", "cuit", "direccion", "observaciones", "deleted_at"}
-        p.table("Proveedores").seleccionar()
+        Dim campos As String() = {"id_proveedor", "razon_social", "cuit", "calle", "altura", "observaciones"}
+        p.table("Proveedores").seleccionar(campos)
         Return DBConn.executeSQL(p.build)
     End Function
 

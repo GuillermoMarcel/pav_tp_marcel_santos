@@ -13,7 +13,7 @@
         ''' <remarks></remarks>
         Public Function table(t As String) As QueryBuilder
             Me.t = t
-            If op IsNot Nothing Then op.setTable(t)
+            op = Nothing
             Return Me
         End Function
 
