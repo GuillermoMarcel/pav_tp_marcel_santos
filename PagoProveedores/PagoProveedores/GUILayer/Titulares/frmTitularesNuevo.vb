@@ -16,7 +16,8 @@
         ' End If
         ' Dim cuit As Long
         '  cuit = Long.Parse(txt_cuit.Text)
-        DBHTitular.addTitular(txt_nombre.Text, txt_apellido.Text, cuit, txt_direccion.Text)
+        DBHTitular.addTitular(txt_nombre.Text, txt_apellido.Text, cuit, txt_calle.Text, Integer.Parse(txt_altura.Text))
+        frmTitularesConsulta.dgv_titulares.DataSource = DBHTitular.getTitulares()
         Me.Close()
 
     End Sub

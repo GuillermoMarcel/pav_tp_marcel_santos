@@ -15,7 +15,7 @@
         Public Function setTable(s As String) As Operacion Implements Operacion.setTable
             prim = New TableSelected
             prim.name = s
-            Dim w As New WhereClausule("@deleted_at", "@NULL")
+            Dim w As New WhereClausule("@" + prim.name + ".deleted_at", "@NULL")
             w.op = "Is"
             prim.whereClausules.Add(w)
 

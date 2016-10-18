@@ -27,6 +27,7 @@ Partial Class frmTitularesConsulta
         Me.btn_delete = New System.Windows.Forms.Button()
         Me.btn_modify = New System.Windows.Forms.Button()
         Me.btn_new = New System.Windows.Forms.Button()
+        Me.btn_cuenta = New System.Windows.Forms.Button()
         CType(Me.dgv_titulares, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -37,6 +38,7 @@ Partial Class frmTitularesConsulta
         Me.dgv_titulares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_titulares.Location = New System.Drawing.Point(11, 51)
         Me.dgv_titulares.Name = "dgv_titulares"
+        Me.dgv_titulares.ReadOnly = True
         Me.dgv_titulares.Size = New System.Drawing.Size(686, 265)
         Me.dgv_titulares.TabIndex = 6
         '
@@ -77,18 +79,29 @@ Partial Class frmTitularesConsulta
         Me.btn_new.Text = "Nuevo"
         Me.btn_new.UseVisualStyleBackColor = True
         '
+        'btn_cuenta
+        '
+        Me.btn_cuenta.Enabled = False
+        Me.btn_cuenta.Location = New System.Drawing.Point(332, 7)
+        Me.btn_cuenta.Name = "btn_cuenta"
+        Me.btn_cuenta.Size = New System.Drawing.Size(75, 23)
+        Me.btn_cuenta.TabIndex = 7
+        Me.btn_cuenta.Text = "Cuentas"
+        Me.btn_cuenta.UseVisualStyleBackColor = True
+        '
         'frmTitularesConsulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(709, 328)
+        Me.Controls.Add(Me.btn_cuenta)
         Me.Controls.Add(Me.dgv_titulares)
         Me.Controls.Add(Me.btn_update)
         Me.Controls.Add(Me.btn_delete)
         Me.Controls.Add(Me.btn_modify)
         Me.Controls.Add(Me.btn_new)
         Me.Name = "frmTitularesConsulta"
-        Me.Text = "Frm_Titulares_Consulta"
+        Me.Text = "Titulares"
         CType(Me.dgv_titulares, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -98,4 +111,5 @@ Partial Class frmTitularesConsulta
     Friend WithEvents btn_delete As System.Windows.Forms.Button
     Friend WithEvents btn_modify As System.Windows.Forms.Button
     Friend WithEvents btn_new As System.Windows.Forms.Button
+    Friend WithEvents btn_cuenta As System.Windows.Forms.Button
 End Class

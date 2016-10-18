@@ -12,6 +12,18 @@
     End Function
 
     ''' <summary>
+    ''' Para comprobar si un campo esta vacio.
+    ''' Devuelve Cero(0) si input es System.DBNULL
+    ''' </summary>
+    ''' <param name="input"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Shared Function ifNULLCero(input As Object) As Integer
+        If TypeOf input Is System.DBNull Then Return 0
+        Return input
+    End Function
+
+    ''' <summary>
     ''' Para el QueryBuilder. Devuelve '@null' si es vacia
     ''' </summary>
     ''' <param name="input"></param>

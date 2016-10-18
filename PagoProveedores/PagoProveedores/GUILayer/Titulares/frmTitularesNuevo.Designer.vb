@@ -24,7 +24,6 @@ Partial Class frmTitularesNuevo
     Private Sub InitializeComponent()
         Me.txt_nombre = New System.Windows.Forms.TextBox()
         Me.txt_apellido = New System.Windows.Forms.TextBox()
-        Me.txt_direccion = New System.Windows.Forms.TextBox()
         Me.txt_id = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -34,6 +33,8 @@ Partial Class frmTitularesNuevo
         Me.btn_aceptar = New System.Windows.Forms.Button()
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.txt_cuit = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_calle = New System.Windows.Forms.TextBox()
+        Me.txt_altura = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'txt_nombre
@@ -53,16 +54,6 @@ Partial Class frmTitularesNuevo
         Me.txt_apellido.Name = "txt_apellido"
         Me.txt_apellido.Size = New System.Drawing.Size(97, 20)
         Me.txt_apellido.TabIndex = 2
-        '
-        'txt_direccion
-        '
-        Me.txt_direccion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txt_direccion.Location = New System.Drawing.Point(160, 135)
-        Me.txt_direccion.Multiline = True
-        Me.txt_direccion.Name = "txt_direccion"
-        Me.txt_direccion.Size = New System.Drawing.Size(97, 64)
-        Me.txt_direccion.TabIndex = 4
         '
         'txt_id
         '
@@ -136,7 +127,7 @@ Partial Class frmTitularesNuevo
         Me.btn_aceptar.Location = New System.Drawing.Point(12, 229)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(75, 23)
-        Me.btn_aceptar.TabIndex = 5
+        Me.btn_aceptar.TabIndex = 6
         Me.btn_aceptar.Text = "Aceptar"
         Me.btn_aceptar.UseVisualStyleBackColor = True
         '
@@ -146,7 +137,7 @@ Partial Class frmTitularesNuevo
         Me.btn_cancelar.Location = New System.Drawing.Point(296, 229)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btn_cancelar.TabIndex = 6
+        Me.btn_cancelar.TabIndex = 7
         Me.btn_cancelar.Text = "Cancelar"
         Me.btn_cancelar.UseVisualStyleBackColor = True
         '
@@ -159,12 +150,33 @@ Partial Class frmTitularesNuevo
         Me.txt_cuit.Name = "txt_cuit"
         Me.txt_cuit.Size = New System.Drawing.Size(97, 20)
         Me.txt_cuit.TabIndex = 3
+        Me.txt_cuit.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
+        '
+        'txt_calle
+        '
+        Me.txt_calle.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txt_calle.Location = New System.Drawing.Point(160, 135)
+        Me.txt_calle.Name = "txt_calle"
+        Me.txt_calle.Size = New System.Drawing.Size(97, 20)
+        Me.txt_calle.TabIndex = 4
+        '
+        'txt_altura
+        '
+        Me.txt_altura.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txt_altura.Location = New System.Drawing.Point(263, 135)
+        Me.txt_altura.Name = "txt_altura"
+        Me.txt_altura.Size = New System.Drawing.Size(57, 20)
+        Me.txt_altura.TabIndex = 5
         '
         'frmTitularesNuevo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(383, 264)
+        Me.Controls.Add(Me.txt_altura)
+        Me.Controls.Add(Me.txt_calle)
         Me.Controls.Add(Me.txt_cuit)
         Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.btn_aceptar)
@@ -174,7 +186,6 @@ Partial Class frmTitularesNuevo
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txt_id)
-        Me.Controls.Add(Me.txt_direccion)
         Me.Controls.Add(Me.txt_apellido)
         Me.Controls.Add(Me.txt_nombre)
         Me.Name = "frmTitularesNuevo"
@@ -185,7 +196,6 @@ Partial Class frmTitularesNuevo
     End Sub
     Friend WithEvents txt_nombre As System.Windows.Forms.TextBox
     Friend WithEvents txt_apellido As System.Windows.Forms.TextBox
-    Friend WithEvents txt_direccion As System.Windows.Forms.TextBox
     Friend WithEvents txt_id As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
@@ -195,4 +205,6 @@ Partial Class frmTitularesNuevo
     Friend WithEvents btn_aceptar As System.Windows.Forms.Button
     Friend WithEvents btn_cancelar As System.Windows.Forms.Button
     Friend WithEvents txt_cuit As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_calle As System.Windows.Forms.TextBox
+    Friend WithEvents txt_altura As System.Windows.Forms.TextBox
 End Class

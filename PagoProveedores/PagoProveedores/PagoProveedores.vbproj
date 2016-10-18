@@ -99,6 +99,18 @@
       <DependentUpon>frmBancoModif.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUILayer\Cuentas\frmConsultarCuenta.Designer.vb">
+      <DependentUpon>frmConsultarCuenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Cuentas\frmConsultarCuenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Cuentas\frmNuevaCuenta.Designer.vb">
+      <DependentUpon>frmNuevaCuenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Cuentas\frmNuevaCuenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUILayer\Facturas\frmNuevaFactura.Designer.vb">
       <DependentUpon>frmNuevaFactura.vb</DependentUpon>
     </Compile>
@@ -156,9 +168,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ObjectLayer\Cuenta.vb" />
     <Compile Include="ObjectLayer\Mail.vb" />
     <Compile Include="ObjectLayer\Proveedor.vb" />
     <Compile Include="ObjectLayer\Telefono.vb" />
+    <Compile Include="ObjectLayer\Titular.vb" />
     <Compile Include="Utils\DBUtils.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +181,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Banco\frmBancoModif.resx">
       <DependentUpon>frmBancoModif.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Cuentas\frmConsultarCuenta.resx">
+      <DependentUpon>frmConsultarCuenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Cuentas\frmNuevaCuenta.resx">
+      <DependentUpon>frmNuevaCuenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Facturas\frmNuevaFactura.resx">
       <DependentUpon>frmNuevaFactura.vb</DependentUpon>
@@ -211,7 +231,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUILayer\Cheques\" />
-    <Folder Include="GUILayer\Cuentas\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lapiz.png" />

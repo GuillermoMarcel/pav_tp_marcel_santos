@@ -32,4 +32,9 @@
         Dim f As New frmNuevaFactura
         f.ShowDialog()
     End Sub
+
+    
+    Private Sub btn_cuenta_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
