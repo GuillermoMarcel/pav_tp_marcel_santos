@@ -54,6 +54,11 @@ Public Class Escaper
             Return r
         End If
         If IsNumeric(asdf) Then
+            Dim decim As Decimal
+            If Decimal.TryParse(asdf, decim) Then
+                Dim culture As CultureInfo = CultureInfo.CreateSpecificCulture("en-US")
+                Return decim.ToString(culture)
+            End If
             Return numToString(asdf)
         Else
             If isEspecial(asdf) Then
