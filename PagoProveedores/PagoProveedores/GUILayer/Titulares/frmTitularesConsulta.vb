@@ -1,6 +1,14 @@
 ﻿Public Class frmTitularesConsulta
 
     Private Sub frmTitularesConsulta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        actualizar()
+    End Sub
+
+    ''' <summary>
+    ''' Este metodo para poder actualizar la tabla
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub actualizar()
         dgv_titulares.DataSource = DBHTitular.getTitulares
     End Sub
 
@@ -11,7 +19,12 @@
     End Sub
 
     Private Sub btn_new_Click(sender As Object, e As EventArgs) Handles btn_new.Click
-        frmTitularesNuevo.ShowDialog()
+        'Para que no queden rastros de una ventana vieja.
+        Dim f As New frmTitularesNuevo
+        'Modifico aca para que se pueda actualizar luego de agregar nuevo.
+        If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            actualizar()
+        End If
     End Sub
 
     Private Sub btn_cuenta_Click(sender As Object, e As EventArgs) Handles btn_cuenta.Click
@@ -22,5 +35,9 @@
 
     Private Sub dgv_titulares_SelectionChanged(sender As Object, e As EventArgs) Handles dgv_titulares.SelectionChanged
         btn_cuenta.Enabled = True
+    End Sub
+
+    Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
+        actualizar()
     End Sub
 End Class

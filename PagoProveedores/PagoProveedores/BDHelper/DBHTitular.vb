@@ -7,26 +7,21 @@ Public Class DBHTitular
         Return DBConn.executeSQL(p.build)
     End Function
 
-    Public Shared Function getMaxID() As Integer
-        Dim str As String
-        Dim table As DataTable
-        Dim id As Integer
-        str = "select MAX(id_titular) FROM Titulares"
-
-        table = DBConn.executeSQL(str)
-
-        For Each row In table.Rows
-            id = Convert.ToInt32((row.item(0).ToString))
-        Next
-        Return id
-    End Function
 
     Public Shared Function addTitular(nombre As String, apellido As String, cuit As Long, calle As String, altura As Integer) As Boolean
         Dim q As New QB.QueryBuilder
+
+        'Verifico si el Cuit es -1 o un cuit valido.
+        Dim c As String
+        If cuit = -1 Then
+            c = "@null"
+        Else
+            c = cuit
+        End If
         q.table("Titulares").insert({
                                     {"nombre", nombre},
                                     {"apellido", apellido},
-                                    {"cuit", cuit},
+                                    {"cuit", c},
                                     {"calle", calle},
                                     {"altura", altura}
                                 })

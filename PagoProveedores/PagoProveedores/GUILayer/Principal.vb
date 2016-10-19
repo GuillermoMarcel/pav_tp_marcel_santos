@@ -25,7 +25,8 @@
     End Sub
 
     Private Sub btn_titulares_Click(sender As Object, e As EventArgs) Handles btn_titulares.Click
-        frmTitularesConsulta.ShowDialog()
+        Dim f As New frmTitularesConsulta
+        f.ShowDialog()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -33,8 +34,10 @@
         f.ShowDialog()
     End Sub
 
-    
-    Private Sub btn_cuenta_Click(sender As Object, e As EventArgs)
 
+    Private Sub frm_principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Mensaje para avisar que hay cambios en la base de datos.
+        'Cuando actualices la Base de datos simplemente comenta esta linea
+        MsgBox("Modifique la estructura de la base de datos desde la ultima vez")
     End Sub
 End Class
