@@ -33,6 +33,8 @@ Partial Class frmTitularesConsulta
         '
         'dgv_titulares
         '
+        Me.dgv_titulares.AllowUserToAddRows = False
+        Me.dgv_titulares.AllowUserToDeleteRows = False
         Me.dgv_titulares.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_titulares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize

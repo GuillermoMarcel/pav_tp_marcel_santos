@@ -39,7 +39,7 @@ Public Class DBHTitular
         Return DBConn.executeSQL(q.build)
     End Function
 
-    Public Shared Function getTitular(id_titular As Integer) As 
+    Public Shared Function getTitular(id_titular As Integer) As Titular
         Dim t As Titular
         Dim c As Cuenta
 
