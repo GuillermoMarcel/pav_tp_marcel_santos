@@ -65,6 +65,7 @@ Partial Class frmTitularesConsulta
         '
         'btn_modify
         '
+        Me.btn_modify.Enabled = False
         Me.btn_modify.Location = New System.Drawing.Point(93, 7)
         Me.btn_modify.Name = "btn_modify"
         Me.btn_modify.Size = New System.Drawing.Size(75, 23)

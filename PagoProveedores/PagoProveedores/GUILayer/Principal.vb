@@ -40,4 +40,8 @@
         'Cuando actualices la Base de datos simplemente comenta esta linea
         MsgBox("Modifique la estructura de la base de datos desde la ultima vez")
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btn_cheques.Click
+
+    End Sub
 End Class

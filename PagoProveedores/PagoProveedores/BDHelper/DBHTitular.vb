@@ -7,6 +7,27 @@ Public Class DBHTitular
         Return DBConn.executeSQL(p.build)
     End Function
 
+    Public Shared Function modifyTitular(id_titular As Integer, nombre As String, apellido As String, cuit As Long, calle As String, altura As Integer) As Boolean
+        Dim q As New QB.QueryBuilder
+        'Verifico si el Cuit es -1 o un cuit valido.
+        Dim c As String
+        If cuit = -1 Then
+            c = "@null"
+        Else
+            c = cuit
+        End If
+
+        q.table("Titulares").update({
+                                    {"apellido", apellido},
+                                    {"nombre", nombre},
+                                    {"cuit", cuit},
+                                    {"calle", calle},
+                                    {"altura", altura}
+                                }).
+                            where("id_titular", id_titular)
+        Return DBConn.executeOnlySQL(q.build)
+    End Function
+
 
     Public Shared Function addTitular(nombre As String, apellido As String, cuit As Long, calle As String, altura As Integer) As Boolean
         Dim q As New QB.QueryBuilder

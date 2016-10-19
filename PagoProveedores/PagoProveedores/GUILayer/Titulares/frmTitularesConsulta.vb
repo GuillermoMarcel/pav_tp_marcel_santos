@@ -35,9 +35,15 @@
 
     Private Sub dgv_titulares_SelectionChanged(sender As Object, e As EventArgs) Handles dgv_titulares.SelectionChanged
         btn_cuenta.Enabled = True
+        btn_modify.Enabled = True
     End Sub
 
     Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
         actualizar()
+    End Sub
+
+    Private Sub btn_modify_Click(sender As Object, e As EventArgs) Handles btn_modify.Click
+        Dim f As New frmTitularesModificacion(dgv_titulares.CurrentRow.Cells.Item("id_titular").Value)
+        f.ShowDialog()
     End Sub
 End Class

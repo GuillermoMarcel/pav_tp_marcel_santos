@@ -141,6 +141,12 @@
     <Compile Include="GUILayer\Proveedores\frmProveedorNuevo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUILayer\Titulares\frmTitularesModificacion.Designer.vb">
+      <DependentUpon>frmTitularesModificacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Titulares\frmTitularesModificacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUILayer\Titulares\frmTitularesConsulta.Designer.vb">
       <DependentUpon>frmTitularesConsulta.vb</DependentUpon>
     </Compile>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Proveedores\frmProveedorNuevo.resx">
       <DependentUpon>frmProveedorNuevo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Titulares\frmTitularesModificacion.resx">
+      <DependentUpon>frmTitularesModificacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Titulares\frmTitularesConsulta.resx">
       <DependentUpon>frmTitularesConsulta.vb</DependentUpon>
