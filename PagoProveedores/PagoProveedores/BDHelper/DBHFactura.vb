@@ -18,7 +18,10 @@ Public Class DBHFactura
                                             {"fecha", fecha}
                                             })
         comandos.Add(b.build)
-        b.table("Proveedores").update({"cuenta_corriente", "@cuenta_corriente + " + monto.ToString}).
+
+        'Para meter un decimal en un campo sin escapar, usar el format provider del escaper: Escaper.getIFormatProvider
+        'EJ: nro.toString(Escaper.getIFormatProvider)
+        b.table("Proveedores").update({"cuenta_corriente", "@cuenta_corriente + " + monto.ToString(Escaper.getIFormatProvider)}).
             where("@id_proveedor", idProveedor)
         comandos.Add(b.build)
 

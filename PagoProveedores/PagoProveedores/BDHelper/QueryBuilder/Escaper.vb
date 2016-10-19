@@ -4,24 +4,11 @@ Public Class Escaper
     Private Sub New()
     End Sub
 
-    Private Shared format As NumberFormatInfo
-
-    ''' <summary>
-    ''' Setea el separador decimal.
-    ''' </summary>
-    ''' <param name="c">Puede ser . o ,</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    Private Shared Function setDecimalCharacter(c As Char)
-        If format Is Nothing Then format = New CultureInfo("en-US", False).NumberFormat
-        If c = "." Then
-            format.NumberDecimalSeparator = "."
-        End If
-        If c = "," Then
-            format.NumberDecimalSeparator = ","
-        End If
-        Throw New ArgumentException("Caracter no valido")
+    Private Shared culture As CultureInfo = CultureInfo.CreateSpecificCulture("en-US")
+    Public Shared Function getIFormatProvider() As IFormatProvider
+        Return culture
     End Function
+    
 
     ''' <summary>
     ''' Escapa el caracter '
@@ -54,11 +41,6 @@ Public Class Escaper
             Return r
         End If
         If IsNumeric(asdf) Then
-            Dim decim As Decimal
-            If Decimal.TryParse(asdf, decim) Then
-                Dim culture As CultureInfo = CultureInfo.CreateSpecificCulture("en-US")
-                Return decim.ToString(culture)
-            End If
             Return numToString(asdf)
         Else
             If isEspecial(asdf) Then
@@ -89,6 +71,7 @@ Public Class Escaper
     End Function
 
     Private Shared Function numToString(asdf As Decimal) As String
-        Return asdf.ToString(format)
+
+        Return asdf.ToString(culture)
     End Function
 End Class
