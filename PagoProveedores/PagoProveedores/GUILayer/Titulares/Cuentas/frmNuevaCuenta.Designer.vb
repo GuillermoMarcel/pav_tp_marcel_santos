@@ -32,6 +32,7 @@ Partial Class frmNuevaCuenta
         Me.txt_nrocuenta = New System.Windows.Forms.TextBox()
         Me.btn_aceptar = New System.Windows.Forms.Button()
         Me.btn_cerrar = New System.Windows.Forms.Button()
+        Me.cb_not_cbu = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'cbo_banco
@@ -76,7 +77,7 @@ Partial Class frmNuevaCuenta
         Me.txt_cbu.Mask = "0000000000000000000000"
         Me.txt_cbu.Name = "txt_cbu"
         Me.txt_cbu.Size = New System.Drawing.Size(142, 20)
-        Me.txt_cbu.TabIndex = 8
+        Me.txt_cbu.TabIndex = 3
         Me.txt_cbu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txt_sucursal
@@ -85,7 +86,7 @@ Partial Class frmNuevaCuenta
         Me.txt_sucursal.Mask = "000"
         Me.txt_sucursal.Name = "txt_sucursal"
         Me.txt_sucursal.Size = New System.Drawing.Size(29, 20)
-        Me.txt_sucursal.TabIndex = 9
+        Me.txt_sucursal.TabIndex = 1
         '
         'Label3
         '
@@ -101,32 +102,45 @@ Partial Class frmNuevaCuenta
         Me.txt_nrocuenta.Location = New System.Drawing.Point(99, 65)
         Me.txt_nrocuenta.Name = "txt_nrocuenta"
         Me.txt_nrocuenta.Size = New System.Drawing.Size(100, 20)
-        Me.txt_nrocuenta.TabIndex = 11
+        Me.txt_nrocuenta.TabIndex = 2
         '
         'btn_aceptar
         '
-        Me.btn_aceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btn_aceptar.Location = New System.Drawing.Point(124, 132)
+        Me.btn_aceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_aceptar.Location = New System.Drawing.Point(212, 142)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(75, 23)
-        Me.btn_aceptar.TabIndex = 12
+        Me.btn_aceptar.TabIndex = 5
         Me.btn_aceptar.Text = "Aceptar"
         Me.btn_aceptar.UseVisualStyleBackColor = True
         '
         'btn_cerrar
         '
-        Me.btn_cerrar.Location = New System.Drawing.Point(206, 131)
+        Me.btn_cerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_cerrar.Location = New System.Drawing.Point(294, 141)
         Me.btn_cerrar.Name = "btn_cerrar"
         Me.btn_cerrar.Size = New System.Drawing.Size(75, 23)
-        Me.btn_cerrar.TabIndex = 13
+        Me.btn_cerrar.TabIndex = 6
         Me.btn_cerrar.Text = "Cerrar"
         Me.btn_cerrar.UseVisualStyleBackColor = True
+        '
+        'cb_not_cbu
+        '
+        Me.cb_not_cbu.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cb_not_cbu.AutoSize = True
+        Me.cb_not_cbu.Location = New System.Drawing.Point(247, 93)
+        Me.cb_not_cbu.Name = "cb_not_cbu"
+        Me.cb_not_cbu.Size = New System.Drawing.Size(81, 17)
+        Me.cb_not_cbu.TabIndex = 4
+        Me.cb_not_cbu.Text = "No Ingresar"
+        Me.cb_not_cbu.UseVisualStyleBackColor = True
         '
         'frmNuevaCuenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(372, 167)
+        Me.ClientSize = New System.Drawing.Size(381, 176)
+        Me.Controls.Add(Me.cb_not_cbu)
         Me.Controls.Add(Me.btn_cerrar)
         Me.Controls.Add(Me.btn_aceptar)
         Me.Controls.Add(Me.txt_nrocuenta)
@@ -137,7 +151,9 @@ Partial Class frmNuevaCuenta
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cbo_banco)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "frmNuevaCuenta"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Nueva Cuenta"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -153,4 +169,5 @@ Partial Class frmNuevaCuenta
     Friend WithEvents txt_nrocuenta As System.Windows.Forms.TextBox
     Friend WithEvents btn_aceptar As System.Windows.Forms.Button
     Friend WithEvents btn_cerrar As System.Windows.Forms.Button
+    Friend WithEvents cb_not_cbu As System.Windows.Forms.CheckBox
 End Class

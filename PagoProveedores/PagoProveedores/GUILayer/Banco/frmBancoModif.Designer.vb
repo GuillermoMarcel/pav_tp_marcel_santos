@@ -94,7 +94,7 @@ Partial Class frmBancoModif
         Me.btn_aceptar.Text = "Aceptar"
         Me.btn_aceptar.UseVisualStyleBackColor = True
         '
-        'Form1
+        'frmBancoModif
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -106,7 +106,8 @@ Partial Class frmBancoModif
         Me.Controls.Add(Me.txt_banco)
         Me.Controls.Add(Me.txt_nro)
         Me.Controls.Add(Me.Label1)
-        Me.Name = "Form1"
+        Me.Name = "frmBancoModif"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Form1"
         Me.ResumeLayout(False)
         Me.PerformLayout()

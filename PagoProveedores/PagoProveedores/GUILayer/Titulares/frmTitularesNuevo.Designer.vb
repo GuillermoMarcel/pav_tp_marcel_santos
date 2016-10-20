@@ -175,6 +175,7 @@ Partial Class frmTitularesNuevo
         Me.Controls.Add(Me.txt_apellido)
         Me.Controls.Add(Me.txt_nombre)
         Me.Name = "frmTitularesNuevo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Nuevo Titular"
         Me.ResumeLayout(False)
         Me.PerformLayout()

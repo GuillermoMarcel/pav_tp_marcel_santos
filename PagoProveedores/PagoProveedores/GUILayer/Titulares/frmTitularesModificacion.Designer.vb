@@ -47,7 +47,7 @@ Partial Class frmTitularesModificacion
         '
         Me.cb_cuitnull.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cb_cuitnull.AutoSize = True
-        Me.cb_cuitnull.Location = New System.Drawing.Point(373, 90)
+        Me.cb_cuitnull.Location = New System.Drawing.Point(360, 90)
         Me.cb_cuitnull.Name = "cb_cuitnull"
         Me.cb_cuitnull.Size = New System.Drawing.Size(81, 17)
         Me.cb_cuitnull.TabIndex = 24
@@ -57,7 +57,7 @@ Partial Class frmTitularesModificacion
         'txt_altura
         '
         Me.txt_altura.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txt_altura.Location = New System.Drawing.Point(373, 114)
+        Me.txt_altura.Location = New System.Drawing.Point(360, 114)
         Me.txt_altura.Name = "txt_altura"
         Me.txt_altura.Size = New System.Drawing.Size(57, 20)
         Me.txt_altura.TabIndex = 17
@@ -68,7 +68,7 @@ Partial Class frmTitularesModificacion
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_calle.Location = New System.Drawing.Point(70, 114)
         Me.txt_calle.Name = "txt_calle"
-        Me.txt_calle.Size = New System.Drawing.Size(297, 20)
+        Me.txt_calle.Size = New System.Drawing.Size(284, 20)
         Me.txt_calle.TabIndex = 16
         '
         'txt_cuit
@@ -78,25 +78,25 @@ Partial Class frmTitularesModificacion
         Me.txt_cuit.Location = New System.Drawing.Point(70, 88)
         Me.txt_cuit.Mask = "00-00000000-0"
         Me.txt_cuit.Name = "txt_cuit"
-        Me.txt_cuit.Size = New System.Drawing.Size(297, 20)
+        Me.txt_cuit.Size = New System.Drawing.Size(284, 20)
         Me.txt_cuit.TabIndex = 15
         Me.txt_cuit.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
         'btn_cancelar
         '
         Me.btn_cancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_cancelar.Location = New System.Drawing.Point(421, 326)
+        Me.btn_cancelar.Location = New System.Drawing.Point(408, 527)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(75, 23)
         Me.btn_cancelar.TabIndex = 19
-        Me.btn_cancelar.Text = "Cancelar"
+        Me.btn_cancelar.Text = "Cerrar"
         Me.btn_cancelar.UseVisualStyleBackColor = True
         '
         'btn_aceptar
         '
         Me.btn_aceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_aceptar.Enabled = False
-        Me.btn_aceptar.Location = New System.Drawing.Point(340, 326)
+        Me.btn_aceptar.Location = New System.Drawing.Point(327, 527)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(75, 23)
         Me.btn_aceptar.TabIndex = 18
@@ -153,7 +153,7 @@ Partial Class frmTitularesModificacion
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_apellido.Location = New System.Drawing.Point(70, 62)
         Me.txt_apellido.Name = "txt_apellido"
-        Me.txt_apellido.Size = New System.Drawing.Size(297, 20)
+        Me.txt_apellido.Size = New System.Drawing.Size(284, 20)
         Me.txt_apellido.TabIndex = 14
         '
         'txt_nombre
@@ -162,7 +162,7 @@ Partial Class frmTitularesModificacion
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_nombre.Location = New System.Drawing.Point(70, 36)
         Me.txt_nombre.Name = "txt_nombre"
-        Me.txt_nombre.Size = New System.Drawing.Size(297, 20)
+        Me.txt_nombre.Size = New System.Drawing.Size(284, 20)
         Me.txt_nombre.TabIndex = 13
         '
         'txt_id_titular
@@ -177,7 +177,7 @@ Partial Class frmTitularesModificacion
         'btn_eliminar
         '
         Me.btn_eliminar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btn_eliminar.Location = New System.Drawing.Point(141, 268)
+        Me.btn_eliminar.Location = New System.Drawing.Point(141, 469)
         Me.btn_eliminar.Name = "btn_eliminar"
         Me.btn_eliminar.Size = New System.Drawing.Size(75, 23)
         Me.btn_eliminar.TabIndex = 28
@@ -187,7 +187,7 @@ Partial Class frmTitularesModificacion
         'btn_agregar
         '
         Me.btn_agregar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btn_agregar.Location = New System.Drawing.Point(60, 268)
+        Me.btn_agregar.Location = New System.Drawing.Point(60, 469)
         Me.btn_agregar.Name = "btn_agregar"
         Me.btn_agregar.Size = New System.Drawing.Size(75, 23)
         Me.btn_agregar.TabIndex = 27
@@ -203,13 +203,12 @@ Partial Class frmTitularesModificacion
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_cuentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgv_cuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_cuentas.Enabled = False
         Me.dgv_cuentas.Location = New System.Drawing.Point(12, 160)
         Me.dgv_cuentas.MultiSelect = False
         Me.dgv_cuentas.Name = "dgv_cuentas"
         Me.dgv_cuentas.ReadOnly = True
         Me.dgv_cuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_cuentas.Size = New System.Drawing.Size(486, 102)
+        Me.dgv_cuentas.Size = New System.Drawing.Size(473, 303)
         Me.dgv_cuentas.TabIndex = 26
         '
         'Label1
@@ -224,7 +223,7 @@ Partial Class frmTitularesModificacion
         'btn_modif
         '
         Me.btn_modif.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_modif.Location = New System.Drawing.Point(423, 12)
+        Me.btn_modif.Location = New System.Drawing.Point(410, 12)
         Me.btn_modif.Name = "btn_modif"
         Me.btn_modif.Size = New System.Drawing.Size(75, 23)
         Me.btn_modif.TabIndex = 30
@@ -235,7 +234,7 @@ Partial Class frmTitularesModificacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(510, 361)
+        Me.ClientSize = New System.Drawing.Size(497, 562)
         Me.Controls.Add(Me.btn_modif)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn_eliminar)
@@ -254,8 +253,9 @@ Partial Class frmTitularesModificacion
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txt_apellido)
         Me.Controls.Add(Me.txt_nombre)
-        Me.MinimumSize = New System.Drawing.Size(433, 333)
+        Me.MinimumSize = New System.Drawing.Size(433, 356)
         Me.Name = "frmTitularesModificacion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Modificar Titular"
         CType(Me.dgv_cuentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

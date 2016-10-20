@@ -104,6 +104,7 @@ Partial Class frmTitularesConsulta
         Me.Controls.Add(Me.btn_modify)
         Me.Controls.Add(Me.btn_new)
         Me.Name = "frmTitularesConsulta"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Titulares"
         CType(Me.dgv_titulares, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -38,6 +38,7 @@
     Private Sub frm_principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Mensaje para avisar que hay cambios en la base de datos.
         'Cuando actualices la Base de datos simplemente comenta esta linea
-        'MsgBox("Modifique la estructura de la base de datos desde la ultima vez")
+        MsgBox("Cambio importante en la estructura de la DB" & vbCrLf & _
+               "Desactivar este mensaje comentando la linea")
     End Sub
 End Class

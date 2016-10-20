@@ -247,6 +247,7 @@ Partial Class frmProveedorModificacion
         Me.Controls.Add(Me.btn_cancel)
         Me.Controls.Add(Me.btn_accept)
         Me.Name = "frmProveedorModificacion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Moficar Proveedor"
         Me.ResumeLayout(False)
         Me.PerformLayout()

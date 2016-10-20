@@ -92,6 +92,7 @@ Partial Class frmProveedorConsulta
         Me.Controls.Add(Me.btn_new)
         Me.Controls.Add(Me.dgv_proveedores)
         Me.Name = "frmProveedorConsulta"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Proveedores"
         CType(Me.dgv_proveedores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -277,6 +277,7 @@ Partial Class frmProveedorNuevo
         Me.Controls.Add(Me.btn_cancel)
         Me.Controls.Add(Me.btn_accept)
         Me.Name = "frmProveedorNuevo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Nuevo Proveedor"
         Me.ResumeLayout(False)
         Me.PerformLayout()

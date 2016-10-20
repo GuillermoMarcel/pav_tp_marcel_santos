@@ -1,21 +1,22 @@
 ﻿Public Class frmTitularesModificacion
     Private id_titular As Integer
+    Private t As Titular
     Public Sub New(id_titular As Integer)
         'Metodo necesario para iniciar la parte grafica
         InitializeComponent()
         Me.id_titular = id_titular
     End Sub
 
-    Private t As New Titular
+
 
 
     Private Sub frmTitularesModificacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         desactivarTodo()
-        t = DBHTitular.getTitular(id_titular)
         cargarDatos()
     End Sub
 
     Private Sub cargarDatos()
+        t = DBHTitular.getTitular(id_titular)
         txt_id_titular.Text = "ID: " + t.id_titular.ToString
         txt_apellido.Text = t.apellido
         txt_nombre.Text = t.nombre
@@ -30,6 +31,7 @@
         End If
         txt_calle.Text = t.calle
         txt_altura.Text = t.altura.ToString
+        dgv_cuentas.DataSource = t.cuentas
     End Sub
 
 
@@ -103,5 +105,20 @@
 
     Private Sub cb_cuitnull_CheckedChanged(sender As Object, e As EventArgs) Handles cb_cuitnull.CheckedChanged
         txt_cuit.Enabled = Not cb_cuitnull.Checked
+    End Sub
+
+    Private Sub btn_agregar_Click(sender As Object, e As EventArgs) Handles btn_agregar.Click
+        Dim f As New frmNuevaCuenta(t.id_titular)
+        If f.ShowDialog = Windows.Forms.DialogResult.OK Then
+            cargarDatos()
+        End If
+    End Sub
+
+    Private Sub btn_eliminar_Click(sender As Object, e As EventArgs) Handles btn_eliminar.Click
+        Dim c As Cuenta = t.cuentas(dgv_cuentas.CurrentRow.Index)
+        If DBHTitular.deleteCuenta(c.nro_cuenta, c.banco.id) Then
+            MsgBox("Exito")
+            cargarDatos()
+        End If
     End Sub
 End Class

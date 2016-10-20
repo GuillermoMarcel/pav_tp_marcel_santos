@@ -77,7 +77,7 @@ Partial Class frmBancoConsulta
         Me.btn_update.Text = "Actualizar"
         Me.btn_update.UseVisualStyleBackColor = True
         '
-        'ConsultaBancoForm
+        'frmBancoConsulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -87,7 +87,8 @@ Partial Class frmBancoConsulta
         Me.Controls.Add(Me.btn_delete)
         Me.Controls.Add(Me.btn_modify)
         Me.Controls.Add(Me.btn_new)
-        Me.Name = "ConsultaBancoForm"
+        Me.Name = "frmBancoConsulta"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Bancos"
         CType(Me.dgv_grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

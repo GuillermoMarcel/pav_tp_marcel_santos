@@ -106,6 +106,7 @@ Partial Class frmConsultarCuenta
         Me.Controls.Add(Me.txt_apellido)
         Me.Controls.Add(Me.dgv_cuentas)
         Me.Name = "frmConsultarCuenta"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Cuenta de Titular"
         CType(Me.dgv_cuentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

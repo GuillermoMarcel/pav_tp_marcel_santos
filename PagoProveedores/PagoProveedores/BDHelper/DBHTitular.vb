@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports PagoProveedores.QB
 Public Class DBHTitular
 
     Public Shared Function getTitulares() As DataTable
@@ -53,13 +54,14 @@ Public Class DBHTitular
 
     Public Shared Function getCuentas(id_titular As Integer)
         Dim q As New QB.QueryBuilder
-        q.table("Cuentas").seleccionar({"nro_cuenta", "cbu"}).join("Bancos", "nro_banco", {"nombre"}).where("@id_titular", id_titular)
+        q.table("Cuentas").seleccionar({"nro_cuenta", "cbu"}).join("Bancos", "nro_banco", {"nombre Banco"}).where("@id_titular", id_titular)
         Return DBConn.executeSQL(q.build)
     End Function
 
     Public Shared Function getTitular(id_titular As Integer) As Titular
         Dim t As Titular
         Dim c As Cuenta
+        Dim ban As Banco
 
         Dim q As New QB.QueryBuilder
         'Corrijo Tabla Titulares no Titular
@@ -87,22 +89,25 @@ Public Class DBHTitular
 
         q = New QB.QueryBuilder
         'La tabla se llama Cuentas no Cuenta. En el where como es el nombre de un campo va con @
-        q.table("Cuentas").seleccionar.where("@id_titular", id_titular)
+        q.table("Cuentas").seleccionar.join("Bancos", "nro_banco").where("@id_titular", id_titular)
 
         b = New DataTable
         b = DBConn.executeSQL(q.build)
 
         For Each Cuenta As DataRow In b.Rows
 
-            Dim nro_cuenta As Integer = Cuenta.Item("nro_cuenta"),
-                nro_banco As Integer = DBUtils.ifNULLCero(Cuenta.Item("nro_banco")),
-                sucursal As Long = DBUtils.ifNULLCero(Cuenta.Item("sucursal")),
-                cbu As String = DBUtils.ifNULLCero(Cuenta.Item("cbu"))
+            Dim nro_cuenta As String = Cuenta.Item("nro_cuenta"),
+                nro_banco As Integer = Cuenta.Item("nro_banco"),
+                nom_banco As String = Cuenta.Item("nombre"),
+                sucursal As Integer = DBUtils.ifNULLCero(Cuenta.Item("sucursal")),
+                cbu As String = DBUtils.ifNULLEmpty(Cuenta.Item("cbu"))
 
             c = New Cuenta
-
-            c.id_titular = id_titular
-            c.nro_banco = nro_banco
+            ban = New Banco
+            'c.id_titular = id_titular
+            ban.id = nro_banco
+            ban.nombre = nom_banco
+            c.banco = ban
             c.nro_cuenta = nro_cuenta
             c.sucursal = sucursal
             c.cbu = cbu
@@ -114,13 +119,27 @@ Public Class DBHTitular
 
     End Function
 
-    Public Shared Function addCuenta(id_titular As Integer, nro_banco As Integer, sucursarl As Integer, nro_cuenta As Long, cbu As Long) As Boolean
+    Public Shared Function addCuenta(id_titular As Integer, nro_banco As Integer, sucursarl As Integer, nro_cuenta As String, cbu As String) As Boolean
+        Dim c As String
+        If cbu = -1 Then
+            c = "@null"
+        Else
+            c = cbu
+        End If
         Dim q As New QB.QueryBuilder
         q.table("Cuentas").insert({{"id_titular", id_titular},
                                   {"nro_banco", nro_banco},
                                   {"nro_cuenta", nro_cuenta},
-                                  {"cbu", cbu},
+                                  {"cbu", c},
                                   {"sucursal", sucursarl}})
+
+        Return DBConn.executeOnlySQL(q.build)
+    End Function
+    Public Shared Function deleteCuenta(nro_cuenta As String, nro_banco As String) As Boolean
+        Dim q As New QueryBuilder
+        q.table("Cuentas").update({{"deleted_at", "@GETDATE()"}}) _
+            .where("@nro_cuenta", nro_cuenta) _
+            .where("@nro_banco", nro_banco)
 
         Return DBConn.executeOnlySQL(q.build)
     End Function
