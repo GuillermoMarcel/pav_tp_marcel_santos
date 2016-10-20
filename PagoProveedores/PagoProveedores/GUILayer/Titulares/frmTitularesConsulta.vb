@@ -44,6 +44,9 @@
 
     Private Sub btn_modify_Click(sender As Object, e As EventArgs) Handles btn_modify.Click
         Dim f As New frmTitularesModificacion(dgv_titulares.CurrentRow.Cells.Item("id_titular").Value)
-        f.ShowDialog()
+        'Modifico aca para que se pueda actualizar luego de agregar nuevo.
+        If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            actualizar()
+        End If
     End Sub
 End Class

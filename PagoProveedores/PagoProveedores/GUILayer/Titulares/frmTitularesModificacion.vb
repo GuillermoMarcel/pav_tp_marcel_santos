@@ -1,6 +1,8 @@
 ﻿Public Class frmTitularesModificacion
     Private id_titular As Integer
     Public Sub New(id_titular As Integer)
+        'Metodo necesario para iniciar la parte grafica
+        InitializeComponent()
         Me.id_titular = id_titular
     End Sub
 
@@ -8,13 +10,47 @@
 
 
     Private Sub frmTitularesModificacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txt_id_titular.Text = "ID: " + id_titular.ToString
+        desactivarTodo()
         t = DBHTitular.getTitular(id_titular)
+        cargarDatos()
+    End Sub
+
+    Private Sub cargarDatos()
+        txt_id_titular.Text = "ID: " + t.id_titular.ToString
         txt_apellido.Text = t.apellido
         txt_nombre.Text = t.nombre
-        txt_cuit.Text = t.cuit.ToString
+        If t.cuit = 0 Then
+            cb_cuitnull.Checked = True
+            txt_cuit.Text = ""
+
+        Else
+            cb_cuitnull.Checked = False
+            txt_cuit.Text = t.cuit.ToString
+
+        End If
         txt_calle.Text = t.calle
         txt_altura.Text = t.altura.ToString
+    End Sub
+
+
+    Private Sub desactivarTodo()
+        'txt_altura.Enabled = False
+        txt_altura.ReadOnly = True
+        txt_apellido.ReadOnly = True
+        txt_calle.ReadOnly = True
+        txt_cuit.ReadOnly = True
+        txt_nombre.ReadOnly = True
+        cb_cuitnull.Enabled = False
+        btn_aceptar.Enabled = False
+    End Sub
+    Private Sub modificar()
+        txt_altura.ReadOnly = False
+        txt_apellido.ReadOnly = False
+        txt_calle.ReadOnly = False
+        txt_cuit.ReadOnly = False
+        txt_nombre.ReadOnly = False
+        cb_cuitnull.Enabled = True
+        btn_aceptar.Enabled = True
     End Sub
 
     
@@ -55,5 +91,17 @@
         'No cierro. Si hay un error debo permitir modificar y volver enviar.
         'Me.Close()
 
+    End Sub
+
+    Private Function validar() As Boolean
+        Return True
+    End Function
+
+    Private Sub btn_modif_Click(sender As Object, e As EventArgs) Handles btn_modif.Click
+        modificar()
+    End Sub
+
+    Private Sub cb_cuitnull_CheckedChanged(sender As Object, e As EventArgs) Handles cb_cuitnull.CheckedChanged
+        txt_cuit.Enabled = Not cb_cuitnull.Checked
     End Sub
 End Class

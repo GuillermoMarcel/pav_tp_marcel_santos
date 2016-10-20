@@ -28,75 +28,114 @@ Partial Class frm_principal
         Me.btn_titulares = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.btn_cheques = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'btn_banco
         '
-        Me.btn_banco.Location = New System.Drawing.Point(13, 32)
+        Me.btn_banco.Location = New System.Drawing.Point(6, 19)
         Me.btn_banco.Name = "btn_banco"
-        Me.btn_banco.Size = New System.Drawing.Size(75, 23)
+        Me.btn_banco.Size = New System.Drawing.Size(138, 23)
         Me.btn_banco.TabIndex = 0
-        Me.btn_banco.Text = "Bancos"
+        Me.btn_banco.Text = "Administrar Bancos"
         Me.btn_banco.UseVisualStyleBackColor = True
         '
         'btn_proveedor
         '
-        Me.btn_proveedor.Location = New System.Drawing.Point(95, 31)
+        Me.btn_proveedor.Location = New System.Drawing.Point(6, 19)
         Me.btn_proveedor.Name = "btn_proveedor"
-        Me.btn_proveedor.Size = New System.Drawing.Size(75, 23)
+        Me.btn_proveedor.Size = New System.Drawing.Size(138, 23)
         Me.btn_proveedor.TabIndex = 1
-        Me.btn_proveedor.Text = "Proveedores"
+        Me.btn_proveedor.Text = "Administrar Proveedores"
         Me.btn_proveedor.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(110, 189)
+        Me.Button1.Location = New System.Drawing.Point(6, 126)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(101, 23)
+        Me.Button1.Size = New System.Drawing.Size(138, 23)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Test Proveedor 1"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'btn_titulares
         '
-        Me.btn_titulares.Location = New System.Drawing.Point(176, 32)
+        Me.btn_titulares.Location = New System.Drawing.Point(6, 48)
         Me.btn_titulares.Name = "btn_titulares"
-        Me.btn_titulares.Size = New System.Drawing.Size(75, 23)
+        Me.btn_titulares.Size = New System.Drawing.Size(138, 23)
         Me.btn_titulares.TabIndex = 3
-        Me.btn_titulares.Text = "Titulares"
+        Me.btn_titulares.Text = "Administrar Titulares"
         Me.btn_titulares.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(12, 118)
+        Me.Button2.Location = New System.Drawing.Point(6, 48)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(112, 23)
+        Me.Button2.Size = New System.Drawing.Size(138, 23)
         Me.Button2.TabIndex = 4
         Me.Button2.Text = "Nueva Factura"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'btn_cheques
         '
-        Me.btn_cheques.Location = New System.Drawing.Point(257, 32)
+        Me.btn_cheques.Location = New System.Drawing.Point(6, 97)
         Me.btn_cheques.Name = "btn_cheques"
-        Me.btn_cheques.Size = New System.Drawing.Size(75, 23)
+        Me.btn_cheques.Size = New System.Drawing.Size(138, 23)
         Me.btn_cheques.TabIndex = 5
         Me.btn_cheques.Text = "Cheques"
         Me.btn_cheques.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.btn_banco)
+        Me.GroupBox1.Controls.Add(Me.btn_titulares)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(246, 155)
+        Me.GroupBox1.TabIndex = 6
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Bancos"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.btn_cheques)
+        Me.GroupBox2.Controls.Add(Me.Button1)
+        Me.GroupBox2.Location = New System.Drawing.Point(264, 12)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(246, 155)
+        Me.GroupBox2.TabIndex = 7
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Temporales"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.Button2)
+        Me.GroupBox3.Controls.Add(Me.btn_proveedor)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 173)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(246, 155)
+        Me.GroupBox3.TabIndex = 8
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Proveedores"
         '
         'frm_principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(545, 273)
-        Me.Controls.Add(Me.btn_cheques)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.btn_titulares)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.btn_proveedor)
-        Me.Controls.Add(Me.btn_banco)
+        Me.ClientSize = New System.Drawing.Size(533, 347)
+        Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frm_principal"
         Me.Text = "Menu Principal"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -106,4 +145,7 @@ Partial Class frm_principal
     Friend WithEvents btn_titulares As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents btn_cheques As System.Windows.Forms.Button
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
 End Class

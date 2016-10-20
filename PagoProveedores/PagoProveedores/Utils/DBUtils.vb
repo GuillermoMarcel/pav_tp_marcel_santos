@@ -18,7 +18,7 @@
     ''' <param name="input"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Shared Function ifNULLCero(input As Object) As Integer
+    Public Shared Function ifNULLCero(input As Object) As Double
         If TypeOf input Is System.DBNull Then Return 0
         Return input
     End Function

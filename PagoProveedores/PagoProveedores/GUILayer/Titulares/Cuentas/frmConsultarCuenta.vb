@@ -1,6 +1,8 @@
 ﻿Public Class frmConsultarCuenta
     Private id_titular As Integer
     Public Sub New(id_titular As Integer)
+        'Metodo necesario para iniciar la parte grafica
+        InitializeComponent()
         Me.id_titular = id_titular
     End Sub
 

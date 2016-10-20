@@ -99,16 +99,16 @@
       <DependentUpon>frmBancoModif.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\Cuentas\frmConsultarCuenta.Designer.vb">
+    <Compile Include="GUILayer\Titulares\Cuentas\frmConsultarCuenta.Designer.vb">
       <DependentUpon>frmConsultarCuenta.vb</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\Cuentas\frmConsultarCuenta.vb">
+    <Compile Include="GUILayer\Titulares\Cuentas\frmConsultarCuenta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\Cuentas\frmNuevaCuenta.Designer.vb">
+    <Compile Include="GUILayer\Titulares\Cuentas\frmNuevaCuenta.Designer.vb">
       <DependentUpon>frmNuevaCuenta.vb</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\Cuentas\frmNuevaCuenta.vb">
+    <Compile Include="GUILayer\Titulares\Cuentas\frmNuevaCuenta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUILayer\Facturas\frmNuevaFactura.Designer.vb">
@@ -188,10 +188,10 @@
     <EmbeddedResource Include="GUILayer\Banco\frmBancoModif.resx">
       <DependentUpon>frmBancoModif.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUILayer\Cuentas\frmConsultarCuenta.resx">
+    <EmbeddedResource Include="GUILayer\Titulares\Cuentas\frmConsultarCuenta.resx">
       <DependentUpon>frmConsultarCuenta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUILayer\Cuentas\frmNuevaCuenta.resx">
+    <EmbeddedResource Include="GUILayer\Titulares\Cuentas\frmNuevaCuenta.resx">
       <DependentUpon>frmNuevaCuenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Facturas\frmNuevaFactura.resx">
@@ -240,6 +240,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUILayer\Cheques\" />
+    <Folder Include="GUILayer\Cuentas\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lapiz.png" />
