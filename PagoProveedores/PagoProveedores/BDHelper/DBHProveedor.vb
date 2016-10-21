@@ -2,12 +2,12 @@
 Public Class DBHProveedor
     Public Shared Function getProveedores() As DataTable
         Dim p As New QB.QueryBuilder
-        Dim campos As String() = {"id_proveedor", "razon_social", "cuit", "calle", "altura", "observaciones"}
+        Dim campos As String() = {"id_proveedor", "razon_social", "cuit", "@(calle + ' ' + CONVERT(varchar(5), altura)) direccion", "altura", "observaciones"}
         p.table("Proveedores").seleccionar(campos)
         Return DBConn.executeSQL(p.build)
     End Function
 
-    Public Shared Function addProveedor(razonSocial As String, cuit As Long, direccion As String, observacion As String, telefonos As List(Of Telefono), mails As List(Of Mail)) As Boolean
+    Public Shared Function addProveedor(razonSocial As String, cuit As Long, direccion As Direccion, observacion As String, telefonos As List(Of Telefono), mails As List(Of Mail)) As Boolean
         Dim p As New QueryBuilder
 
         Dim com As New List(Of String)
@@ -17,7 +17,8 @@ Public Class DBHProveedor
         p.table("Proveedores").insert({
                                       {"razon_social", razonSocial},
                                       {"cuit", c},
-                                      {"direccion", direccion},
+                                      {"calle", direccion.Calle},
+                                      {"altura", direccion.Altura},
                                       {"observaciones", observacion}
                                   })
 
@@ -53,7 +54,8 @@ Public Class DBHProveedor
         Dim b As Data.DataTable = DBConn.executeSQL(q.build)
 
         Dim rs As String = b.Rows(0).Item("razon_social"),
-            direccion As Object = DBUtils.ifNULLEmpty(b.Rows(0).Item("direccion")),
+            calle As String = DBUtils.ifNULLEmpty(b.Rows(0).Item("calle")),
+            altura As Integer = DBUtils.ifNULLCero(b.Rows(0).Item("altura")),
             cuit As Long = b.Rows(0).Item("cuit"),
             observacion As String = DBUtils.ifNULLEmpty(b.Rows(0).Item("observaciones"))
 
@@ -66,18 +68,19 @@ Public Class DBHProveedor
         p.RazonSocial = rs
         p.Cuit = cuit
         p.Observacion = observacion
-        p.Direccion = direccion
+        p.Direccion = New Direccion(calle, altura)
 
         Return p
     End Function
 
-    Public Shared Function confirmarModificacionProveedor(id As String, razonSocial As String, cuit As Long, direccion As String, observacion As String) As Boolean
+    Public Shared Function confirmarModificacionProveedor(id As String, razonSocial As String, cuit As Long, direccion As Direccion, observacion As String) As Boolean
         Dim q As New QueryBuilder
         q.table("Proveedores").update({
                                      {"razon_social", razonSocial},
                                      {"cuit", cuit},
                                      {"observaciones", observacion},
-                                     {"direccion", direccion}
+                                     {"calle", direccion.Calle},
+                                     {"altura", direccion.Altura}
                                  }).
                          where("@id_proveedor", id)
         Dim com As String = q.build

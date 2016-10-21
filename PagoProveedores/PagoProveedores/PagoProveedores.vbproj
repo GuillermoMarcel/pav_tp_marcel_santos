@@ -176,6 +176,7 @@
     </Compile>
     <Compile Include="ObjectLayer\Banco.vb" />
     <Compile Include="ObjectLayer\Cuenta.vb" />
+    <Compile Include="ObjectLayer\Direccion.vb" />
     <Compile Include="ObjectLayer\Mail.vb" />
     <Compile Include="ObjectLayer\Proveedor.vb" />
     <Compile Include="ObjectLayer\Telefono.vb" />

@@ -1,4 +1,5 @@
 ﻿Public Class Proveedor
+
     Private id_ As Integer
     Public ReadOnly Property Id As Integer
         Get
@@ -6,8 +7,7 @@
         End Get
     End Property
     Public Property RazonSocial As String
-    Public Property Direccion As String
-    Public Property Altura As Integer
+    Public Property Direccion As Direccion
     Public Property Cuit As Long
     Public Property Observacion As String
     Public Property Telefonos As List(Of Telefono)
@@ -17,5 +17,6 @@
         id_ = id
         Me.Telefonos = telefonos
         Me.Mails = mails
+        Me.Direccion = New Direccion
     End Sub
 End Class

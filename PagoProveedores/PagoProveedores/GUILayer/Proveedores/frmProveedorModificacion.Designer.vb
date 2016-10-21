@@ -42,14 +42,17 @@ Partial Class frmProveedorModificacion
         Me.btn_borrar_telefono = New System.Windows.Forms.Button()
         Me.btn_agregar_mail = New System.Windows.Forms.Button()
         Me.btn_agregar_telefono = New System.Windows.Forms.Button()
+        Me.txt_altura = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btn_borrar_mail
         '
-        Me.btn_borrar_mail.Location = New System.Drawing.Point(361, 310)
+        Me.btn_borrar_mail.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btn_borrar_mail.Location = New System.Drawing.Point(361, 370)
         Me.btn_borrar_mail.Name = "btn_borrar_mail"
         Me.btn_borrar_mail.Size = New System.Drawing.Size(28, 23)
-        Me.btn_borrar_mail.TabIndex = 36
+        Me.btn_borrar_mail.TabIndex = 12
         Me.btn_borrar_mail.Text = "-"
         Me.btn_borrar_mail.UseVisualStyleBackColor = True
         '
@@ -58,7 +61,7 @@ Partial Class frmProveedorModificacion
         Me.txt_observacion.Location = New System.Drawing.Point(289, 67)
         Me.txt_observacion.Name = "txt_observacion"
         Me.txt_observacion.Size = New System.Drawing.Size(201, 58)
-        Me.txt_observacion.TabIndex = 33
+        Me.txt_observacion.TabIndex = 4
         Me.txt_observacion.Text = ""
         '
         'txt_cuit
@@ -67,7 +70,7 @@ Partial Class frmProveedorModificacion
         Me.txt_cuit.Mask = "00-00000000-0"
         Me.txt_cuit.Name = "txt_cuit"
         Me.txt_cuit.Size = New System.Drawing.Size(100, 20)
-        Me.txt_cuit.TabIndex = 32
+        Me.txt_cuit.TabIndex = 3
         Me.txt_cuit.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
         'Label6
@@ -81,33 +84,37 @@ Partial Class frmProveedorModificacion
         '
         'lst_mail
         '
+        Me.lst_mail.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lst_mail.FormattingEnabled = True
         Me.lst_mail.Location = New System.Drawing.Point(289, 144)
         Me.lst_mail.Name = "lst_mail"
-        Me.lst_mail.Size = New System.Drawing.Size(201, 160)
-        Me.lst_mail.TabIndex = 30
+        Me.lst_mail.Size = New System.Drawing.Size(201, 212)
+        Me.lst_mail.TabIndex = 9
         '
         'lst_telefono
         '
+        Me.lst_telefono.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lst_telefono.FormattingEnabled = True
         Me.lst_telefono.Location = New System.Drawing.Point(44, 144)
         Me.lst_telefono.Name = "lst_telefono"
-        Me.lst_telefono.Size = New System.Drawing.Size(187, 160)
-        Me.lst_telefono.TabIndex = 29
+        Me.lst_telefono.Size = New System.Drawing.Size(187, 212)
+        Me.lst_telefono.TabIndex = 5
         '
         'txt_direccion
         '
         Me.txt_direccion.Location = New System.Drawing.Point(44, 67)
         Me.txt_direccion.Name = "txt_direccion"
         Me.txt_direccion.Size = New System.Drawing.Size(187, 20)
-        Me.txt_direccion.TabIndex = 28
+        Me.txt_direccion.TabIndex = 1
         '
         'txt_razon_social
         '
         Me.txt_razon_social.Location = New System.Drawing.Point(44, 24)
         Me.txt_razon_social.Name = "txt_razon_social"
         Me.txt_razon_social.Size = New System.Drawing.Size(187, 20)
-        Me.txt_razon_social.TabIndex = 27
+        Me.txt_razon_social.TabIndex = 0
         '
         'Label5
         '
@@ -157,75 +164,98 @@ Partial Class frmProveedorModificacion
         'btn_cancel
         '
         Me.btn_cancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_cancel.Location = New System.Drawing.Point(314, 376)
+        Me.btn_cancel.Location = New System.Drawing.Point(480, 439)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(75, 23)
-        Me.btn_cancel.TabIndex = 21
+        Me.btn_cancel.TabIndex = 14
         Me.btn_cancel.Text = "Cancelar"
         Me.btn_cancel.UseVisualStyleBackColor = True
         '
         'btn_accept
         '
         Me.btn_accept.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_accept.Location = New System.Drawing.Point(233, 376)
+        Me.btn_accept.Location = New System.Drawing.Point(399, 439)
         Me.btn_accept.Name = "btn_accept"
         Me.btn_accept.Size = New System.Drawing.Size(75, 23)
-        Me.btn_accept.TabIndex = 20
+        Me.btn_accept.TabIndex = 13
         Me.btn_accept.Text = "Aceptar"
         Me.btn_accept.UseVisualStyleBackColor = True
         '
         'btn_edit_mail
         '
+        Me.btn_edit_mail.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_edit_mail.BackgroundImage = Global.PagoProveedores.My.Resources.Resources.lapiz
         Me.btn_edit_mail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_edit_mail.Location = New System.Drawing.Point(289, 309)
+        Me.btn_edit_mail.Location = New System.Drawing.Point(289, 369)
         Me.btn_edit_mail.Name = "btn_edit_mail"
         Me.btn_edit_mail.Size = New System.Drawing.Size(33, 23)
-        Me.btn_edit_mail.TabIndex = 39
+        Me.btn_edit_mail.TabIndex = 10
         Me.btn_edit_mail.UseVisualStyleBackColor = True
         '
         'btn_edit_telefono
         '
+        Me.btn_edit_telefono.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_edit_telefono.BackgroundImage = Global.PagoProveedores.My.Resources.Resources.lapiz
         Me.btn_edit_telefono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_edit_telefono.Location = New System.Drawing.Point(131, 310)
+        Me.btn_edit_telefono.Location = New System.Drawing.Point(131, 370)
         Me.btn_edit_telefono.Name = "btn_edit_telefono"
         Me.btn_edit_telefono.Size = New System.Drawing.Size(33, 23)
-        Me.btn_edit_telefono.TabIndex = 38
+        Me.btn_edit_telefono.TabIndex = 6
         Me.btn_edit_telefono.UseVisualStyleBackColor = True
         '
         'btn_borrar_telefono
         '
-        Me.btn_borrar_telefono.Location = New System.Drawing.Point(204, 310)
+        Me.btn_borrar_telefono.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btn_borrar_telefono.Location = New System.Drawing.Point(204, 370)
         Me.btn_borrar_telefono.Name = "btn_borrar_telefono"
         Me.btn_borrar_telefono.Size = New System.Drawing.Size(28, 23)
-        Me.btn_borrar_telefono.TabIndex = 37
+        Me.btn_borrar_telefono.TabIndex = 8
         Me.btn_borrar_telefono.Text = "-"
         Me.btn_borrar_telefono.UseVisualStyleBackColor = True
         '
         'btn_agregar_mail
         '
-        Me.btn_agregar_mail.Location = New System.Drawing.Point(327, 310)
+        Me.btn_agregar_mail.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btn_agregar_mail.Location = New System.Drawing.Point(327, 370)
         Me.btn_agregar_mail.Name = "btn_agregar_mail"
         Me.btn_agregar_mail.Size = New System.Drawing.Size(28, 23)
-        Me.btn_agregar_mail.TabIndex = 35
+        Me.btn_agregar_mail.TabIndex = 11
         Me.btn_agregar_mail.Text = "+"
         Me.btn_agregar_mail.UseVisualStyleBackColor = True
         '
         'btn_agregar_telefono
         '
-        Me.btn_agregar_telefono.Location = New System.Drawing.Point(170, 310)
+        Me.btn_agregar_telefono.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btn_agregar_telefono.Location = New System.Drawing.Point(170, 370)
         Me.btn_agregar_telefono.Name = "btn_agregar_telefono"
         Me.btn_agregar_telefono.Size = New System.Drawing.Size(28, 23)
-        Me.btn_agregar_telefono.TabIndex = 34
+        Me.btn_agregar_telefono.TabIndex = 7
         Me.btn_agregar_telefono.Text = "+"
         Me.btn_agregar_telefono.UseVisualStyleBackColor = True
+        '
+        'txt_altura
+        '
+        Me.txt_altura.Location = New System.Drawing.Point(44, 106)
+        Me.txt_altura.Name = "txt_altura"
+        Me.txt_altura.Size = New System.Drawing.Size(188, 20)
+        Me.txt_altura.TabIndex = 2
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(41, 90)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(34, 13)
+        Me.Label1.TabIndex = 41
+        Me.Label1.Text = "Altura"
         '
         'frmProveedorModificacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(522, 412)
+        Me.ClientSize = New System.Drawing.Size(567, 474)
+        Me.Controls.Add(Me.txt_altura)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn_edit_mail)
         Me.Controls.Add(Me.btn_edit_telefono)
         Me.Controls.Add(Me.btn_borrar_telefono)
@@ -246,6 +276,7 @@ Partial Class frmProveedorModificacion
         Me.Controls.Add(Me.lbl_razon_social)
         Me.Controls.Add(Me.btn_cancel)
         Me.Controls.Add(Me.btn_accept)
+        Me.MinimumSize = New System.Drawing.Size(508, 361)
         Me.Name = "frmProveedorModificacion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Moficar Proveedor"
@@ -273,4 +304,6 @@ Partial Class frmProveedorModificacion
     Friend WithEvents btn_accept As System.Windows.Forms.Button
     Friend WithEvents btn_edit_mail As System.Windows.Forms.Button
     Friend WithEvents btn_edit_telefono As System.Windows.Forms.Button
+    Friend WithEvents txt_altura As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

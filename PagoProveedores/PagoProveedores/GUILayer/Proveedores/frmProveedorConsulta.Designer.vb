@@ -37,11 +37,12 @@ Partial Class frmProveedorConsulta
         Me.dgv_proveedores.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv_proveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgv_proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_proveedores.Location = New System.Drawing.Point(12, 98)
         Me.dgv_proveedores.Name = "dgv_proveedores"
         Me.dgv_proveedores.ReadOnly = True
-        Me.dgv_proveedores.Size = New System.Drawing.Size(664, 163)
+        Me.dgv_proveedores.Size = New System.Drawing.Size(684, 267)
         Me.dgv_proveedores.TabIndex = 0
         '
         'btn_new
@@ -65,7 +66,7 @@ Partial Class frmProveedorConsulta
         'btn_update
         '
         Me.btn_update.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_update.Location = New System.Drawing.Point(601, 26)
+        Me.btn_update.Location = New System.Drawing.Point(621, 26)
         Me.btn_update.Name = "btn_update"
         Me.btn_update.Size = New System.Drawing.Size(75, 23)
         Me.btn_update.TabIndex = 3
@@ -85,12 +86,13 @@ Partial Class frmProveedorConsulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(688, 273)
+        Me.ClientSize = New System.Drawing.Size(708, 377)
         Me.Controls.Add(Me.btn_delete)
         Me.Controls.Add(Me.btn_update)
         Me.Controls.Add(Me.btn_modify)
         Me.Controls.Add(Me.btn_new)
         Me.Controls.Add(Me.dgv_proveedores)
+        Me.MinimumSize = New System.Drawing.Size(373, 276)
         Me.Name = "frmProveedorConsulta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Proveedores"

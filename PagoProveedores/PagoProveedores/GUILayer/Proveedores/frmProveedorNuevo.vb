@@ -65,9 +65,14 @@
         Else
             cuit = Long.Parse(txt_cuit.Text)
         End If
-
+        Dim altura As Integer
+        If Not Integer.TryParse(txt_altura.Text, altura) Then
+            MsgBox("La altura debe ser numerica")
+            Return
+        End If
+        Dim d As New Direccion(txt_direccion.Text, altura)
         Dim b As Boolean = DBHProveedor.addProveedor(txt_razon_social.Text, cuit,
-                                  txt_direccion.Text, txt_observacion.Text, telefonos, mails)
+                                  d, txt_observacion.Text, telefonos, mails)
 
         If b Then
             MsgBox("Se ha agregado un nuevo PROVEEDOR")

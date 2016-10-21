@@ -10,16 +10,18 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim rs As String = "alguien sa",
-            dir = "calle nro",
-            cuit = 1234
+            dir = "Elm Street",
+            alt As Integer = 5522,
+            cuit As Integer = 1234
         Dim t As New Telefono With {.Telefono = "125 412", .Observacion = ""}
         Dim m As New Mail With {.Mail = "asf@asdf", .Observacion = ""}
         Dim lt As New List(Of Telefono)
         lt.Add(t)
         Dim lm As New List(Of Mail)
         lm.Add(m)
+        Dim d As New Direccion(dir, alt)
 
-        DBHProveedor.addProveedor(rs, cuit, dir, "", lt, lm)
+        DBHProveedor.addProveedor(rs, cuit, d, "", lt, lm)
 
 
     End Sub

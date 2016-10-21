@@ -6,7 +6,8 @@
     End Sub
     Private Sub frmProveedorModificacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txt_cuit.Text = p.Cuit
-        txt_direccion.Text = p.Direccion
+        txt_altura.Text = p.Direccion.Altura
+        txt_direccion.Text = p.Direccion.Calle
         txt_razon_social.Text = p.RazonSocial
         txt_observacion.Text = p.Observacion
         lst_mail.DataSource = p.Mails
@@ -104,7 +105,13 @@
         Else
             cuit = Long.Parse(txt_cuit.Text)
         End If
-        If DBHProveedor.confirmarModificacionProveedor(p.Id, txt_razon_social.Text, cuit, txt_direccion.Text, txt_observacion.Text) Then
+        Dim altura As Integer
+        If Not Integer.TryParse(txt_altura.Text, altura) Then
+            MsgBox("La altura debe ser numerica")
+            Return
+        End If
+        Dim d As New Direccion(txt_direccion.Text, altura)
+        If DBHProveedor.confirmarModificacionProveedor(p.Id, txt_razon_social.Text, cuit, d, txt_observacion.Text) Then
             MsgBox("ÉXITO")
             Me.Close()
         End If
