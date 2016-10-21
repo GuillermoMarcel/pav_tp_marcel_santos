@@ -160,9 +160,10 @@ Partial Class frmNuevaFactura
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "frmNuevaFactura"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "frmNuevaFactura"
+        Me.Text = "Registrar Nueva Factura"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

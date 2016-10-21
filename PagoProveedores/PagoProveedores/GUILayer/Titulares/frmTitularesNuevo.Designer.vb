@@ -42,7 +42,7 @@ Partial Class frmTitularesNuevo
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_nombre.Location = New System.Drawing.Point(70, 12)
         Me.txt_nombre.Name = "txt_nombre"
-        Me.txt_nombre.Size = New System.Drawing.Size(234, 20)
+        Me.txt_nombre.Size = New System.Drawing.Size(220, 20)
         Me.txt_nombre.TabIndex = 1
         '
         'txt_apellido
@@ -51,7 +51,7 @@ Partial Class frmTitularesNuevo
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_apellido.Location = New System.Drawing.Point(70, 38)
         Me.txt_apellido.Name = "txt_apellido"
-        Me.txt_apellido.Size = New System.Drawing.Size(234, 20)
+        Me.txt_apellido.Size = New System.Drawing.Size(220, 20)
         Me.txt_apellido.TabIndex = 2
         '
         'Label2
@@ -101,7 +101,7 @@ Partial Class frmTitularesNuevo
         'btn_aceptar
         '
         Me.btn_aceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_aceptar.Location = New System.Drawing.Point(264, 138)
+        Me.btn_aceptar.Location = New System.Drawing.Point(221, 148)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(75, 23)
         Me.btn_aceptar.TabIndex = 6
@@ -111,7 +111,7 @@ Partial Class frmTitularesNuevo
         'btn_cancelar
         '
         Me.btn_cancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_cancelar.Location = New System.Drawing.Point(345, 138)
+        Me.btn_cancelar.Location = New System.Drawing.Point(302, 148)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(75, 23)
         Me.btn_cancelar.TabIndex = 7
@@ -125,7 +125,7 @@ Partial Class frmTitularesNuevo
         Me.txt_cuit.Location = New System.Drawing.Point(70, 64)
         Me.txt_cuit.Mask = "00-00000000-0"
         Me.txt_cuit.Name = "txt_cuit"
-        Me.txt_cuit.Size = New System.Drawing.Size(234, 20)
+        Me.txt_cuit.Size = New System.Drawing.Size(220, 20)
         Me.txt_cuit.TabIndex = 3
         Me.txt_cuit.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
@@ -135,13 +135,13 @@ Partial Class frmTitularesNuevo
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_calle.Location = New System.Drawing.Point(70, 90)
         Me.txt_calle.Name = "txt_calle"
-        Me.txt_calle.Size = New System.Drawing.Size(234, 20)
+        Me.txt_calle.Size = New System.Drawing.Size(244, 20)
         Me.txt_calle.TabIndex = 4
         '
         'txt_altura
         '
         Me.txt_altura.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txt_altura.Location = New System.Drawing.Point(310, 90)
+        Me.txt_altura.Location = New System.Drawing.Point(320, 90)
         Me.txt_altura.Name = "txt_altura"
         Me.txt_altura.Size = New System.Drawing.Size(57, 20)
         Me.txt_altura.TabIndex = 5
@@ -150,7 +150,7 @@ Partial Class frmTitularesNuevo
         '
         Me.cb_cuitnull.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cb_cuitnull.AutoSize = True
-        Me.cb_cuitnull.Location = New System.Drawing.Point(310, 66)
+        Me.cb_cuitnull.Location = New System.Drawing.Point(296, 66)
         Me.cb_cuitnull.Name = "cb_cuitnull"
         Me.cb_cuitnull.Size = New System.Drawing.Size(81, 17)
         Me.cb_cuitnull.TabIndex = 12
@@ -161,7 +161,7 @@ Partial Class frmTitularesNuevo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(432, 173)
+        Me.ClientSize = New System.Drawing.Size(389, 183)
         Me.Controls.Add(Me.cb_cuitnull)
         Me.Controls.Add(Me.txt_altura)
         Me.Controls.Add(Me.txt_calle)
@@ -174,6 +174,7 @@ Partial Class frmTitularesNuevo
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txt_apellido)
         Me.Controls.Add(Me.txt_nombre)
+        Me.MinimumSize = New System.Drawing.Size(265, 183)
         Me.Name = "frmTitularesNuevo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Nuevo Titular"
