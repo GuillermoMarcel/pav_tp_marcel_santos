@@ -59,7 +59,7 @@ Public Class Escaper
     End Function
 
     Public Shared Function escapeAddTable(asdf As String, table As String) As String
-        If isEspecial(asdf) Then asdf = getEspecial(asdf)
+        If isEspecial(asdf) Then Return getEspecial(asdf) 'asdf = getEspecial(asdf)
         Return table & "." & escape(asdf)
     End Function
 
