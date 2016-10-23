@@ -99,6 +99,12 @@
       <DependentUpon>frmBancoModif.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUILayer\Cheques\frmNuevoCheque.Designer.vb">
+      <DependentUpon>frmNuevoCheque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Cheques\frmNuevoCheque.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUILayer\Titulares\Cuentas\frmConsultarCuenta.Designer.vb">
       <DependentUpon>frmConsultarCuenta.vb</DependentUpon>
     </Compile>
@@ -190,6 +196,9 @@
     <EmbeddedResource Include="GUILayer\Banco\frmBancoModif.resx">
       <DependentUpon>frmBancoModif.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Cheques\frmNuevoCheque.resx">
+      <DependentUpon>frmNuevoCheque.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Titulares\Cuentas\frmConsultarCuenta.resx">
       <DependentUpon>frmConsultarCuenta.vb</DependentUpon>
     </EmbeddedResource>
@@ -240,9 +249,7 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GUILayer\Cheques\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\lapiz.png" />
   </ItemGroup>

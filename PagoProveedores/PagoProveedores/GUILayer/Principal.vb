@@ -43,4 +43,9 @@
         MsgBox("Cambio importante en la estructura de la DB" & vbCrLf & _
                "Desactivar este mensaje comentando la linea")
     End Sub
+
+    Private Sub btn_cheques_Click(sender As Object, e As EventArgs) Handles btn_cheques.Click, btn_nuevo_cheque.Click
+        Dim f As New frmNuevoCheque
+        f.ShowDialog()
+    End Sub
 End Class

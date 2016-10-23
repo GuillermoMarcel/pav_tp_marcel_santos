@@ -59,9 +59,7 @@ Public Class DBHTitular
     End Function
 
     Public Shared Function getTitular(id_titular As Integer) As Titular
-        Dim t As Titular
-        Dim c As Cuenta
-        Dim ban As Banco
+
 
         Dim q As New QB.QueryBuilder
         'Corrijo Tabla Titulares no Titular
@@ -69,16 +67,25 @@ Public Class DBHTitular
         q.table("Titulares").seleccionar.where("@id_titular", id_titular)
         Dim b As DataTable = DBConn.executeSQL(q.build)
 
-        'Metes el valor del nombre en la variable cuit
-        Dim apellido As String = b.Rows(0).Item("apellido"),
-            nombre As String = DBUtils.ifNULLEmpty(b.Rows(0).Item("nombre")),
-            cuit As Long = DBUtils.ifNULLCero(b.Rows(0).Item("cuit")),
-            calle As String = DBUtils.ifNULLEmpty(b.Rows(0).Item("calle")),
-            altura As Integer = DBUtils.ifNULLCero(b.Rows(0).Item("altura"))
+        'Saco toda la transformacion de tabla a objecto a una funcion para poder llamarla desde otro lado.
+        Dim t As Titular = fromRowToTitular(b.Rows(0))
+        
+        Return t
+
+    End Function
+
+    Private Shared Function fromRowToTitular(r As DataRow, Optional id_banco As Integer = -1) As Titular
+
+        Dim apellido As String = r.Item("apellido"),
+            nombre As String = DBUtils.ifNULLEmpty(r.Item("nombre")),
+            cuit As Long = DBUtils.ifNULLCero(r.Item("cuit")),
+            calle As String = DBUtils.ifNULLEmpty(r.Item("calle")),
+            altura As Integer = DBUtils.ifNULLCero(r.Item("altura")),
+            id_titular As Integer = DBUtils.ifNULLCero(r.Item("id_titular"))
 
 
         'Esto provoca un NullPointerException porque nunca se hace un New Titular.
-        t = New Titular With {
+        Dim t As New Titular With {
             .id_titular = id_titular,
             .apellido = apellido,
             .nombre = nombre,
@@ -87,13 +94,17 @@ Public Class DBHTitular
             .cuit = cuit
         }
 
-        q = New QB.QueryBuilder
+        Dim q As New QB.QueryBuilder
         'La tabla se llama Cuentas no Cuenta. En el where como es el nombre de un campo va con @
-        q.table("Cuentas").seleccionar.join("Bancos", "nro_banco").where("@id_titular", id_titular)
 
-        b = New DataTable
+        q.table("Cuentas").seleccionar.join("Bancos", "nro_banco").where("@id_titular", id_titular)
+        If id_banco <> -1 Then q.where("@Bancos.nro_banco", id_banco)
+
+        Dim b As DataTable
         b = DBConn.executeSQL(q.build)
 
+        Dim c As Cuenta
+        Dim ban As Banco
         For Each Cuenta As DataRow In b.Rows
 
             Dim nro_cuenta As String = Cuenta.Item("nro_cuenta"),
@@ -112,11 +123,8 @@ Public Class DBHTitular
             c.Sucursal = sucursal
             c.CBU = cbu
             t.cuentas.Add(c)
-
-
         Next
         Return t
-
     End Function
 
     Public Shared Function addCuenta(id_titular As Integer, nro_banco As Integer, sucursarl As Integer, nro_cuenta As String, cbu As String) As Boolean
@@ -142,6 +150,21 @@ Public Class DBHTitular
             .where("@nro_banco", nro_banco)
 
         Return DBConn.executeOnlySQL(q.build)
+    End Function
+
+    Public Shared Function getTitulareDeBanco(id_banco As Integer) As List(Of Titular)
+        Dim sconsulta As New QueryBuilder
+        sconsulta.table("Cuentas").seleccionar({"id_titular"}).where("@nro_banco", id_banco)
+        Dim q As New QueryBuilder
+        q.table("Titulares").seleccionar.where("@id_titular", "in", "@(" + sconsulta.build + ")")
+        Dim table As DataTable = DBConn.executeSQL(q.build)
+        Dim lista As New List(Of Titular)
+        Dim t As Titular
+        For Each row As DataRow In table.Rows
+            t = fromRowToTitular(row, id_banco)
+            lista.Add(t)
+        Next
+        Return lista
     End Function
 
 End Class

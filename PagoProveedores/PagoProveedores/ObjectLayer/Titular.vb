@@ -15,4 +15,7 @@
         If Me.nombre = String.Empty Then Return Me.apellido
         Return Me.apellido & ", " & Me.nombre
     End Function
+    Public Overrides Function ToString() As String
+        Return Me.nombreCompleto
+    End Function
 End Class

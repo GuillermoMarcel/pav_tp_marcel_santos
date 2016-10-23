@@ -31,9 +31,12 @@ Partial Class frm_principal
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.btn_nuevo_cheque = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'btn_banco
@@ -83,11 +86,11 @@ Partial Class frm_principal
         '
         'btn_cheques
         '
-        Me.btn_cheques.Location = New System.Drawing.Point(6, 97)
+        Me.btn_cheques.Location = New System.Drawing.Point(6, 19)
         Me.btn_cheques.Name = "btn_cheques"
         Me.btn_cheques.Size = New System.Drawing.Size(138, 23)
         Me.btn_cheques.TabIndex = 5
-        Me.btn_cheques.Text = "Cheques"
+        Me.btn_cheques.Text = "Administrar Cheques"
         Me.btn_cheques.UseVisualStyleBackColor = True
         '
         'GroupBox1
@@ -103,9 +106,8 @@ Partial Class frm_principal
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.btn_cheques)
         Me.GroupBox2.Controls.Add(Me.Button1)
-        Me.GroupBox2.Location = New System.Drawing.Point(264, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(264, 173)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(246, 155)
         Me.GroupBox2.TabIndex = 7
@@ -123,11 +125,32 @@ Partial Class frm_principal
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Proveedores"
         '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.btn_nuevo_cheque)
+        Me.GroupBox4.Controls.Add(Me.btn_cheques)
+        Me.GroupBox4.Location = New System.Drawing.Point(264, 12)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(246, 155)
+        Me.GroupBox4.TabIndex = 9
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Cheques"
+        '
+        'btn_nuevo_cheque
+        '
+        Me.btn_nuevo_cheque.Location = New System.Drawing.Point(6, 48)
+        Me.btn_nuevo_cheque.Name = "btn_nuevo_cheque"
+        Me.btn_nuevo_cheque.Size = New System.Drawing.Size(138, 23)
+        Me.btn_nuevo_cheque.TabIndex = 5
+        Me.btn_nuevo_cheque.Text = "Registrar Cheque Nuevo"
+        Me.btn_nuevo_cheque.UseVisualStyleBackColor = True
+        '
         'frm_principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(533, 347)
+        Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -136,6 +159,7 @@ Partial Class frm_principal
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox4.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -148,4 +172,6 @@ Partial Class frm_principal
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
+    Friend WithEvents btn_nuevo_cheque As System.Windows.Forms.Button
 End Class
