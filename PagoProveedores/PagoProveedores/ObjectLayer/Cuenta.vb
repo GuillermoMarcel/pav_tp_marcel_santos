@@ -1,7 +1,7 @@
 ﻿Public Class Cuenta
-    Public Property nro_cuenta As String
-    Public Property banco As Banco
+    Public Property NroCuenta As String
+    Public Property Banco As Banco
     'Public Property id_titular As Integer
-    Public Property sucursal As Integer
-    Public Property cbu As String
+    Public Property Sucursal As Integer
+    Public Property CBU As String
 End Class

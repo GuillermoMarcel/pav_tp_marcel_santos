@@ -42,6 +42,7 @@ Partial Class frmTitularesConsulta
         Me.dgv_titulares.Location = New System.Drawing.Point(11, 51)
         Me.dgv_titulares.Name = "dgv_titulares"
         Me.dgv_titulares.ReadOnly = True
+        Me.dgv_titulares.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_titulares.Size = New System.Drawing.Size(570, 214)
         Me.dgv_titulares.TabIndex = 6
         '
@@ -57,7 +58,7 @@ Partial Class frmTitularesConsulta
         '
         'btn_delete
         '
-        Me.btn_delete.Location = New System.Drawing.Point(174, 12)
+        Me.btn_delete.Location = New System.Drawing.Point(197, 12)
         Me.btn_delete.Name = "btn_delete"
         Me.btn_delete.Size = New System.Drawing.Size(75, 23)
         Me.btn_delete.TabIndex = 3
@@ -69,9 +70,9 @@ Partial Class frmTitularesConsulta
         Me.btn_modify.Enabled = False
         Me.btn_modify.Location = New System.Drawing.Point(93, 12)
         Me.btn_modify.Name = "btn_modify"
-        Me.btn_modify.Size = New System.Drawing.Size(75, 23)
+        Me.btn_modify.Size = New System.Drawing.Size(98, 23)
         Me.btn_modify.TabIndex = 4
-        Me.btn_modify.Text = "Modificacion"
+        Me.btn_modify.Text = "Ver / Modificar"
         Me.btn_modify.UseVisualStyleBackColor = True
         '
         'btn_new
@@ -86,7 +87,7 @@ Partial Class frmTitularesConsulta
         'btn_cuenta
         '
         Me.btn_cuenta.Enabled = False
-        Me.btn_cuenta.Location = New System.Drawing.Point(289, 12)
+        Me.btn_cuenta.Location = New System.Drawing.Point(312, 12)
         Me.btn_cuenta.Name = "btn_cuenta"
         Me.btn_cuenta.Size = New System.Drawing.Size(75, 23)
         Me.btn_cuenta.TabIndex = 7

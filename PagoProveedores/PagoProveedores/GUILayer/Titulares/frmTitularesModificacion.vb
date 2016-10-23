@@ -116,7 +116,7 @@
 
     Private Sub btn_eliminar_Click(sender As Object, e As EventArgs) Handles btn_eliminar.Click
         Dim c As Cuenta = t.cuentas(dgv_cuentas.CurrentRow.Index)
-        If DBHTitular.deleteCuenta(c.nro_cuenta, c.banco.id) Then
+        If DBHTitular.deleteCuenta(c.NroCuenta, c.Banco.id) Then
             MsgBox("Exito")
             cargarDatos()
         End If

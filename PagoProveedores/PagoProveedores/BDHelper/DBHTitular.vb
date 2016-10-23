@@ -4,7 +4,7 @@ Public Class DBHTitular
 
     Public Shared Function getTitulares() As DataTable
         Dim p As New QB.QueryBuilder
-        p.table("Titulares").seleccionar()
+        p.table("Titulares").seleccionar({"id_titular Id", "@(nombre + ' ' + apellido) as Nombre", "cuit Cuit"})
         Return DBConn.executeSQL(p.build)
     End Function
 
@@ -107,10 +107,10 @@ Public Class DBHTitular
             'c.id_titular = id_titular
             ban.id = nro_banco
             ban.nombre = nom_banco
-            c.banco = ban
-            c.nro_cuenta = nro_cuenta
-            c.sucursal = sucursal
-            c.cbu = cbu
+            c.Banco = ban
+            c.NroCuenta = nro_cuenta
+            c.Sucursal = sucursal
+            c.CBU = cbu
             t.cuentas.Add(c)
 
 
