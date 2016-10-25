@@ -76,4 +76,25 @@ Public Class DBConn
         End Try
     End Function
 
+    Public Shared Sub llenarTabla(sql As String, tabla As DataTable)
+        Dim con As New SqlConnection
+        Dim cmd As New SqlCommand
+        Try
+            con.ConnectionString = constr
+            con.Open()
+            cmd.Connection = con
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = sql
+            tabla.Load(cmd.ExecuteReader)
+            Return
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            lastex = ex
+        Finally
+            con.Close()
+
+        End Try
+        Return
+    End Sub
+
 End Class

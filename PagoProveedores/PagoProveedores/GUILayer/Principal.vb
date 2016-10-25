@@ -48,4 +48,9 @@
         Dim f As New frmNuevoCheque
         f.ShowDialog()
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim f As New frmReporteProveedores
+        f.ShowDialog()
+    End Sub
 End Class
