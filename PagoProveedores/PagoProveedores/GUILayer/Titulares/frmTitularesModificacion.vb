@@ -13,6 +13,9 @@
     Private Sub frmTitularesModificacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         desactivarTodo()
         cargarDatos()
+        dgv_cuentas.Columns("Banco").Name = "Nombre Banco"
+        dgv_cuentas.Update()
+
     End Sub
 
     Private Sub cargarDatos()

@@ -2,6 +2,7 @@
 
     Private Sub ConsultaBancoForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         actualizar()
+        dgv_grid.Columns("nombre").Name = "Nomb"
     End Sub
 
     Private Sub btn_new_Click(sender As Object, e As EventArgs) Handles btn_new.Click

@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDHelper\DBConn.vb" />
+    <Compile Include="BDHelper\DBHCheque.vb" />
     <Compile Include="BDHelper\DBHFactura.vb" />
     <Compile Include="BDHelper\DBHProveedor.vb" />
     <Compile Include="BDHelper\DBHBanco.vb" />
