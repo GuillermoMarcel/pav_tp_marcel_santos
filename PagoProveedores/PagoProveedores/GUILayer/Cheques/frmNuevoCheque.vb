@@ -1,5 +1,6 @@
 ﻿Public Class frmNuevoCheque
     Private titulares As List(Of Titular)
+    Private cuentaSeleccionada As Cuenta
 
     Private Sub frmNuevoCheque_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cb_bancos.DisplayMember = "nombre"
@@ -40,15 +41,44 @@
     
     Private Sub btn_accept_Click(sender As Object, e As EventArgs) Handles btn_accept.Click
         If Not validar() Then Return
-        Dim n As New Integer
-        Dim d As New Decimal
+        Dim n As Integer = Integer.Parse(txt_nro.Text)
+        Dim d As Decimal = Decimal.Parse(txt_monto.Text)
+        Dim s As String = "Desea confirmar el cheque de " & d.ToString("C")
+        If MsgBox(s, MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            Dim b As Boolean = DBHCheque.addCheque(n,
+                                                   d,
+                                                   dtp_emision.Value,
+                                                   dtp_vencimiento.Value,
+                                                   cb_cruzado.Checked,
+                                                   txt_observaciones.Text,
+                                                   cuentaSeleccionada)
+
+            If b Then
+                Me.Close()
+                s = "Exito" & vbCrLf & "¿Desea agregar otro?"
+
+                If MsgBox(s, MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2) = MsgBoxResult.Yes Then
+                    Me.DialogResult = Windows.Forms.DialogResult.Retry
+                Else
+                    Me.DialogResult = Windows.Forms.DialogResult.OK
+                End If
+
+            End If
+
+        End If
+
     End Sub
+
 
     Private Function validarCuenta() As Boolean
         ' If cb_bancos.SelectedIndex = -1 Then Return False
         ' If cb_cuenta.SelectedIndex = -1 Then Return False
         ' If cb_titular.SelectedIndex = -1 Then Return False
-        If TypeOf cb_cuenta.SelectedItem Is Cuenta And TypeOf cb_titular.SelectedItem Is Titular And cb_bancos.SelectedIndex <> -1 Then Return True
+        If TypeOf cb_cuenta.SelectedItem Is Cuenta And TypeOf cb_titular.SelectedItem Is Titular And cb_bancos.SelectedIndex <> -1 Then
+            cuentaSeleccionada = cb_cuenta.SelectedItem
+            Return True
+        End If
+
         MsgBox("Debe seleccionar una cuenta valida", MsgBoxStyle.Critical)
         Return False
     End Function
@@ -81,6 +111,7 @@
             gp_cuenta.Enabled = False
             If flag = False Then
                 dtp_emision.Value = Now
+                dtp_vencimiento.Value = Now.AddDays(1)
                 flag = True
             End If
         End If
@@ -93,10 +124,23 @@
     Private Sub btn_select_cuenta_Click(sender As Object, e As EventArgs) Handles btn_select_cuenta.Click
         gp_cuenta.Enabled = True
         gp_cheque.Enabled = False
+        cuentaSeleccionada = Nothing
     End Sub
 
     Private Sub dtp_emision_ValueChanged(sender As Object, e As EventArgs) Handles dtp_emision.ValueChanged
         dtp_vencimiento.MinDate = DirectCast(dtp_emision.Value, Date).AddDays(1)
         dtp_vencimiento.MaxDate = DirectCast(dtp_emision.Value, Date).AddDays(365)
+    End Sub
+
+    Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
+        Me.DialogResult = Windows.Forms.DialogResult.Cancel
+    End Sub
+
+    Private Sub btn_new_titular_Click(sender As Object, e As EventArgs) Handles btn_new_titular.Click
+        Dim f As New frmTitularesNuevo
+        If f.ShowDialog = Windows.Forms.DialogResult.OK Then
+            Dim t As Titular = f.titular
+
+        End If
     End Sub
 End Class

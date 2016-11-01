@@ -1,4 +1,10 @@
 ﻿Public Class frmTitularesNuevo
+    Public ReadOnly Property titular As Titular
+        Get
+            Return t
+        End Get
+    End Property
+    Private t As Titular
 
     Private Sub btn_aceptar_Click(sender As Object, e As EventArgs) Handles btn_aceptar.Click
         'Valido para asegurarme de que todos los datos esten correctos.
@@ -20,9 +26,12 @@
             Return
         End If
 
-        If DBHTitular.addTitular(txt_nombre.Text, txt_apellido.Text, cuit, txt_calle.Text, altura) Then
+        Dim t As Titular = DBHTitular.addTitular(txt_nombre.Text, txt_apellido.Text, cuit, txt_calle.Text, altura)
+        If t IsNot Nothing Then
             'Advierto el resultado de la operacion
             MsgBox("Exito")
+            'Seteo T para uso futuro
+            Me.t = t
             'Devuelvo resultado de la operacion. Se cierra automaticamente el formulario despues asignarle resultado.
             Me.DialogResult = Windows.Forms.DialogResult.OK
         End If

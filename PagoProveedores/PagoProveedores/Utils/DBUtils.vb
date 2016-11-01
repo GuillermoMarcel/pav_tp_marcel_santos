@@ -47,4 +47,10 @@
         Return "'" & input & "'"
     End Function
 
+
+    Public Shared Function BooleanToDB(input As Boolean) As Integer
+        If input Then Return 1
+        Return 0
+    End Function
+
 End Class

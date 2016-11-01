@@ -32,7 +32,7 @@ Public Class DBHTitular
     End Function
 
 
-    Public Shared Function addTitular(nombre As String, apellido As String, cuit As Long, calle As String, altura As Integer) As Boolean
+    Public Shared Function addTitular(nombre As String, apellido As String, cuit As Long, calle As String, altura As Integer) As Titular
         Dim q As New QB.QueryBuilder
 
         'Verifico si el Cuit es -1 o un cuit valido.
@@ -49,7 +49,11 @@ Public Class DBHTitular
                                     {"calle", calle},
                                     {"altura", altura}
                                 })
-        Return DBConn.executeOnlySQL(q.build)
+
+        Dim v As String = "Select @@IDENTITY"
+        Dim tabla As DataTable = DBConn.executeTransactionQuery({q.build, v})
+        Dim id As Integer = tabla.Rows(0).Item(0)
+        Return getTitular(id)
     End Function
 
     Public Shared Function getCuentas(id_titular As Integer)

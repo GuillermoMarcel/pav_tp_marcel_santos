@@ -4,27 +4,9 @@ Public Class DBConn
     Public Shared lastex As Exception
 
     Public Shared Function executeSQL(SQL As String) As DataTable
-        Dim con As New SqlConnection
-        Dim cmd As New SqlCommand
-        Dim table As New DataTable
-        Try
-            con.ConnectionString = constr
-            con.Open()
-            cmd.Connection = con
-            cmd.CommandType = CommandType.Text
-            cmd.CommandText = SQL
-
-            table.Load(cmd.ExecuteReader)
-            Return table
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            lastex = ex
-        Finally
-            con.Close()
-
-        End Try
-        Return Nothing
-
+        Dim t As New DataTable
+        llenarTabla(SQL, t)
+        Return t
     End Function
 
     Public Shared Function executeOnlySQL(sql As String) As Boolean
@@ -73,6 +55,33 @@ Public Class DBConn
             lastex = ex
             MsgBox(ex.Message)
             Return False
+        End Try
+    End Function
+    Public Shared Function executeTransactionQuery(sqls As String()) As DataTable
+        Dim final_command As String = ""
+        For Each c As String In sqls
+            If c <> "" Then final_command &= c & "; " & vbCrLf
+        Next
+        Dim connection As New SqlConnection(constr)
+        Dim transaction As SqlTransaction
+        connection.Open()
+        Dim command As SqlCommand = connection.CreateCommand
+
+        transaction = connection.BeginTransaction(IsolationLevel.ReadCommitted)
+        command.Connection = connection
+        command.Transaction = transaction
+        command.CommandType = CommandType.Text
+        Try
+            command.CommandText = final_command
+            Dim t As New DataTable
+            t.Load(command.ExecuteReader())
+            transaction.Commit()
+            Return t
+        Catch ex As Exception
+            transaction.Rollback()
+            lastex = ex
+            MsgBox(ex.Message)
+            Return Nothing
         End Try
     End Function
 

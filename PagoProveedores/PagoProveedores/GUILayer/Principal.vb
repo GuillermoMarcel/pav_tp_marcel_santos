@@ -40,13 +40,15 @@
     Private Sub frm_principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Mensaje para avisar que hay cambios en la base de datos.
         'Cuando actualices la Base de datos simplemente comenta esta linea
-        MsgBox("Cambio importante en la estructura de la DB" & vbCrLf & _
-               "Desactivar este mensaje comentando la linea")
+        'MsgBox("Cambio importante en la estructura de la DB" & vbCrLf & _
+        '       "Desactivar este mensaje comentando la linea")
     End Sub
 
     Private Sub btn_cheques_Click(sender As Object, e As EventArgs) Handles btn_cheques.Click, btn_nuevo_cheque.Click
         Dim f As New frmNuevoCheque
-        f.ShowDialog()
+        While f.ShowDialog() = Windows.Forms.DialogResult.Retry
+            f = New frmNuevoCheque
+        End While
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
