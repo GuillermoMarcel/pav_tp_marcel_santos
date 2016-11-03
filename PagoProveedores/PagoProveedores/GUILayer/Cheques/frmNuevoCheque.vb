@@ -6,6 +6,7 @@
         cb_bancos.DisplayMember = "nombre"
         cb_bancos.ValueMember = "nro_banco"
         cb_bancos.DataSource = DBHBanco.getBancos
+        cb_bancos.Focus()
 
     End Sub
 
@@ -109,6 +110,7 @@
             gp_cheque.Enabled = True
             btn_select_cuenta.Enabled = True
             gp_cuenta.Enabled = False
+            txt_nro.Focus()
             If flag = False Then
                 dtp_emision.Value = Now
                 dtp_vencimiento.Value = Now.AddDays(1)
@@ -125,11 +127,12 @@
         gp_cuenta.Enabled = True
         gp_cheque.Enabled = False
         cuentaSeleccionada = Nothing
+        cb_bancos.Focus()
     End Sub
 
     Private Sub dtp_emision_ValueChanged(sender As Object, e As EventArgs) Handles dtp_emision.ValueChanged
-        dtp_vencimiento.MinDate = DirectCast(dtp_emision.Value, Date).AddDays(1)
-        dtp_vencimiento.MaxDate = DirectCast(dtp_emision.Value, Date).AddDays(365)
+        dtp_vencimiento.MinDate = dtp_emision.Value.AddDays(1)
+        dtp_vencimiento.MaxDate = dtp_emision.Value.AddDays(365)
     End Sub
 
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click

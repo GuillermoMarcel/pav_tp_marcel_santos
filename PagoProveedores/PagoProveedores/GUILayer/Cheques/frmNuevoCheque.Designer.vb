@@ -105,7 +105,7 @@ Partial Class frmNuevoCheque
         Me.btn_new_cuenta.Location = New System.Drawing.Point(291, 71)
         Me.btn_new_cuenta.Name = "btn_new_cuenta"
         Me.btn_new_cuenta.Size = New System.Drawing.Size(145, 23)
-        Me.btn_new_cuenta.TabIndex = 4
+        Me.btn_new_cuenta.TabIndex = 5
         Me.btn_new_cuenta.Text = "Registrar Nueva Cuenta"
         Me.btn_new_cuenta.UseVisualStyleBackColor = True
         '
@@ -114,7 +114,7 @@ Partial Class frmNuevoCheque
         Me.btn_new_titular.Location = New System.Drawing.Point(291, 44)
         Me.btn_new_titular.Name = "btn_new_titular"
         Me.btn_new_titular.Size = New System.Drawing.Size(145, 23)
-        Me.btn_new_titular.TabIndex = 2
+        Me.btn_new_titular.TabIndex = 4
         Me.btn_new_titular.Text = "Registrar Nuevo Titular"
         Me.btn_new_titular.UseVisualStyleBackColor = True
         '
@@ -123,7 +123,7 @@ Partial Class frmNuevoCheque
         Me.btn_confirm_cuenta.Location = New System.Drawing.Point(169, 100)
         Me.btn_confirm_cuenta.Name = "btn_confirm_cuenta"
         Me.btn_confirm_cuenta.Size = New System.Drawing.Size(116, 23)
-        Me.btn_confirm_cuenta.TabIndex = 5
+        Me.btn_confirm_cuenta.TabIndex = 3
         Me.btn_confirm_cuenta.Text = "Confirmar Cuenta"
         Me.btn_confirm_cuenta.UseVisualStyleBackColor = True
         '
@@ -151,7 +151,7 @@ Partial Class frmNuevoCheque
         Me.cb_cuenta.Location = New System.Drawing.Point(114, 73)
         Me.cb_cuenta.Name = "cb_cuenta"
         Me.cb_cuenta.Size = New System.Drawing.Size(171, 21)
-        Me.cb_cuenta.TabIndex = 3
+        Me.cb_cuenta.TabIndex = 2
         '
         'cb_titular
         '
@@ -260,7 +260,7 @@ Partial Class frmNuevoCheque
         Me.btn_accept.Location = New System.Drawing.Point(529, 392)
         Me.btn_accept.Name = "btn_accept"
         Me.btn_accept.Size = New System.Drawing.Size(75, 23)
-        Me.btn_accept.TabIndex = 6
+        Me.btn_accept.TabIndex = 3
         Me.btn_accept.Text = "Dale que va"
         Me.btn_accept.UseVisualStyleBackColor = True
         '
@@ -270,7 +270,7 @@ Partial Class frmNuevoCheque
         Me.btn_cancel.Location = New System.Drawing.Point(610, 392)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(75, 23)
-        Me.btn_cancel.TabIndex = 7
+        Me.btn_cancel.TabIndex = 4
         Me.btn_cancel.Text = "Me arrepenti"
         Me.btn_cancel.UseVisualStyleBackColor = True
         '
@@ -291,7 +291,7 @@ Partial Class frmNuevoCheque
         Me.gp_cheque.Location = New System.Drawing.Point(12, 214)
         Me.gp_cheque.Name = "gp_cheque"
         Me.gp_cheque.Size = New System.Drawing.Size(611, 169)
-        Me.gp_cheque.TabIndex = 8
+        Me.gp_cheque.TabIndex = 2
         Me.gp_cheque.TabStop = False
         Me.gp_cheque.Text = "Datos de cheque"
         '
@@ -301,7 +301,7 @@ Partial Class frmNuevoCheque
         Me.btn_select_cuenta.Location = New System.Drawing.Point(461, 185)
         Me.btn_select_cuenta.Name = "btn_select_cuenta"
         Me.btn_select_cuenta.Size = New System.Drawing.Size(125, 23)
-        Me.btn_select_cuenta.TabIndex = 9
+        Me.btn_select_cuenta.TabIndex = 1
         Me.btn_select_cuenta.Text = "Seleccion de cuenta"
         Me.btn_select_cuenta.UseVisualStyleBackColor = True
         '
