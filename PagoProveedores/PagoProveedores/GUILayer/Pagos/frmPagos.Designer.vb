@@ -53,7 +53,7 @@ Partial Class frmPagos
         'btn_aceptar
         '
         Me.btn_aceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_aceptar.Location = New System.Drawing.Point(741, 591)
+        Me.btn_aceptar.Location = New System.Drawing.Point(745, 595)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(75, 23)
         Me.btn_aceptar.TabIndex = 0
@@ -63,7 +63,7 @@ Partial Class frmPagos
         'btn_cancelar
         '
         Me.btn_cancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_cancelar.Location = New System.Drawing.Point(822, 591)
+        Me.btn_cancelar.Location = New System.Drawing.Point(826, 595)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(75, 23)
         Me.btn_cancelar.TabIndex = 1
@@ -89,26 +89,23 @@ Partial Class frmPagos
         '
         'dgv_facturas_pendientes
         '
-        Me.dgv_facturas_pendientes.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.dgv_facturas_pendientes.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_facturas_pendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_facturas_pendientes.Location = New System.Drawing.Point(17, 31)
         Me.dgv_facturas_pendientes.Name = "dgv_facturas_pendientes"
         Me.dgv_facturas_pendientes.ReadOnly = True
         Me.dgv_facturas_pendientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_facturas_pendientes.Size = New System.Drawing.Size(402, 162)
+        Me.dgv_facturas_pendientes.Size = New System.Drawing.Size(406, 166)
         Me.dgv_facturas_pendientes.TabIndex = 5
         '
         'dgv_facturas_seleccionadas
         '
-        Me.dgv_facturas_seleccionadas.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv_facturas_seleccionadas.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_facturas_seleccionadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_facturas_seleccionadas.Location = New System.Drawing.Point(465, 31)
+        Me.dgv_facturas_seleccionadas.Location = New System.Drawing.Point(466, 31)
         Me.dgv_facturas_seleccionadas.Name = "dgv_facturas_seleccionadas"
-        Me.dgv_facturas_seleccionadas.Size = New System.Drawing.Size(402, 162)
+        Me.dgv_facturas_seleccionadas.Size = New System.Drawing.Size(406, 166)
         Me.dgv_facturas_seleccionadas.TabIndex = 9
         '
         'gr_Facturas
@@ -123,7 +120,7 @@ Partial Class frmPagos
         Me.gr_Facturas.Controls.Add(Me.dgv_facturas_seleccionadas)
         Me.gr_Facturas.Location = New System.Drawing.Point(15, 78)
         Me.gr_Facturas.Name = "gr_Facturas"
-        Me.gr_Facturas.Size = New System.Drawing.Size(885, 223)
+        Me.gr_Facturas.Size = New System.Drawing.Size(889, 227)
         Me.gr_Facturas.TabIndex = 12
         Me.gr_Facturas.TabStop = False
         Me.gr_Facturas.Text = "Facturas"
@@ -131,7 +128,7 @@ Partial Class frmPagos
         'lbl_total_facturas
         '
         Me.lbl_total_facturas.AutoSize = True
-        Me.lbl_total_facturas.Location = New System.Drawing.Point(452, 200)
+        Me.lbl_total_facturas.Location = New System.Drawing.Point(463, 200)
         Me.lbl_total_facturas.Name = "lbl_total_facturas"
         Me.lbl_total_facturas.Size = New System.Drawing.Size(61, 13)
         Me.lbl_total_facturas.TabIndex = 12
@@ -139,32 +136,27 @@ Partial Class frmPagos
         '
         'btn_quitar_factura
         '
-        Me.btn_quitar_factura.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_quitar_factura.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_quitar_factura.Location = New System.Drawing.Point(426, 106)
         Me.btn_quitar_factura.Name = "btn_quitar_factura"
-        Me.btn_quitar_factura.Size = New System.Drawing.Size(34, 23)
+        Me.btn_quitar_factura.Size = New System.Drawing.Size(38, 27)
         Me.btn_quitar_factura.TabIndex = 11
         Me.btn_quitar_factura.Text = "<"
         Me.btn_quitar_factura.UseVisualStyleBackColor = True
         '
         'btn_agregar_factura
         '
-        Me.btn_agregar_factura.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_agregar_factura.Location = New System.Drawing.Point(425, 77)
+        Me.btn_agregar_factura.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_agregar_factura.Location = New System.Drawing.Point(426, 73)
         Me.btn_agregar_factura.Name = "btn_agregar_factura"
-        Me.btn_agregar_factura.Size = New System.Drawing.Size(34, 23)
+        Me.btn_agregar_factura.Size = New System.Drawing.Size(38, 27)
         Me.btn_agregar_factura.TabIndex = 10
         Me.btn_agregar_factura.Text = ">"
         Me.btn_agregar_factura.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
-        Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.lbl_total_cheques)
         Me.GroupBox2.Controls.Add(Me.Button5)
@@ -174,7 +166,7 @@ Partial Class frmPagos
         Me.GroupBox2.Controls.Add(Me.dgv_cheques_seleccionados)
         Me.GroupBox2.Location = New System.Drawing.Point(15, 307)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(885, 227)
+        Me.GroupBox2.Size = New System.Drawing.Size(889, 231)
         Me.GroupBox2.TabIndex = 13
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Cheques"
@@ -182,7 +174,7 @@ Partial Class frmPagos
         'lbl_total_cheques
         '
         Me.lbl_total_cheques.AutoSize = True
-        Me.lbl_total_cheques.Location = New System.Drawing.Point(463, 194)
+        Me.lbl_total_cheques.Location = New System.Drawing.Point(463, 205)
         Me.lbl_total_cheques.Name = "lbl_total_cheques"
         Me.lbl_total_cheques.Size = New System.Drawing.Size(55, 13)
         Me.lbl_total_cheques.TabIndex = 13
@@ -190,7 +182,7 @@ Partial Class frmPagos
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(301, 194)
+        Me.Button5.Location = New System.Drawing.Point(301, 201)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(118, 21)
         Me.Button5.TabIndex = 12
@@ -199,46 +191,45 @@ Partial Class frmPagos
         '
         'btn_quitar_cheque
         '
-        Me.btn_quitar_cheque.Location = New System.Drawing.Point(425, 108)
+        Me.btn_quitar_cheque.Location = New System.Drawing.Point(426, 108)
         Me.btn_quitar_cheque.Name = "btn_quitar_cheque"
-        Me.btn_quitar_cheque.Size = New System.Drawing.Size(34, 23)
+        Me.btn_quitar_cheque.Size = New System.Drawing.Size(38, 27)
         Me.btn_quitar_cheque.TabIndex = 11
         Me.btn_quitar_cheque.Text = "<"
         Me.btn_quitar_cheque.UseVisualStyleBackColor = True
         '
         'btn_agregar_cheque
         '
-        Me.btn_agregar_cheque.Location = New System.Drawing.Point(424, 79)
+        Me.btn_agregar_cheque.Location = New System.Drawing.Point(426, 79)
         Me.btn_agregar_cheque.Name = "btn_agregar_cheque"
-        Me.btn_agregar_cheque.Size = New System.Drawing.Size(34, 23)
+        Me.btn_agregar_cheque.Size = New System.Drawing.Size(38, 27)
         Me.btn_agregar_cheque.TabIndex = 10
         Me.btn_agregar_cheque.Text = ">"
         Me.btn_agregar_cheque.UseVisualStyleBackColor = True
         '
         'dgv_cheques_cartera
         '
-        Me.dgv_cheques_cartera.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.dgv_cheques_cartera.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.dgv_cheques_cartera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_cheques_cartera.Location = New System.Drawing.Point(17, 29)
         Me.dgv_cheques_cartera.Name = "dgv_cheques_cartera"
-        Me.dgv_cheques_cartera.Size = New System.Drawing.Size(402, 162)
+        Me.dgv_cheques_cartera.Size = New System.Drawing.Size(406, 166)
         Me.dgv_cheques_cartera.TabIndex = 5
         '
         'dgv_cheques_seleccionados
         '
-        Me.dgv_cheques_seleccionados.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv_cheques_seleccionados.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_cheques_seleccionados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_cheques_seleccionados.Location = New System.Drawing.Point(465, 29)
+        Me.dgv_cheques_seleccionados.Location = New System.Drawing.Point(466, 29)
         Me.dgv_cheques_seleccionados.Name = "dgv_cheques_seleccionados"
-        Me.dgv_cheques_seleccionados.Size = New System.Drawing.Size(402, 162)
+        Me.dgv_cheques_seleccionados.Size = New System.Drawing.Size(406, 166)
         Me.dgv_cheques_seleccionados.TabIndex = 9
         '
         'Label2
         '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(261, 537)
+        Me.Label2.Location = New System.Drawing.Point(277, 547)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(46, 13)
         Me.Label2.TabIndex = 14
@@ -246,7 +237,8 @@ Partial Class frmPagos
         '
         'txt_efectivo
         '
-        Me.txt_efectivo.Location = New System.Drawing.Point(347, 534)
+        Me.txt_efectivo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_efectivo.Location = New System.Drawing.Point(338, 544)
         Me.txt_efectivo.Name = "txt_efectivo"
         Me.txt_efectivo.Size = New System.Drawing.Size(100, 20)
         Me.txt_efectivo.TabIndex = 16
@@ -264,7 +256,7 @@ Partial Class frmPagos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(909, 626)
+        Me.ClientSize = New System.Drawing.Size(911, 628)
         Me.Controls.Add(Me.btn_actualizar)
         Me.Controls.Add(Me.txt_efectivo)
         Me.Controls.Add(Me.Label2)
@@ -274,6 +266,9 @@ Partial Class frmPagos
         Me.Controls.Add(Me.cbo_proveedor)
         Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.btn_aceptar)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(917, 653)
         Me.Name = "frmPagos"
         Me.Text = "Pagos"
