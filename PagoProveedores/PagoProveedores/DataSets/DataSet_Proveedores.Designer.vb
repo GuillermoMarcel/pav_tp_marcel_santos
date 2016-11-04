@@ -395,7 +395,7 @@ Partial Public Class DataSet_Proveedores
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddProveedoresRow(ByVal Id As String, ByVal Razon_Social As String, ByVal cuit As String, ByVal Cuenta_Corriente As String) As ProveedoresRow
+        Public Overloads Function AddProveedoresRow(ByVal Id As Short, ByVal Razon_Social As String, ByVal cuit As String, ByVal Cuenta_Corriente As Decimal) As ProveedoresRow
             Dim rowProveedoresRow As ProveedoresRow = CType(Me.NewRow, ProveedoresRow)
             Dim columnValuesArray() As Object = New Object() {Id, Razon_Social, cuit, Cuenta_Corriente}
             rowProveedoresRow.ItemArray = columnValuesArray
@@ -429,7 +429,7 @@ Partial Public Class DataSet_Proveedores
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Private Sub InitClass()
-            Me.columnId = New Global.System.Data.DataColumn("Id", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnId = New Global.System.Data.DataColumn("Id", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnId)
             Me.columnRazon_Social = New Global.System.Data.DataColumn("Razon_Social", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnRazon_Social)
@@ -439,7 +439,7 @@ Partial Public Class DataSet_Proveedores
             Me.columncuit.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columncuit")
             Me.columncuit.ExtendedProperties.Add("Generator_UserColumnName", "Cuit")
             MyBase.Columns.Add(Me.columncuit)
-            Me.columnCuenta_Corriente = New Global.System.Data.DataColumn("Cuenta_Corriente", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnCuenta_Corriente = New Global.System.Data.DataColumn("Cuenta_Corriente", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCuenta_Corriente)
         End Sub
 
@@ -587,15 +587,15 @@ Partial Public Class DataSet_Proveedores
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property Id() As String
+        Public Property Id() As Short
             Get
                 Try
-                    Return CType(Me(Me.tableProveedores.IdColumn), String)
+                    Return CType(Me(Me.tableProveedores.IdColumn), Short)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'Id' in table 'Proveedores' is DBNull.", e)
                 End Try
             End Get
-            Set(value As String)
+            Set(value As Short)
                 Me(Me.tableProveedores.IdColumn) = value
             End Set
         End Property
@@ -632,15 +632,15 @@ Partial Public Class DataSet_Proveedores
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property Cuenta_Corriente() As String
+        Public Property Cuenta_Corriente() As Decimal
             Get
                 Try
-                    Return CType(Me(Me.tableProveedores.Cuenta_CorrienteColumn), String)
+                    Return CType(Me(Me.tableProveedores.Cuenta_CorrienteColumn), Decimal)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'Cuenta_Corriente' in table 'Proveedores' is DBNull.", e)
                 End Try
             End Get
-            Set(value As String)
+            Set(value As Decimal)
                 Me(Me.tableProveedores.Cuenta_CorrienteColumn) = value
             End Set
         End Property

@@ -50,11 +50,15 @@
         Public Function values(keyvalues(,) As String) As Operacion Implements Operacion.values
             Throw New NotImplementedException
         End Function
+        Public Function orderBy(s As String()) As Operacion Implements Operacion.orderBy
+            Throw New NotImplementedException
+        End Function
 
         Public Function where(clausula As WhereClausule) As Operacion Implements Operacion.where
             whereclaus.Add(clausula)
             Return Me
         End Function
+
     End Class
 
 End Namespace

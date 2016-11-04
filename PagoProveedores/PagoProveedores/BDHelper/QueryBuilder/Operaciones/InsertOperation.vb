@@ -131,5 +131,10 @@
             Next
             ins.Add(insert)
         End Sub
+
+
+        Public Function orderBy(s As String()) As Operacion Implements Operacion.orderBy
+            Throw New NotImplementedException
+        End Function
     End Class
 End Namespace

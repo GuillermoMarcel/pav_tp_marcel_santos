@@ -3,8 +3,11 @@
         Implements Operacion
         Private prim As TableSelected
         Private joins As List(Of JoinSelected)
+        Private orders As List(Of String)
+
         Sub New()
             joins = New List(Of JoinSelected)
+            orders = New List(Of String)
         End Sub
 
         Public Function setFields(s As String()) As Operacion Implements Operacion.setFields
@@ -35,19 +38,6 @@
                 first = False
             Next
 
-            'For Each i As String In prim.items
-
-            'Next
-            'For Each t As TableSelected In joins
-            '    If t.items.Length = 0 Then Continue For
-            '    If Not first Then sql += ", "
-            '    first = True
-            '    For Each i As String In t.items
-            '        If Not first Then sql += ", "
-            '        sql += Escaper.escapeAddTable(i, t.name) 't.name & "." & i
-            '        first = False
-            '    Next
-            'Next
 
             sql += " FROM " & prim.name
 
@@ -74,6 +64,15 @@
                 Next
             End If
 
+            If hasOrder() Then
+                sql &= " ORDER BY "
+                first = True
+                For Each o As String In orders
+                    If Not first Then sql &= ", "
+                    sql &= o
+                Next
+            End If
+
 
 
             Return sql
@@ -95,6 +94,10 @@
             Next
         End Function
 
+        Private Function hasOrder() As Boolean
+            Return orders.Count <> 0
+        End Function
+
         Public Function where(clausula As WhereClausule) As Operacion Implements Operacion.where
             prim.whereClausules.Add(clausula)
             Return Me
@@ -113,6 +116,10 @@
             Return i
         End Function
 
+        Public Function orderBy(s As String()) As Operacion Implements Operacion.orderBy
+            orders.AddRange(s)
+            Return Me
+        End Function
 
         Public Function values(keyvalues(,) As String) As Operacion Implements Operacion.values
             Throw New InvalidMethodException

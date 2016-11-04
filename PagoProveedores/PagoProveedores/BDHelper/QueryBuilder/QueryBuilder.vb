@@ -130,6 +130,26 @@
             Me.op.where(w)
             Return Me
         End Function
+
+        ''' <summary>
+        ''' Ordenamiento simple
+        ''' </summary>
+        ''' <param name="s">campo a ordenar</param>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Function orderBy(s As String) As QueryBuilder
+            op.orderBy({s})
+            Return Me
+        End Function
+        ''' <summary>
+        ''' Ordenamiento Multiple
+        ''' </summary>
+        ''' <param name="s">campo a ordenar</param>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Function orderBy(s As String()) As QueryBuilder
+            Return op.orderBy(s)
+        End Function
         ''' <summary>
         ''' Ingresa un arreglo de pares campos, valores.
         ''' </summary>
@@ -168,6 +188,7 @@
             Me.op = Nothing
             Return Me
         End Function
+
 
 
 

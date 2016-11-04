@@ -6,6 +6,7 @@
         Function setFields(s As String()) As Operacion
         Function where(clausula As WhereClausule) As Operacion
         Function values(keyvalues As String(,)) As Operacion
+        Function orderBy(s As String()) As Operacion
 
 
         Function build() As String
