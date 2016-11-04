@@ -28,4 +28,13 @@ Public Class DBHFactura
         Return DBConn.executeTransaction(comandos.ToArray)
 
     End Function
+
+    Public Shared Function getFacturasImpagasProveedor(id As Integer) As DataTable
+        Dim q As New QueryBuilder
+        q.table("FacturasEntrantes").seleccionar({"nro_factura NumeroFactura", "fecha Fecha", "monto Monto"}).
+            where("@id_proveedor", id).where("@fecha_pago", "is", "@null")
+        Dim t As DataTable = DBConn.executeSQL(q.build)
+        If t.Rows.Count = 0 Then Throw New Exception("No se encontraron facturas impagas")
+        Return t
+    End Function
 End Class

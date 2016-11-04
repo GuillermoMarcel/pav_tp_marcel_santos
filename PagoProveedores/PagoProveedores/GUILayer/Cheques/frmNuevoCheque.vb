@@ -140,10 +140,10 @@
     End Sub
 
     Private Sub btn_new_titular_Click(sender As Object, e As EventArgs) Handles btn_new_titular.Click
-        Dim f As New frmTitularesNuevo
-        If f.ShowDialog = Windows.Forms.DialogResult.OK Then
-            Dim t As Titular = f.titular
+        'Dim f As New frmTitularesNuevo
+        'If f.ShowDialog = Windows.Forms.DialogResult.OK Then
+        'Dim t As Titular = f.titular
 
-        End If
+        'End If
     End Sub
 End Class

@@ -118,6 +118,12 @@
     <Compile Include="GUILayer\Cheques\frmNuevoCheque.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUILayer\Pagos\frmPagos.Designer.vb">
+      <DependentUpon>frmPagos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Pagos\frmPagos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUILayer\Proveedores\frmReporteProveedores.Designer.vb">
       <DependentUpon>frmReporteProveedores.vb</DependentUpon>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Cheques\frmNuevoCheque.resx">
       <DependentUpon>frmNuevoCheque.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Pagos\frmPagos.resx">
+      <DependentUpon>frmPagos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Proveedores\frmReporteProveedores.resx">
       <DependentUpon>frmReporteProveedores.vb</DependentUpon>

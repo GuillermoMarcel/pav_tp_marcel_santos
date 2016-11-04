@@ -30,10 +30,11 @@ Partial Class frm_principal
         Me.btn_cheques = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.btn_nuevo_cheque = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btn_pagar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -107,6 +108,7 @@ Partial Class frm_principal
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.btn_pagar)
         Me.GroupBox2.Controls.Add(Me.Button3)
         Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Location = New System.Drawing.Point(264, 173)
@@ -115,6 +117,15 @@ Partial Class frm_principal
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Temporales"
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(6, 19)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(138, 23)
+        Me.Button3.TabIndex = 3
+        Me.Button3.Text = "Reporte Proveedores"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -147,14 +158,14 @@ Partial Class frm_principal
         Me.btn_nuevo_cheque.Text = "Registrar Cheque Nuevo"
         Me.btn_nuevo_cheque.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btn_pagar
         '
-        Me.Button3.Location = New System.Drawing.Point(6, 48)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(138, 23)
-        Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Reporte Proveedores"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btn_pagar.Location = New System.Drawing.Point(7, 47)
+        Me.btn_pagar.Name = "btn_pagar"
+        Me.btn_pagar.Size = New System.Drawing.Size(137, 23)
+        Me.btn_pagar.TabIndex = 4
+        Me.btn_pagar.Text = "Pagar"
+        Me.btn_pagar.UseVisualStyleBackColor = True
         '
         'frm_principal
         '
@@ -186,4 +197,5 @@ Partial Class frm_principal
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents btn_nuevo_cheque As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents btn_pagar As System.Windows.Forms.Button
 End Class

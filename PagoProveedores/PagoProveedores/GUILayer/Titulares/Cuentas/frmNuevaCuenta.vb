@@ -1,12 +1,14 @@
 ﻿Public Class frmNuevaCuenta
     Private id As Integer
+    Private id_b As Integer
 
-    Public Sub New(id_titular As Integer)
+    Public Sub New(id_titular As Integer, Optional id_banco As Integer = -1)
         InitializeComponent()
         Me.id = id_titular
+        id_b = id_banco
     End Sub
 
-    Private Sub cargarCombo(cbo As ComboBox, surce As DataTable, value As String, display As String)
+    Private Sub cargarCombo(cbo As ComboBox, surce As Object, value As String, display As String)
         cbo.DataSource = surce
         cbo.ValueMember = value
         cbo.DisplayMember = display
@@ -14,7 +16,13 @@
 
 
     Private Sub frmNuevaCuenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cargarCombo(cbo_banco, DBHBanco.getBancos, "nro_banco", "nombre")
+        If id_b = -1 Then
+            cargarCombo(cbo_banco, DBHBanco.getBancos, "nro_banco", "nombre")
+        Else
+            cargarCombo(cbo_banco, {DBHBanco.getBanco(id_b)}, "nro_banco", "nombre")
+
+        End If
+
     End Sub
 
 

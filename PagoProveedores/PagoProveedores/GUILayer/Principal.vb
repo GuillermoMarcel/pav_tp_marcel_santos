@@ -55,4 +55,9 @@
         Dim f As New frmReporteProveedores
         f.ShowDialog()
     End Sub
+
+    Private Sub btn_pagar_Click(sender As Object, e As EventArgs) Handles btn_pagar.Click
+        Dim d As New frmPagos
+        d.ShowDialog()
+    End Sub
 End Class
