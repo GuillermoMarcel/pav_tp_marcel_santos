@@ -6,4 +6,13 @@ Public Class RHProveedores
         tabla.Clear()
         DBConn.llenarTabla(q.build, tabla)
     End Sub
+
+    Public Shared Sub facturas(tabla As DataTable)
+        Dim q As New QueryBuilder
+        q.table("Proveedores").seleccionar({"razon_social proveedor"}).
+            join("FacturasEntrantes", "id_proveedor", {"tipo_fact tipo", "nro_factura nro", "monto"})
+        q.orderBy("monto")
+        tabla.Clear()
+        DBConn.llenarTabla(q.build, tabla)
+    End Sub
 End Class
