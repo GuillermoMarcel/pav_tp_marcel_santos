@@ -2,14 +2,22 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Textbox Name="Textbox2">
+      <Textbox Name="txt_fecha">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Perdiodo Desde: " &amp; FormatDateTime(Parameters!fecha_desde.Value, DateFormat.ShortDate ) &amp; " Hasta: " &amp; FormatDateTime(Parameters!fecha_hasta.Value, DateFormat.ShortDate)</Value>
+                <Value>=IIf(
+	Parameters!filtro_fecha.Value = false , 
+	"Sin filtro de fecha", 
+	("Perdiodo Desde: " 
+		&amp; FormatDateTime(Parameters!fecha_desde.Value, DateFormat.ShortDate) 
+		&amp; " Hasta: " 
+		&amp; FormatDateTime(Parameters!fecha_hasta.Value, DateFormat.ShortDate)
+	)
+)</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -18,7 +26,6 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>0.42016cm</Top>
         <Height>0.6cm</Height>
         <Width>16.88953cm</Width>
@@ -639,10 +646,22 @@
   <ReportParameters>
     <ReportParameter Name="fecha_desde">
       <DataType>DateTime</DataType>
+      <Nullable>true</Nullable>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="fecha_hasta">
       <DataType>DateTime</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="filtro_fecha">
+      <DataType>Boolean</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>false</Value>
+        </Values>
+      </DefaultValue>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
