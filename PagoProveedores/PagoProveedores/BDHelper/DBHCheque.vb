@@ -23,4 +23,12 @@
         Return DBConn.executeOnlySQL(q.build)
     End Function
 
+    Public Shared Function getChequesCartera() As DataTable
+        Dim q As New QB.QueryBuilder
+        q.table("Cheques").seleccionar({"nro_cheque Cheque",
+                                        "fecha_vencimiento Vencimiento", "monto Monto"}).
+                                    join("Bancos", "nro_banco", {"nombre Nombre"}).
+                                    where("estado", 1)
+        Return DBConn.executeSQL(q.build)
+    End Function
 End Class
