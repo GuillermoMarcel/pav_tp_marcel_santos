@@ -124,6 +124,7 @@
     <Compile Include="GUILayer\Pagos\frmPagos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUILayer\Pagos\List.vb" />
     <Compile Include="GUILayer\Proveedores\frmReporteProveedores.Designer.vb">
       <DependentUpon>frmReporteProveedores.vb</DependentUpon>
     </Compile>
@@ -210,6 +211,7 @@
     <Compile Include="ObjectLayer\Cuenta.vb" />
     <Compile Include="ObjectLayer\Direccion.vb" />
     <Compile Include="ObjectLayer\EstadoCheque.vb" />
+    <Compile Include="ObjectLayer\Factura.vb" />
     <Compile Include="ObjectLayer\Mail.vb" />
     <Compile Include="ObjectLayer\Proveedor.vb" />
     <Compile Include="ObjectLayer\Telefono.vb" />

@@ -28,7 +28,7 @@
         q.table("Cheques").seleccionar({"nro_cheque Cheque",
                                         "fecha_vencimiento Vencimiento", "monto Monto"}).
                                     join("Bancos", "nro_banco", {"nombre Nombre"}).
-                                    where("estado", 1)
+                                    where("@id_estado", 1)
         Return DBConn.executeSQL(q.build)
     End Function
 End Class

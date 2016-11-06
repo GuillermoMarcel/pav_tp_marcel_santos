@@ -34,7 +34,6 @@ Partial Class frmPagos
         Me.btn_agregar_factura = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lbl_total_cheques = New System.Windows.Forms.Label()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.btn_quitar_cheque = New System.Windows.Forms.Button()
         Me.btn_agregar_cheque = New System.Windows.Forms.Button()
         Me.dgv_cheques_cartera = New System.Windows.Forms.DataGridView()
@@ -42,6 +41,14 @@ Partial Class frmPagos
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_efectivo = New System.Windows.Forms.TextBox()
         Me.btn_actualizar = New System.Windows.Forms.Button()
+        Me.col_cheque2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_venci = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_monto2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_banco = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_nro_factura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgv_facturas_pendientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_facturas_seleccionadas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gr_Facturas.SuspendLayout()
@@ -53,7 +60,7 @@ Partial Class frmPagos
         'btn_aceptar
         '
         Me.btn_aceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_aceptar.Location = New System.Drawing.Point(745, 595)
+        Me.btn_aceptar.Location = New System.Drawing.Point(845, 595)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(75, 23)
         Me.btn_aceptar.TabIndex = 0
@@ -63,7 +70,7 @@ Partial Class frmPagos
         'btn_cancelar
         '
         Me.btn_cancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_cancelar.Location = New System.Drawing.Point(826, 595)
+        Me.btn_cancelar.Location = New System.Drawing.Point(926, 595)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(75, 23)
         Me.btn_cancelar.TabIndex = 1
@@ -72,6 +79,7 @@ Partial Class frmPagos
         '
         'cbo_proveedor
         '
+        Me.cbo_proveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_proveedor.FormattingEnabled = True
         Me.cbo_proveedor.Location = New System.Drawing.Point(86, 34)
         Me.cbo_proveedor.Name = "cbo_proveedor"
@@ -89,6 +97,8 @@ Partial Class frmPagos
         '
         'dgv_facturas_pendientes
         '
+        Me.dgv_facturas_pendientes.AllowUserToAddRows = False
+        Me.dgv_facturas_pendientes.AllowUserToDeleteRows = False
         Me.dgv_facturas_pendientes.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_facturas_pendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -96,16 +106,21 @@ Partial Class frmPagos
         Me.dgv_facturas_pendientes.Name = "dgv_facturas_pendientes"
         Me.dgv_facturas_pendientes.ReadOnly = True
         Me.dgv_facturas_pendientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_facturas_pendientes.Size = New System.Drawing.Size(406, 166)
+        Me.dgv_facturas_pendientes.Size = New System.Drawing.Size(441, 166)
         Me.dgv_facturas_pendientes.TabIndex = 5
         '
         'dgv_facturas_seleccionadas
         '
+        Me.dgv_facturas_seleccionadas.AllowUserToAddRows = False
+        Me.dgv_facturas_seleccionadas.AllowUserToDeleteRows = False
         Me.dgv_facturas_seleccionadas.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_facturas_seleccionadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_facturas_seleccionadas.Location = New System.Drawing.Point(466, 31)
+        Me.dgv_facturas_seleccionadas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_nro_factura, Me.col_fecha, Me.col_monto, Me.col_tipo})
+        Me.dgv_facturas_seleccionadas.Location = New System.Drawing.Point(534, 31)
         Me.dgv_facturas_seleccionadas.Name = "dgv_facturas_seleccionadas"
-        Me.dgv_facturas_seleccionadas.Size = New System.Drawing.Size(406, 166)
+        Me.dgv_facturas_seleccionadas.ReadOnly = True
+        Me.dgv_facturas_seleccionadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgv_facturas_seleccionadas.Size = New System.Drawing.Size(446, 166)
         Me.dgv_facturas_seleccionadas.TabIndex = 9
         '
         'gr_Facturas
@@ -120,7 +135,7 @@ Partial Class frmPagos
         Me.gr_Facturas.Controls.Add(Me.dgv_facturas_seleccionadas)
         Me.gr_Facturas.Location = New System.Drawing.Point(15, 78)
         Me.gr_Facturas.Name = "gr_Facturas"
-        Me.gr_Facturas.Size = New System.Drawing.Size(889, 227)
+        Me.gr_Facturas.Size = New System.Drawing.Size(984, 227)
         Me.gr_Facturas.TabIndex = 12
         Me.gr_Facturas.TabStop = False
         Me.gr_Facturas.Text = "Facturas"
@@ -128,7 +143,7 @@ Partial Class frmPagos
         'lbl_total_facturas
         '
         Me.lbl_total_facturas.AutoSize = True
-        Me.lbl_total_facturas.Location = New System.Drawing.Point(463, 200)
+        Me.lbl_total_facturas.Location = New System.Drawing.Point(524, 200)
         Me.lbl_total_facturas.Name = "lbl_total_facturas"
         Me.lbl_total_facturas.Size = New System.Drawing.Size(61, 13)
         Me.lbl_total_facturas.TabIndex = 12
@@ -137,7 +152,7 @@ Partial Class frmPagos
         'btn_quitar_factura
         '
         Me.btn_quitar_factura.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_quitar_factura.Location = New System.Drawing.Point(426, 106)
+        Me.btn_quitar_factura.Location = New System.Drawing.Point(479, 110)
         Me.btn_quitar_factura.Name = "btn_quitar_factura"
         Me.btn_quitar_factura.Size = New System.Drawing.Size(38, 27)
         Me.btn_quitar_factura.TabIndex = 11
@@ -147,7 +162,7 @@ Partial Class frmPagos
         'btn_agregar_factura
         '
         Me.btn_agregar_factura.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_agregar_factura.Location = New System.Drawing.Point(426, 73)
+        Me.btn_agregar_factura.Location = New System.Drawing.Point(479, 77)
         Me.btn_agregar_factura.Name = "btn_agregar_factura"
         Me.btn_agregar_factura.Size = New System.Drawing.Size(38, 27)
         Me.btn_agregar_factura.TabIndex = 10
@@ -159,14 +174,13 @@ Partial Class frmPagos
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.lbl_total_cheques)
-        Me.GroupBox2.Controls.Add(Me.Button5)
         Me.GroupBox2.Controls.Add(Me.btn_quitar_cheque)
         Me.GroupBox2.Controls.Add(Me.btn_agregar_cheque)
         Me.GroupBox2.Controls.Add(Me.dgv_cheques_cartera)
         Me.GroupBox2.Controls.Add(Me.dgv_cheques_seleccionados)
         Me.GroupBox2.Location = New System.Drawing.Point(15, 307)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(889, 231)
+        Me.GroupBox2.Size = New System.Drawing.Size(986, 231)
         Me.GroupBox2.TabIndex = 13
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Cheques"
@@ -174,24 +188,16 @@ Partial Class frmPagos
         'lbl_total_cheques
         '
         Me.lbl_total_cheques.AutoSize = True
-        Me.lbl_total_cheques.Location = New System.Drawing.Point(463, 205)
+        Me.lbl_total_cheques.Location = New System.Drawing.Point(524, 205)
         Me.lbl_total_cheques.Name = "lbl_total_cheques"
         Me.lbl_total_cheques.Size = New System.Drawing.Size(55, 13)
         Me.lbl_total_cheques.TabIndex = 13
         Me.lbl_total_cheques.Text = "$9.000,00"
         '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(301, 201)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(118, 21)
-        Me.Button5.TabIndex = 12
-        Me.Button5.Text = "Nuevo"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
         'btn_quitar_cheque
         '
-        Me.btn_quitar_cheque.Location = New System.Drawing.Point(426, 108)
+        Me.btn_quitar_cheque.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_quitar_cheque.Location = New System.Drawing.Point(479, 106)
         Me.btn_quitar_cheque.Name = "btn_quitar_cheque"
         Me.btn_quitar_cheque.Size = New System.Drawing.Size(38, 27)
         Me.btn_quitar_cheque.TabIndex = 11
@@ -200,7 +206,8 @@ Partial Class frmPagos
         '
         'btn_agregar_cheque
         '
-        Me.btn_agregar_cheque.Location = New System.Drawing.Point(426, 79)
+        Me.btn_agregar_cheque.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_agregar_cheque.Location = New System.Drawing.Point(479, 77)
         Me.btn_agregar_cheque.Name = "btn_agregar_cheque"
         Me.btn_agregar_cheque.Size = New System.Drawing.Size(38, 27)
         Me.btn_agregar_cheque.TabIndex = 10
@@ -209,27 +216,35 @@ Partial Class frmPagos
         '
         'dgv_cheques_cartera
         '
-        Me.dgv_cheques_cartera.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.dgv_cheques_cartera.AllowUserToAddRows = False
+        Me.dgv_cheques_cartera.AllowUserToDeleteRows = False
+        Me.dgv_cheques_cartera.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_cheques_cartera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_cheques_cartera.Location = New System.Drawing.Point(17, 29)
         Me.dgv_cheques_cartera.Name = "dgv_cheques_cartera"
-        Me.dgv_cheques_cartera.Size = New System.Drawing.Size(406, 166)
+        Me.dgv_cheques_cartera.ReadOnly = True
+        Me.dgv_cheques_cartera.Size = New System.Drawing.Size(444, 166)
         Me.dgv_cheques_cartera.TabIndex = 5
         '
         'dgv_cheques_seleccionados
         '
+        Me.dgv_cheques_seleccionados.AllowUserToAddRows = False
+        Me.dgv_cheques_seleccionados.AllowUserToDeleteRows = False
         Me.dgv_cheques_seleccionados.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_cheques_seleccionados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_cheques_seleccionados.Location = New System.Drawing.Point(466, 29)
+        Me.dgv_cheques_seleccionados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_cheque2, Me.col_venci, Me.col_monto2, Me.col_banco})
+        Me.dgv_cheques_seleccionados.Location = New System.Drawing.Point(534, 29)
         Me.dgv_cheques_seleccionados.Name = "dgv_cheques_seleccionados"
-        Me.dgv_cheques_seleccionados.Size = New System.Drawing.Size(406, 166)
+        Me.dgv_cheques_seleccionados.ReadOnly = True
+        Me.dgv_cheques_seleccionados.Size = New System.Drawing.Size(446, 166)
         Me.dgv_cheques_seleccionados.TabIndex = 9
         '
         'Label2
         '
         Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(277, 547)
+        Me.Label2.Location = New System.Drawing.Point(380, 543)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(46, 13)
         Me.Label2.TabIndex = 14
@@ -238,7 +253,7 @@ Partial Class frmPagos
         'txt_efectivo
         '
         Me.txt_efectivo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.txt_efectivo.Location = New System.Drawing.Point(338, 544)
+        Me.txt_efectivo.Location = New System.Drawing.Point(432, 540)
         Me.txt_efectivo.Name = "txt_efectivo"
         Me.txt_efectivo.Size = New System.Drawing.Size(100, 20)
         Me.txt_efectivo.TabIndex = 16
@@ -252,11 +267,60 @@ Partial Class frmPagos
         Me.btn_actualizar.Text = "Actualizar"
         Me.btn_actualizar.UseVisualStyleBackColor = True
         '
+        'col_cheque2
+        '
+        Me.col_cheque2.HeaderText = "Cheque"
+        Me.col_cheque2.Name = "col_cheque2"
+        Me.col_cheque2.ReadOnly = True
+        '
+        'col_venci
+        '
+        Me.col_venci.HeaderText = "Vencimiento"
+        Me.col_venci.Name = "col_venci"
+        Me.col_venci.ReadOnly = True
+        '
+        'col_monto2
+        '
+        Me.col_monto2.HeaderText = "Monto"
+        Me.col_monto2.Name = "col_monto2"
+        Me.col_monto2.ReadOnly = True
+        '
+        'col_banco
+        '
+        Me.col_banco.HeaderText = "Banco"
+        Me.col_banco.Name = "col_banco"
+        Me.col_banco.ReadOnly = True
+        '
+        'col_nro_factura
+        '
+        Me.col_nro_factura.HeaderText = "NumeroFactura"
+        Me.col_nro_factura.Name = "col_nro_factura"
+        Me.col_nro_factura.ReadOnly = True
+        '
+        'col_fecha
+        '
+        Me.col_fecha.HeaderText = "Fecha"
+        Me.col_fecha.Name = "col_fecha"
+        Me.col_fecha.ReadOnly = True
+        '
+        'col_monto
+        '
+        Me.col_monto.HeaderText = "Monto"
+        Me.col_monto.Name = "col_monto"
+        Me.col_monto.ReadOnly = True
+        '
+        'col_tipo
+        '
+        Me.col_tipo.HeaderText = "Tipo"
+        Me.col_tipo.Name = "col_tipo"
+        Me.col_tipo.ReadOnly = True
+        Me.col_tipo.Visible = False
+        '
         'frmPagos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(911, 628)
+        Me.ClientSize = New System.Drawing.Size(1011, 628)
         Me.Controls.Add(Me.btn_actualizar)
         Me.Controls.Add(Me.txt_efectivo)
         Me.Controls.Add(Me.Label2)
@@ -296,7 +360,6 @@ Partial Class frmPagos
     Friend WithEvents btn_agregar_factura As System.Windows.Forms.Button
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents lbl_total_cheques As System.Windows.Forms.Label
-    Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents btn_quitar_cheque As System.Windows.Forms.Button
     Friend WithEvents btn_agregar_cheque As System.Windows.Forms.Button
     Friend WithEvents dgv_cheques_cartera As System.Windows.Forms.DataGridView
@@ -304,4 +367,12 @@ Partial Class frmPagos
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txt_efectivo As System.Windows.Forms.TextBox
     Friend WithEvents btn_actualizar As System.Windows.Forms.Button
+    Friend WithEvents col_cheque2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_venci As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_monto2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_banco As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_nro_factura As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_fecha As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_monto As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_tipo As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class
