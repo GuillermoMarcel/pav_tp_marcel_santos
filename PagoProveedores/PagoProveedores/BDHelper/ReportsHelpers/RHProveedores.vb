@@ -13,7 +13,7 @@ Public Class RHProveedores
                                Optional hasta As Date = Nothing, Optional fecha As Boolean = False)
         Dim q As New QueryBuilder
         q.table("Proveedores").seleccionar({"razon_social proveedor"}).
-            join("FacturasEntrantes", "id_proveedor", {"tipo_fact tipo", "nro_factura nro", "monto"})
+            join("FacturasEntrantes", "id_proveedor", {"tipo_fact tipo", "nro_factura nro", "monto", "fecha"})
         q.orderBy("monto")
 
         If (proveedor <> -1) Then

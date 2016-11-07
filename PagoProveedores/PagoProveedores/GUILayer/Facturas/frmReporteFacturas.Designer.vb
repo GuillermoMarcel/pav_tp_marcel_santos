@@ -23,7 +23,7 @@ Partial Class frmReporteFacturas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource5 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.FacturasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSet_Proveedores = New PagoProveedores.DataSet_Proveedores()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
@@ -39,6 +39,7 @@ Partial Class frmReporteFacturas
         Me.cb_filtro_fecha = New System.Windows.Forms.CheckBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.cb_filtro_proveedor = New System.Windows.Forms.CheckBox()
+        Me.btn_exit = New System.Windows.Forms.Button()
         CType(Me.FacturasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet_Proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -60,9 +61,9 @@ Partial Class frmReporteFacturas
         Me.ReportViewer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        ReportDataSource5.Name = "DataSet1"
-        ReportDataSource5.Value = Me.FacturasBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource5)
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.FacturasBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "PagoProveedores.ReporteFacturas.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(12, 182)
         Me.ReportViewer1.Name = "ReportViewer1"
@@ -72,7 +73,7 @@ Partial Class frmReporteFacturas
         'btn_generar
         '
         Me.btn_generar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_generar.Location = New System.Drawing.Point(680, 104)
+        Me.btn_generar.Location = New System.Drawing.Point(680, 124)
         Me.btn_generar.Name = "btn_generar"
         Me.btn_generar.Size = New System.Drawing.Size(75, 23)
         Me.btn_generar.TabIndex = 1
@@ -188,11 +189,25 @@ Partial Class frmReporteFacturas
         Me.cb_filtro_proveedor.Text = "Filtrar"
         Me.cb_filtro_proveedor.UseVisualStyleBackColor = True
         '
+        'btn_exit
+        '
+        Me.btn_exit.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btn_exit.Location = New System.Drawing.Point(680, 153)
+        Me.btn_exit.Name = "btn_exit"
+        Me.btn_exit.Size = New System.Drawing.Size(75, 23)
+        Me.btn_exit.TabIndex = 7
+        Me.btn_exit.Text = "Salir"
+        Me.btn_exit.UseVisualStyleBackColor = True
+        '
         'frmReporteFacturas
         '
+        Me.AcceptButton = Me.btn_generar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btn_exit
         Me.ClientSize = New System.Drawing.Size(767, 446)
+        Me.Controls.Add(Me.btn_exit)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label2)
@@ -200,6 +215,7 @@ Partial Class frmReporteFacturas
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "frmReporteFacturas"
         Me.Text = "Reporte de Facturas"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.FacturasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet_Proveedores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
@@ -225,4 +241,5 @@ Partial Class frmReporteFacturas
     Friend WithEvents cb_filtro_fecha As System.Windows.Forms.CheckBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents cb_filtro_proveedor As System.Windows.Forms.CheckBox
+    Friend WithEvents btn_exit As System.Windows.Forms.Button
 End Class

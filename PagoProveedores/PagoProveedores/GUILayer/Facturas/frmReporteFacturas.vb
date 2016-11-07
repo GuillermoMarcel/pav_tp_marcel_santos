@@ -54,4 +54,8 @@ Public Class frmReporteFacturas
     End Sub
 
     Dim flag As Boolean = True
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btn_exit.Click
+        Me.Close()
+    End Sub
 End Class

@@ -621,6 +621,8 @@ Partial Public Class DataSet_Proveedores
 
         Private columnmonto As Global.System.Data.DataColumn
 
+        Private columnfecha As Global.System.Data.DataColumn
+
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
@@ -689,6 +691,14 @@ Partial Public Class DataSet_Proveedores
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property fechaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnfecha
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Browsable(False)> _
         Public ReadOnly Property Count() As Integer
@@ -725,9 +735,9 @@ Partial Public Class DataSet_Proveedores
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddFacturasRow(ByVal proveedor As String, ByVal tipo As String, ByVal nro As Long, ByVal monto As Decimal) As FacturasRow
+        Public Overloads Function AddFacturasRow(ByVal proveedor As String, ByVal tipo As String, ByVal nro As Long, ByVal monto As Decimal, ByVal fecha As Date) As FacturasRow
             Dim rowFacturasRow As FacturasRow = CType(Me.NewRow, FacturasRow)
-            Dim columnValuesArray() As Object = New Object() {proveedor, tipo, nro, monto}
+            Dim columnValuesArray() As Object = New Object() {proveedor, tipo, nro, monto, fecha}
             rowFacturasRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowFacturasRow)
             Return rowFacturasRow
@@ -754,6 +764,7 @@ Partial Public Class DataSet_Proveedores
             Me.columntipo = MyBase.Columns("tipo")
             Me.columnnro = MyBase.Columns("nro")
             Me.columnmonto = MyBase.Columns("monto")
+            Me.columnfecha = MyBase.Columns("fecha")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -767,6 +778,8 @@ Partial Public Class DataSet_Proveedores
             MyBase.Columns.Add(Me.columnnro)
             Me.columnmonto = New Global.System.Data.DataColumn("monto", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmonto)
+            Me.columnfecha = New Global.System.Data.DataColumn("fecha", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfecha)
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -1097,6 +1110,21 @@ Partial Public Class DataSet_Proveedores
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property fecha() As Date
+            Get
+                Try
+                    Return CType(Me(Me.tableFacturas.fechaColumn), Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'fecha' in table 'Facturas' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Date)
+                Me(Me.tableFacturas.fechaColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function IsproveedorNull() As Boolean
             Return Me.IsNull(Me.tableFacturas.proveedorColumn)
         End Function
@@ -1141,6 +1169,18 @@ Partial Public Class DataSet_Proveedores
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetmontoNull()
             Me(Me.tableFacturas.montoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsfechaNull() As Boolean
+            Return Me.IsNull(Me.tableFacturas.fechaColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetfechaNull()
+            Me(Me.tableFacturas.fechaColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 
