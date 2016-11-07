@@ -1,5 +1,8 @@
 ﻿Public Class Factura
-    Public Property NroFactura As Integer
-    Public Property tipoFactura As Integer
+    Public Property Tipo As Char
+    Public Property NroFactura As Long
+    Public Property Fecha As Date
+    Public Property Monto As Decimal
     Public Property Proveedor As Integer
+    Public Property FechaPago As Date
 End Class

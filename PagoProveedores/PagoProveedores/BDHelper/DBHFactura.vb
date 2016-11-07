@@ -29,18 +29,31 @@ Public Class DBHFactura
 
     End Function
 
-    Public Shared Function getFacturasImpagasProveedor(id As Integer) As DataTable
+    Public Shared Function getFacturasImpagasProveedor(id As Integer) As List(Of Factura)
         Dim q As New QueryBuilder
         Dim i As Integer
+        Dim t As New DataTable
+        Dim facturas As New List(Of Factura)
         If Integer.TryParse(id, i) Then
-            q.table("FacturasEntrantes").seleccionar({"nro_factura NumeroFactura", "fecha Fecha", "monto Monto", "tipo_fact Tipo"}).
+            q.table("FacturasEntrantes").seleccionar({"nro_factura", "fecha", "monto", "tipo_fact"}).
             where("@id_proveedor", id).where("@fecha_pago", "is", "@null")
-            Dim t As DataTable = DBConn.executeSQL(q.build)
+            t = DBConn.executeSQL(q.build)
             If t.Rows.Count = 0 Then Throw New Exception("No se encontraron facturas impagas")
-            Return t
         Else
             Throw New Exception("Id proveedor invalido")
         End If
+        For Each row As DataRow In t.Rows
+            Dim f As New Factura
+
+            f.NroFactura = Long.Parse(row.Item("nro_factura").ToString)
+            f.Tipo = Char.Parse(row.Item("tipo_fact").ToString)
+            f.Fecha = Date.Parse(row.Item("fecha").ToString)
+            f.Monto = Decimal.Parse(row.Item("monto").ToString)
+            f.Proveedor = id
+            facturas.Add(f)
+        Next
+
+        Return facturas
     End Function
 
 End Class

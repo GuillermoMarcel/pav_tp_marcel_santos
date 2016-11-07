@@ -1,11 +1,17 @@
 ﻿Public Class frmPagos
+    Dim chequesCartera As List(Of Cheque)
+    Dim chequesSeleccionados As List(Of Cheque)
+
+    Dim facturasPendiente As List(Of Factura)
+    Dim facturasSeleccionadas As List(Of Factura)
 
     Private Sub frmPagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbo_proveedor.DataSource = DBHProveedor.getProveedores
         cbo_proveedor.ValueMember = "id_proveedor"
         cbo_proveedor.DisplayMember = "razon_social"
         cbo_proveedor.SelectedIndex = 1
-        dgv_cheques_cartera.DataSource = DBHCheque.getChequesCartera()
+        chequesCartera = DBHCheque.getChequesCartera()
+        actualizarDGVCheques(chequesCartera)
     End Sub
 
     Private Sub cbo_proveedor_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_proveedor.SelectedIndexChanged
@@ -18,12 +24,32 @@
     End Sub
 
     Private Sub actualizarDGVFacturas()
-        dgv_facturas_pendientes.DataSource = Nothing
-        dgv_facturas_seleccionadas.DataSource = Nothing
         Dim c As Integer = Integer.Parse(cbo_proveedor.SelectedValue.ToString)
-        dgv_facturas_pendientes.DataSource = DBHFactura.getFacturasImpagasProveedor(c)
-        dgv_facturas_pendientes.Columns.Item(3).Visible = False
+        facturasPendiente = Nothing
+        facturasPendiente = DBHFactura.getFacturasImpagasProveedor(c)
+        llenarGridFactura(dgv_facturas_pendientes, facturasPendiente)
+
     End Sub
+
+    Private Sub llenarGridFactura(dgv As DataGridView, list As List(Of Factura))
+        For Each f In list
+            dgv.Rows.Add(New String() {f.Fecha.ToShortDateString, f.Tipo.ToString, f.NroFactura.ToString, f.Monto.ToString, f.Proveedor.ToString})
+        Next
+    End Sub
+
+    Private Sub actualizarDGVCheques(list As List(Of Cheque))
+        dgv_cheques_cartera.Rows.Clear()
+        dgv_cheques_seleccionados.Rows.Clear()
+        dgv_cheques_cartera.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+    End Sub
+
+    Private Sub llenarGridCheque(dgv As DataGridView, list As List(Of Cheque))
+        For Each c In list
+            'Dim str As String() = {c.FechaVencimiento.ToShortDateString, c.Numero.ToString, c.Titular.ToString, c.Banco.ToString, c.Monto.ToString, c.NroBanco.ToString, c.NroCuenta.ToString}
+            dgv.Rows.Add(New String() {c.FechaVencimiento.ToShortDateString, c.Numero.ToString, c.Titular.ToString, c.Banco.ToString, c.Monto.ToString, c.NroBanco.ToString, c.NroCuenta.ToString})
+        Next
+    End Sub
+
 
     Private Sub btn_actualizar_Click(sender As Object, e As EventArgs) Handles btn_actualizar.Click
         actualizarDGVFacturas()
@@ -41,22 +67,5 @@
     End Sub
 
     Private Sub btn_quitar_factura_Click(sender As Object, e As EventArgs) Handles btn_quitar_factura.Click
-        Dim list As New List(Of factura)
-        For Each row As DataGridViewRow In dgv_facturas_seleccionadas.SelectedRows
-            Dim f As New Factura
-            f.NroFactura = row.Cells(0).Value
-            f.tipoFactura = row.Cells(3).Value
-            f.Proveedor = cbo_proveedor.SelectedValue
-            list.Add(f)
-        Next
-
-        For Each Factura As Factura In list
-
-        Next
-
-        For Each row As DataGridViewRow In dgv_facturas_pendientes.SelectedRows
-            dgv_facturas_seleccionadas.Rows.Remove(row)
-        Next
-
     End Sub
 End Class
