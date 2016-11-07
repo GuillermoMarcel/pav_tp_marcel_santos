@@ -62,6 +62,18 @@ Public Class DBHTitular
         Return DBConn.executeSQL(q.build)
     End Function
 
+    Public Shared Function getCuentasFavoritas() As List(Of Cuenta)
+        Dim q As New QueryBuilder
+        q.table("Cuentas").seleccionar.join("Bancos", "nro_banco").where("@favorita", 1)
+        'q.table("Cuentas").seleccionar()
+        Dim t As DataTable = DBConn.executeSQL(q.build)
+        Dim l As New List(Of Cuenta)
+        For Each r As DataRow In t.Rows
+            l.Add(fromRowToCuenta(r))
+        Next
+        Return l
+    End Function
+
     Public Shared Function getTitular(id_titular As Integer) As Titular
 
 
@@ -104,31 +116,30 @@ Public Class DBHTitular
         q.table("Cuentas").seleccionar.join("Bancos", "nro_banco").where("@id_titular", id_titular)
         If id_banco <> -1 Then q.where("@Bancos.nro_banco", id_banco)
 
-        Dim b As DataTable
-        b = DBConn.executeSQL(q.build)
+        Dim b As DataTable = DBConn.executeSQL(q.build)
 
-        Dim c As Cuenta
-        Dim ban As Banco
-        For Each Cuenta As DataRow In b.Rows
-
-            Dim nro_cuenta As String = Cuenta.Item("nro_cuenta"),
-                nro_banco As Integer = Cuenta.Item("nro_banco"),
-                nom_banco As String = Cuenta.Item("nombre"),
-                sucursal As Integer = DBUtils.ifNULLCero(Cuenta.Item("sucursal")),
-                cbu As String = DBUtils.ifNULLEmpty(Cuenta.Item("cbu"))
-
-            c = New Cuenta
-            ban = New Banco
-            'c.id_titular = id_titular
-            ban.id = nro_banco
-            ban.nombre = nom_banco
-            c.Banco = ban
-            c.NroCuenta = nro_cuenta
-            c.Sucursal = sucursal
-            c.CBU = cbu
-            t.cuentas.Add(c)
+        For Each cuenta_row As DataRow In b.Rows
+            t.cuentas.Add(fromRowToCuenta(cuenta_row))
         Next
         Return t
+    End Function
+    Private Shared Function fromRowToCuenta(r As DataRow) As Cuenta
+        Dim nro_cuenta As String = r.Item("nro_cuenta"),
+                nro_banco As Integer = r.Item("nro_banco"),
+                nom_banco As String = r.Item("nombre"),
+                sucursal As Integer = DBUtils.ifNULLCero(r.Item("sucursal")),
+                cbu As String = DBUtils.ifNULLEmpty(r.Item("cbu"))
+
+        Dim c As New Cuenta
+        Dim ban As New Banco
+        'c.id_titular = id_titular
+        ban.id = nro_banco
+        ban.nombre = nom_banco
+        c.Banco = ban
+        c.NroCuenta = nro_cuenta
+        c.Sucursal = sucursal
+        c.CBU = cbu
+        Return c
     End Function
 
     Public Shared Function addCuenta(id_titular As Integer, nro_banco As Integer, sucursarl As Integer, nro_cuenta As String, cbu As String) As Boolean

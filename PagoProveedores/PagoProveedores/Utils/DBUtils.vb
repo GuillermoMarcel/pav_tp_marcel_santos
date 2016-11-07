@@ -53,4 +53,8 @@
         Return 0
     End Function
 
+    Public Shared Function DateToDB(d As Date) As String
+        Return d.ToString("yyyy-MM-dd HH:MM:ss")
+    End Function
+
 End Class

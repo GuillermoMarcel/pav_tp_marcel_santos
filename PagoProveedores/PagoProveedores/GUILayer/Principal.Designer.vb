@@ -24,18 +24,18 @@ Partial Class frm_principal
     Private Sub InitializeComponent()
         Me.btn_banco = New System.Windows.Forms.Button()
         Me.btn_proveedor = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.btn_titulares = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.btn_cheques = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btn_reporte_factura = New System.Windows.Forms.Button()
         Me.btn_pagar = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btn_reporte_proveedor = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.btn_nuevo_cheque = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btn_reporte_cheques = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -59,15 +59,6 @@ Partial Class frm_principal
         Me.btn_proveedor.TabIndex = 1
         Me.btn_proveedor.Text = "Administrar Proveedores"
         Me.btn_proveedor.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(6, 126)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(138, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Test Proveedor 1"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'btn_titulares
         '
@@ -109,16 +100,25 @@ Partial Class frm_principal
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Button4)
+        Me.GroupBox2.Controls.Add(Me.btn_reporte_cheques)
+        Me.GroupBox2.Controls.Add(Me.btn_reporte_factura)
         Me.GroupBox2.Controls.Add(Me.btn_pagar)
-        Me.GroupBox2.Controls.Add(Me.Button3)
-        Me.GroupBox2.Controls.Add(Me.Button1)
+        Me.GroupBox2.Controls.Add(Me.btn_reporte_proveedor)
         Me.GroupBox2.Location = New System.Drawing.Point(264, 173)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(246, 155)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Temporales"
+        '
+        'btn_reporte_factura
+        '
+        Me.btn_reporte_factura.Location = New System.Drawing.Point(6, 76)
+        Me.btn_reporte_factura.Name = "btn_reporte_factura"
+        Me.btn_reporte_factura.Size = New System.Drawing.Size(138, 23)
+        Me.btn_reporte_factura.TabIndex = 5
+        Me.btn_reporte_factura.Text = "Reporte Facturas"
+        Me.btn_reporte_factura.UseVisualStyleBackColor = True
         '
         'btn_pagar
         '
@@ -129,14 +129,14 @@ Partial Class frm_principal
         Me.btn_pagar.Text = "Pagar"
         Me.btn_pagar.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btn_reporte_proveedor
         '
-        Me.Button3.Location = New System.Drawing.Point(6, 19)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(138, 23)
-        Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Reporte Proveedores"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btn_reporte_proveedor.Location = New System.Drawing.Point(6, 19)
+        Me.btn_reporte_proveedor.Name = "btn_reporte_proveedor"
+        Me.btn_reporte_proveedor.Size = New System.Drawing.Size(138, 23)
+        Me.btn_reporte_proveedor.TabIndex = 3
+        Me.btn_reporte_proveedor.Text = "Reporte Proveedores"
+        Me.btn_reporte_proveedor.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -169,20 +169,20 @@ Partial Class frm_principal
         Me.btn_nuevo_cheque.Text = "Registrar Cheque Nuevo"
         Me.btn_nuevo_cheque.UseVisualStyleBackColor = True
         '
-        'Button4
+        'btn_reporte_cheques
         '
-        Me.Button4.Location = New System.Drawing.Point(6, 76)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(138, 23)
-        Me.Button4.TabIndex = 5
-        Me.Button4.Text = "Reporte Facturas"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btn_reporte_cheques.Location = New System.Drawing.Point(6, 105)
+        Me.btn_reporte_cheques.Name = "btn_reporte_cheques"
+        Me.btn_reporte_cheques.Size = New System.Drawing.Size(138, 23)
+        Me.btn_reporte_cheques.TabIndex = 6
+        Me.btn_reporte_cheques.Text = "Reporte Cheques"
+        Me.btn_reporte_cheques.UseVisualStyleBackColor = True
         '
         'frm_principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(533, 347)
+        Me.ClientSize = New System.Drawing.Size(526, 347)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
@@ -198,7 +198,6 @@ Partial Class frm_principal
     End Sub
     Friend WithEvents btn_banco As System.Windows.Forms.Button
     Friend WithEvents btn_proveedor As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents btn_titulares As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents btn_cheques As System.Windows.Forms.Button
@@ -207,7 +206,8 @@ Partial Class frm_principal
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents btn_nuevo_cheque As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents btn_reporte_proveedor As System.Windows.Forms.Button
     Friend WithEvents btn_pagar As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents btn_reporte_factura As System.Windows.Forms.Button
+    Friend WithEvents btn_reporte_cheques As System.Windows.Forms.Button
 End Class

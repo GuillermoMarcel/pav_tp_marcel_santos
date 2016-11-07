@@ -8,23 +8,6 @@
         frmBancoConsulta.Show()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim rs As String = "alguien sa",
-            dir = "Elm Street",
-            alt As Integer = 5522,
-            cuit As Integer = 1234
-        Dim t As New Telefono With {.Telefono = "125 412", .Observacion = ""}
-        Dim m As New Mail With {.Mail = "asf@asdf", .Observacion = ""}
-        Dim lt As New List(Of Telefono)
-        lt.Add(t)
-        Dim lm As New List(Of Mail)
-        lm.Add(m)
-        Dim d As New Direccion(dir, alt)
-
-        DBHProveedor.addProveedor(rs, cuit, d, "", lt, lm)
-
-
-    End Sub
 
     Private Sub btn_titulares_Click(sender As Object, e As EventArgs) Handles btn_titulares.Click
         Dim f As New frmTitularesConsulta
@@ -51,7 +34,7 @@
         End While
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btn_reporte_proveedor.Click
         Dim f As New frmReporteProveedores
         f.ShowDialog()
     End Sub
@@ -61,7 +44,13 @@
         d.ShowDialog()
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        frmReporteFacturas.ShowDialog()
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btn_reporte_factura.Click
+        Dim f As New frmReporteFacturas
+        f.ShowDialog()
+    End Sub
+
+    Private Sub btn_reporte_cheques_Click(sender As Object, e As EventArgs) Handles btn_reporte_cheques.Click
+        Dim f As New frmReporteCheques
+        f.ShowDialog()
     End Sub
 End Class
