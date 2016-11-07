@@ -430,7 +430,7 @@ Partial Public Class DataSet_Proveedores
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddProveedoresRow(ByVal Id As Short, ByVal Razon_Social As String, ByVal cuit As String, ByVal Cuenta_Corriente As Decimal) As ProveedoresRow
+        Public Overloads Function AddProveedoresRow(ByVal Id As Short, ByVal Razon_Social As String, ByVal cuit As Long, ByVal Cuenta_Corriente As Decimal) As ProveedoresRow
             Dim rowProveedoresRow As ProveedoresRow = CType(Me.NewRow, ProveedoresRow)
             Dim columnValuesArray() As Object = New Object() {Id, Razon_Social, cuit, Cuenta_Corriente}
             rowProveedoresRow.ItemArray = columnValuesArray
@@ -468,7 +468,7 @@ Partial Public Class DataSet_Proveedores
             MyBase.Columns.Add(Me.columnId)
             Me.columnRazon_Social = New Global.System.Data.DataColumn("Razon_Social", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnRazon_Social)
-            Me.columncuit = New Global.System.Data.DataColumn("Cuit", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columncuit = New Global.System.Data.DataColumn("Cuit", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
             Me.columncuit.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "cuit")
             Me.columncuit.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "cuitColumn")
             Me.columncuit.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columncuit")
@@ -956,15 +956,15 @@ Partial Public Class DataSet_Proveedores
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property cuit() As String
+        Public Property cuit() As Long
             Get
                 Try
-                    Return CType(Me(Me.tableProveedores.cuitColumn), String)
+                    Return CType(Me(Me.tableProveedores.cuitColumn), Long)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'Cuit' in table 'Proveedores' is DBNull.", e)
                 End Try
             End Get
-            Set(value As String)
+            Set(value As Long)
                 Me(Me.tableProveedores.cuitColumn) = value
             End Set
         End Property
