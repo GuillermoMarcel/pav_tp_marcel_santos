@@ -27,7 +27,18 @@ Partial Class frmPagos
         Me.cbo_proveedor = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgv_facturas_pendientes = New System.Windows.Forms.DataGridView()
+        Me.col_fecha_pendiente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_tipo_pendiente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_numero_pendiente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_monto_pendiente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_proveedor_pendiente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gr_Facturas = New System.Windows.Forms.GroupBox()
+        Me.dgv_facturas_seleccionadas = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lbl_total_facturas = New System.Windows.Forms.Label()
         Me.btn_quitar_factura = New System.Windows.Forms.Button()
         Me.btn_agregar_factura = New System.Windows.Forms.Button()
@@ -54,23 +65,14 @@ Partial Class frmPagos
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_efectivo = New System.Windows.Forms.TextBox()
         Me.btn_actualizar = New System.Windows.Forms.Button()
-        Me.col_fecha_pendiente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_tipo_pendiente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_numero_pendiente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_monto_pendiente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_proveedor_pendiente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgv_facturas_seleccionadas = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txt_obs = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.dgv_facturas_pendientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gr_Facturas.SuspendLayout()
+        CType(Me.dgv_facturas_seleccionadas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgv_cheques_seleccionados, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_cheques_cartera, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgv_facturas_seleccionadas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btn_aceptar
@@ -117,6 +119,7 @@ Partial Class frmPagos
         Me.dgv_facturas_pendientes.AllowUserToDeleteRows = False
         Me.dgv_facturas_pendientes.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv_facturas_pendientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgv_facturas_pendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_facturas_pendientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_fecha_pendiente, Me.col_tipo_pendiente, Me.col_numero_pendiente, Me.col_monto_pendiente, Me.col_proveedor_pendiente})
         Me.dgv_facturas_pendientes.Location = New System.Drawing.Point(17, 31)
@@ -125,6 +128,41 @@ Partial Class frmPagos
         Me.dgv_facturas_pendientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_facturas_pendientes.Size = New System.Drawing.Size(545, 166)
         Me.dgv_facturas_pendientes.TabIndex = 5
+        '
+        'col_fecha_pendiente
+        '
+        Me.col_fecha_pendiente.HeaderText = "Fecha"
+        Me.col_fecha_pendiente.Name = "col_fecha_pendiente"
+        Me.col_fecha_pendiente.ReadOnly = True
+        Me.col_fecha_pendiente.Width = 62
+        '
+        'col_tipo_pendiente
+        '
+        Me.col_tipo_pendiente.HeaderText = "Tipo"
+        Me.col_tipo_pendiente.Name = "col_tipo_pendiente"
+        Me.col_tipo_pendiente.ReadOnly = True
+        Me.col_tipo_pendiente.Width = 53
+        '
+        'col_numero_pendiente
+        '
+        Me.col_numero_pendiente.HeaderText = "Número"
+        Me.col_numero_pendiente.Name = "col_numero_pendiente"
+        Me.col_numero_pendiente.ReadOnly = True
+        Me.col_numero_pendiente.Width = 69
+        '
+        'col_monto_pendiente
+        '
+        Me.col_monto_pendiente.HeaderText = "Monto"
+        Me.col_monto_pendiente.Name = "col_monto_pendiente"
+        Me.col_monto_pendiente.ReadOnly = True
+        Me.col_monto_pendiente.Width = 62
+        '
+        'col_proveedor_pendiente
+        '
+        Me.col_proveedor_pendiente.HeaderText = "proveedor"
+        Me.col_proveedor_pendiente.Name = "col_proveedor_pendiente"
+        Me.col_proveedor_pendiente.ReadOnly = True
+        Me.col_proveedor_pendiente.Visible = False
         '
         'gr_Facturas
         '
@@ -142,6 +180,57 @@ Partial Class frmPagos
         Me.gr_Facturas.TabIndex = 12
         Me.gr_Facturas.TabStop = False
         Me.gr_Facturas.Text = "Facturas"
+        '
+        'dgv_facturas_seleccionadas
+        '
+        Me.dgv_facturas_seleccionadas.AllowUserToAddRows = False
+        Me.dgv_facturas_seleccionadas.AllowUserToDeleteRows = False
+        Me.dgv_facturas_seleccionadas.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv_facturas_seleccionadas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgv_facturas_seleccionadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_facturas_seleccionadas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12})
+        Me.dgv_facturas_seleccionadas.Location = New System.Drawing.Point(612, 31)
+        Me.dgv_facturas_seleccionadas.Name = "dgv_facturas_seleccionadas"
+        Me.dgv_facturas_seleccionadas.ReadOnly = True
+        Me.dgv_facturas_seleccionadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgv_facturas_seleccionadas.Size = New System.Drawing.Size(545, 166)
+        Me.dgv_facturas_seleccionadas.TabIndex = 13
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Fecha"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
+        Me.DataGridViewTextBoxColumn8.Width = 62
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Tipo"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.ReadOnly = True
+        Me.DataGridViewTextBoxColumn9.Width = 53
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Número"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.ReadOnly = True
+        Me.DataGridViewTextBoxColumn10.Width = 69
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.HeaderText = "Monto"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        Me.DataGridViewTextBoxColumn11.ReadOnly = True
+        Me.DataGridViewTextBoxColumn11.Width = 62
+        '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.HeaderText = "proveedor"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        Me.DataGridViewTextBoxColumn12.ReadOnly = True
+        Me.DataGridViewTextBoxColumn12.Visible = False
         '
         'lbl_total_facturas
         '
@@ -194,11 +283,13 @@ Partial Class frmPagos
         Me.dgv_cheques_seleccionados.AllowUserToDeleteRows = False
         Me.dgv_cheques_seleccionados.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv_cheques_seleccionados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgv_cheques_seleccionados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_cheques_seleccionados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
         Me.dgv_cheques_seleccionados.Location = New System.Drawing.Point(612, 29)
         Me.dgv_cheques_seleccionados.Name = "dgv_cheques_seleccionados"
         Me.dgv_cheques_seleccionados.ReadOnly = True
+        Me.dgv_cheques_seleccionados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_cheques_seleccionados.Size = New System.Drawing.Size(545, 166)
         Me.dgv_cheques_seleccionados.TabIndex = 14
         '
@@ -207,30 +298,35 @@ Partial Class frmPagos
         Me.DataGridViewTextBoxColumn1.HeaderText = "Vencimiento"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 90
         '
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.HeaderText = "Cheque"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 69
         '
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.HeaderText = "Apellido y Nombre"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 107
         '
         'DataGridViewTextBoxColumn4
         '
         Me.DataGridViewTextBoxColumn4.HeaderText = "Banco"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        Me.DataGridViewTextBoxColumn4.Width = 63
         '
         'DataGridViewTextBoxColumn5
         '
         Me.DataGridViewTextBoxColumn5.HeaderText = "Monto"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        Me.DataGridViewTextBoxColumn5.Width = 62
         '
         'DataGridViewTextBoxColumn6
         '
@@ -281,11 +377,13 @@ Partial Class frmPagos
         Me.dgv_cheques_cartera.AllowUserToDeleteRows = False
         Me.dgv_cheques_cartera.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv_cheques_cartera.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgv_cheques_cartera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_cheques_cartera.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_vencimiento_cartera, Me.col_cheque_cartera, Me.col_titular_cartera, Me.col_banco_cartera, Me.col_monto_cartera, Me.col_nro_banco_cartera, Me.col_nro_cuenta_cartera})
         Me.dgv_cheques_cartera.Location = New System.Drawing.Point(17, 29)
         Me.dgv_cheques_cartera.Name = "dgv_cheques_cartera"
         Me.dgv_cheques_cartera.ReadOnly = True
+        Me.dgv_cheques_cartera.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_cheques_cartera.Size = New System.Drawing.Size(545, 166)
         Me.dgv_cheques_cartera.TabIndex = 5
         '
@@ -294,30 +392,35 @@ Partial Class frmPagos
         Me.col_vencimiento_cartera.HeaderText = "Vencimiento"
         Me.col_vencimiento_cartera.Name = "col_vencimiento_cartera"
         Me.col_vencimiento_cartera.ReadOnly = True
+        Me.col_vencimiento_cartera.Width = 90
         '
         'col_cheque_cartera
         '
         Me.col_cheque_cartera.HeaderText = "Cheque"
         Me.col_cheque_cartera.Name = "col_cheque_cartera"
         Me.col_cheque_cartera.ReadOnly = True
+        Me.col_cheque_cartera.Width = 69
         '
         'col_titular_cartera
         '
         Me.col_titular_cartera.HeaderText = "Apellido y Nombre"
         Me.col_titular_cartera.Name = "col_titular_cartera"
         Me.col_titular_cartera.ReadOnly = True
+        Me.col_titular_cartera.Width = 107
         '
         'col_banco_cartera
         '
         Me.col_banco_cartera.HeaderText = "Banco"
         Me.col_banco_cartera.Name = "col_banco_cartera"
         Me.col_banco_cartera.ReadOnly = True
+        Me.col_banco_cartera.Width = 63
         '
         'col_monto_cartera
         '
         Me.col_monto_cartera.HeaderText = "Monto"
         Me.col_monto_cartera.Name = "col_monto_cartera"
         Me.col_monto_cartera.ReadOnly = True
+        Me.col_monto_cartera.Width = 62
         '
         'col_nro_banco_cartera
         '
@@ -337,7 +440,7 @@ Partial Class frmPagos
         '
         Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(499, 541)
+        Me.Label2.Location = New System.Drawing.Point(499, 547)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(46, 13)
         Me.Label2.TabIndex = 14
@@ -346,7 +449,7 @@ Partial Class frmPagos
         'txt_efectivo
         '
         Me.txt_efectivo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.txt_efectivo.Location = New System.Drawing.Point(551, 538)
+        Me.txt_efectivo.Location = New System.Drawing.Point(551, 544)
         Me.txt_efectivo.Name = "txt_efectivo"
         Me.txt_efectivo.Size = New System.Drawing.Size(100, 20)
         Me.txt_efectivo.TabIndex = 16
@@ -360,90 +463,33 @@ Partial Class frmPagos
         Me.btn_actualizar.Text = "Actualizar"
         Me.btn_actualizar.UseVisualStyleBackColor = True
         '
-        'col_fecha_pendiente
+        'txt_obs
         '
-        Me.col_fecha_pendiente.HeaderText = "Fecha"
-        Me.col_fecha_pendiente.Name = "col_fecha_pendiente"
-        Me.col_fecha_pendiente.ReadOnly = True
+        Me.txt_obs.Location = New System.Drawing.Point(157, 544)
+        Me.txt_obs.Multiline = True
+        Me.txt_obs.Name = "txt_obs"
+        Me.txt_obs.Size = New System.Drawing.Size(336, 72)
+        Me.txt_obs.TabIndex = 18
         '
-        'col_tipo_pendiente
+        'Label3
         '
-        Me.col_tipo_pendiente.HeaderText = "Tipo"
-        Me.col_tipo_pendiente.Name = "col_tipo_pendiente"
-        Me.col_tipo_pendiente.ReadOnly = True
-        '
-        'col_numero_pendiente
-        '
-        Me.col_numero_pendiente.HeaderText = "Número"
-        Me.col_numero_pendiente.Name = "col_numero_pendiente"
-        Me.col_numero_pendiente.ReadOnly = True
-        '
-        'col_monto_pendiente
-        '
-        Me.col_monto_pendiente.HeaderText = "Monto"
-        Me.col_monto_pendiente.Name = "col_monto_pendiente"
-        Me.col_monto_pendiente.ReadOnly = True
-        '
-        'col_proveedor_pendiente
-        '
-        Me.col_proveedor_pendiente.HeaderText = "proveedor"
-        Me.col_proveedor_pendiente.Name = "col_proveedor_pendiente"
-        Me.col_proveedor_pendiente.ReadOnly = True
-        Me.col_proveedor_pendiente.Visible = False
-        '
-        'dgv_facturas_seleccionadas
-        '
-        Me.dgv_facturas_seleccionadas.AllowUserToAddRows = False
-        Me.dgv_facturas_seleccionadas.AllowUserToDeleteRows = False
-        Me.dgv_facturas_seleccionadas.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgv_facturas_seleccionadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_facturas_seleccionadas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12})
-        Me.dgv_facturas_seleccionadas.Location = New System.Drawing.Point(612, 31)
-        Me.dgv_facturas_seleccionadas.Name = "dgv_facturas_seleccionadas"
-        Me.dgv_facturas_seleccionadas.ReadOnly = True
-        Me.dgv_facturas_seleccionadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_facturas_seleccionadas.Size = New System.Drawing.Size(545, 166)
-        Me.dgv_facturas_seleccionadas.TabIndex = 13
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Fecha"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Tipo"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Número"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn11
-        '
-        Me.DataGridViewTextBoxColumn11.HeaderText = "Monto"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        Me.DataGridViewTextBoxColumn11.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn12
-        '
-        Me.DataGridViewTextBoxColumn12.HeaderText = "proveedor"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        Me.DataGridViewTextBoxColumn12.ReadOnly = True
-        Me.DataGridViewTextBoxColumn12.Visible = False
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(84, 547)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(67, 13)
+        Me.Label3.TabIndex = 14
+        Me.Label3.Text = "Observacion"
         '
         'frmPagos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1190, 628)
+        Me.Controls.Add(Me.txt_obs)
         Me.Controls.Add(Me.btn_actualizar)
         Me.Controls.Add(Me.txt_efectivo)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.gr_Facturas)
@@ -460,11 +506,11 @@ Partial Class frmPagos
         CType(Me.dgv_facturas_pendientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gr_Facturas.ResumeLayout(False)
         Me.gr_Facturas.PerformLayout()
+        CType(Me.dgv_facturas_seleccionadas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.dgv_cheques_seleccionados, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv_cheques_cartera, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgv_facturas_seleccionadas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -512,4 +558,6 @@ Partial Class frmPagos
     Friend WithEvents DataGridViewTextBoxColumn10 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn11 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn12 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents txt_obs As System.Windows.Forms.TextBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class
