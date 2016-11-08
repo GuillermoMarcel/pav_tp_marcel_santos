@@ -27,7 +27,7 @@
         '       "Desactivar este mensaje comentando la linea")
     End Sub
 
-    Private Sub btn_cheques_Click(sender As Object, e As EventArgs) Handles btn_cheques.Click, btn_nuevo_cheque.Click
+    Private Sub btn_cheques_Click(sender As Object, e As EventArgs) Handles btn_nuevo_cheque.Click
         Dim f As New frmNuevoCheque
         While f.ShowDialog() = Windows.Forms.DialogResult.Retry
             f = New frmNuevoCheque
@@ -51,6 +51,11 @@
 
     Private Sub btn_reporte_cheques_Click(sender As Object, e As EventArgs) Handles btn_reporte_cheques.Click
         Dim f As New frmReporteCheques
+        f.ShowDialog()
+    End Sub
+
+    Private Sub btn_cheques_consulta_Click(sender As Object, e As EventArgs) Handles btn_cheques.Click
+        Dim f As New frmConsultaCheque
         f.ShowDialog()
     End Sub
 End Class

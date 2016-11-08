@@ -118,6 +118,12 @@
       <DependentUpon>frmBancoModif.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUILayer\Cheques\frmConsultaCheque.Designer.vb">
+      <DependentUpon>frmConsultaCheque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Cheques\frmConsultaCheque.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUILayer\Cheques\frmNuevoCheque.Designer.vb">
       <DependentUpon>frmNuevoCheque.vb</DependentUpon>
     </Compile>
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Banco\frmBancoModif.resx">
       <DependentUpon>frmBancoModif.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Cheques\frmConsultaCheque.resx">
+      <DependentUpon>frmConsultaCheque.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Cheques\frmNuevoCheque.resx">
       <DependentUpon>frmNuevoCheque.vb</DependentUpon>

@@ -43,7 +43,7 @@
         str += "From Cheques c join  Bancos b on c.nro_banco = b.nro_banco "
         str += "Join Cuentas on Cuentas.nro_cuenta = c.nro_cuenta "
         str += "Join Titulares t on t.id_titular = Cuentas.id_titular "
-        str += "Where c.id_cheque = 1"
+        str += "Where c.id_estado = 1"
 
         Dim t As DataTable = DBConn.executeSQL(str)
         If t.Rows.Count = 0 Then Throw New Exception("No se encontraron cheques en cartera")
@@ -68,6 +68,23 @@
         c.NroCuenta = row.Item("nro_cuenta")
 
         Return c
+    End Function
+
+    Public Shared Function getCheques() As DataTable
+        Dim str As String
+        str = "SELECT c.fecha_vencimiento as Vencimiento, "
+        str += "c.nro_cheque as Cheque, "
+        str += "(t.Apellido+ ', ' +t.Nombre) as Titular, "
+        str += "b.nombre as Banco, "
+        str += "c.monto as Monto, "
+        str += "e.nombre Estado "
+        str += "From Cheques c join  Bancos b on c.nro_banco = b.nro_banco "
+        str += "Join Cuentas on Cuentas.nro_cuenta = c.nro_cuenta "
+        str += "Join Titulares t on t.id_titular = Cuentas.id_titular "
+        str += "Join EstadosCheques e on c.id_Estado = e.id_estado "
+        str += "Order by c.id_estado asc, c.fecha_vencimiento asc"
+
+        Return DBConn.executeSQL(str)
     End Function
 
 End Class

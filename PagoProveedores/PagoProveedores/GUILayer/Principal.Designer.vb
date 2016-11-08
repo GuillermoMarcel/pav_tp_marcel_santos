@@ -29,13 +29,13 @@ Partial Class frm_principal
         Me.btn_cheques = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btn_reporte_cheques = New System.Windows.Forms.Button()
         Me.btn_reporte_factura = New System.Windows.Forms.Button()
         Me.btn_pagar = New System.Windows.Forms.Button()
         Me.btn_reporte_proveedor = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.btn_nuevo_cheque = New System.Windows.Forms.Button()
-        Me.btn_reporte_cheques = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -84,7 +84,7 @@ Partial Class frm_principal
         Me.btn_cheques.Name = "btn_cheques"
         Me.btn_cheques.Size = New System.Drawing.Size(138, 23)
         Me.btn_cheques.TabIndex = 5
-        Me.btn_cheques.Text = "Administrar Cheques"
+        Me.btn_cheques.Text = "Consulta Cheques"
         Me.btn_cheques.UseVisualStyleBackColor = True
         '
         'GroupBox1
@@ -110,6 +110,15 @@ Partial Class frm_principal
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Temporales"
+        '
+        'btn_reporte_cheques
+        '
+        Me.btn_reporte_cheques.Location = New System.Drawing.Point(6, 105)
+        Me.btn_reporte_cheques.Name = "btn_reporte_cheques"
+        Me.btn_reporte_cheques.Size = New System.Drawing.Size(138, 23)
+        Me.btn_reporte_cheques.TabIndex = 6
+        Me.btn_reporte_cheques.Text = "Reporte Cheques"
+        Me.btn_reporte_cheques.UseVisualStyleBackColor = True
         '
         'btn_reporte_factura
         '
@@ -168,15 +177,6 @@ Partial Class frm_principal
         Me.btn_nuevo_cheque.TabIndex = 5
         Me.btn_nuevo_cheque.Text = "Registrar Cheque Nuevo"
         Me.btn_nuevo_cheque.UseVisualStyleBackColor = True
-        '
-        'btn_reporte_cheques
-        '
-        Me.btn_reporte_cheques.Location = New System.Drawing.Point(6, 105)
-        Me.btn_reporte_cheques.Name = "btn_reporte_cheques"
-        Me.btn_reporte_cheques.Size = New System.Drawing.Size(138, 23)
-        Me.btn_reporte_cheques.TabIndex = 6
-        Me.btn_reporte_cheques.Text = "Reporte Cheques"
-        Me.btn_reporte_cheques.UseVisualStyleBackColor = True
         '
         'frm_principal
         '
