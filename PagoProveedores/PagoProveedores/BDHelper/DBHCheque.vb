@@ -42,7 +42,8 @@
         str += "c. nro_banco, c.nro_cuenta "
         str += "From Cheques c join  Bancos b on c.nro_banco = b.nro_banco "
         str += "Join Cuentas on Cuentas.nro_cuenta = c.nro_cuenta "
-        str += "Join Titulares t on t.id_titular = Cuentas.id_titular"
+        str += "Join Titulares t on t.id_titular = Cuentas.id_titular "
+        str += "Where c.id_cheque = 1"
 
         Dim t As DataTable = DBConn.executeSQL(str)
         If t.Rows.Count = 0 Then Throw New Exception("No se encontraron cheques en cartera")
