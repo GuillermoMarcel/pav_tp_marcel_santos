@@ -67,6 +67,7 @@ Partial Class frmPagos
         Me.btn_actualizar = New System.Windows.Forms.Button()
         Me.txt_obs = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.dgv_facturas_pendientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gr_Facturas.SuspendLayout()
         CType(Me.dgv_facturas_seleccionadas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,7 +100,7 @@ Partial Class frmPagos
         '
         Me.cbo_proveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_proveedor.FormattingEnabled = True
-        Me.cbo_proveedor.Location = New System.Drawing.Point(86, 34)
+        Me.cbo_proveedor.Location = New System.Drawing.Point(86, 49)
         Me.cbo_proveedor.Name = "cbo_proveedor"
         Me.cbo_proveedor.Size = New System.Drawing.Size(121, 21)
         Me.cbo_proveedor.TabIndex = 3
@@ -107,7 +108,7 @@ Partial Class frmPagos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 37)
+        Me.Label1.Location = New System.Drawing.Point(12, 52)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(56, 13)
         Me.Label1.TabIndex = 4
@@ -456,7 +457,7 @@ Partial Class frmPagos
         '
         'btn_actualizar
         '
-        Me.btn_actualizar.Location = New System.Drawing.Point(214, 31)
+        Me.btn_actualizar.Location = New System.Drawing.Point(214, 46)
         Me.btn_actualizar.Name = "btn_actualizar"
         Me.btn_actualizar.Size = New System.Drawing.Size(75, 23)
         Me.btn_actualizar.TabIndex = 17
@@ -481,11 +482,24 @@ Partial Class frmPagos
         Me.Label3.TabIndex = 14
         Me.Label3.Text = "Observacion"
         '
+        'Label4
+        '
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Palatino Linotype", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(473, 9)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(253, 35)
+        Me.Label4.TabIndex = 19
+        Me.Label4.Text = "Pago a Proveedores"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'frmPagos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1190, 628)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txt_obs)
         Me.Controls.Add(Me.btn_actualizar)
         Me.Controls.Add(Me.txt_efectivo)
@@ -500,7 +514,7 @@ Partial Class frmPagos
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(1196, 653)
+        Me.MinimumSize = New System.Drawing.Size(1196, 649)
         Me.Name = "frmPagos"
         Me.Text = "Pagos"
         CType(Me.dgv_facturas_pendientes, System.ComponentModel.ISupportInitialize).EndInit()
@@ -560,4 +574,5 @@ Partial Class frmPagos
     Friend WithEvents DataGridViewTextBoxColumn12 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents txt_obs As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class

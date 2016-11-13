@@ -23,7 +23,11 @@
     Private Sub btn_delete_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
         Dim id As String
         id = getCurrentId()
-
+        If MsgBox("¿Realmente desea eliminar al Titular " & dgv_titulares.CurrentRow.Cells("Nombre").Value & "?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            If DBHTitular.deleteTitular(id) Then
+                MsgBox("Se ha eliminado el Titular con exito")
+            End If
+        End If
     End Sub
 
     Private Sub btn_new_Click(sender As Object, e As EventArgs) Handles btn_new.Click

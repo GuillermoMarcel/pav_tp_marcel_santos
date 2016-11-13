@@ -139,7 +139,7 @@
         Me.DialogResult = Windows.Forms.DialogResult.Cancel
     End Sub
 
-    Private Sub btn_new_titular_Click(sender As Object, e As EventArgs) Handles btn_new_titular.Click
+    Private Sub btn_new_titular_Click(sender As Object, e As EventArgs)
         'Dim f As New frmTitularesNuevo
         'If f.ShowDialog = Windows.Forms.DialogResult.OK Then
         'Dim t As Titular = f.titular

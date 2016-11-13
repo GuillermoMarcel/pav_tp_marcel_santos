@@ -44,12 +44,13 @@ Partial Class frmProveedorModificacion
         Me.btn_agregar_telefono = New System.Windows.Forms.Button()
         Me.txt_altura = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btn_borrar_mail
         '
         Me.btn_borrar_mail.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btn_borrar_mail.Location = New System.Drawing.Point(361, 370)
+        Me.btn_borrar_mail.Location = New System.Drawing.Point(350, 360)
         Me.btn_borrar_mail.Name = "btn_borrar_mail"
         Me.btn_borrar_mail.Size = New System.Drawing.Size(28, 23)
         Me.btn_borrar_mail.TabIndex = 12
@@ -58,7 +59,7 @@ Partial Class frmProveedorModificacion
         '
         'txt_observacion
         '
-        Me.txt_observacion.Location = New System.Drawing.Point(289, 67)
+        Me.txt_observacion.Location = New System.Drawing.Point(278, 115)
         Me.txt_observacion.Name = "txt_observacion"
         Me.txt_observacion.Size = New System.Drawing.Size(201, 58)
         Me.txt_observacion.TabIndex = 4
@@ -66,7 +67,7 @@ Partial Class frmProveedorModificacion
         '
         'txt_cuit
         '
-        Me.txt_cuit.Location = New System.Drawing.Point(289, 24)
+        Me.txt_cuit.Location = New System.Drawing.Point(278, 72)
         Me.txt_cuit.Mask = "00-00000000-0"
         Me.txt_cuit.Name = "txt_cuit"
         Me.txt_cuit.Size = New System.Drawing.Size(100, 20)
@@ -76,7 +77,7 @@ Partial Class frmProveedorModificacion
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(286, 128)
+        Me.Label6.Location = New System.Drawing.Point(275, 177)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(31, 13)
         Me.Label6.TabIndex = 31
@@ -87,9 +88,9 @@ Partial Class frmProveedorModificacion
         Me.lst_mail.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lst_mail.FormattingEnabled = True
-        Me.lst_mail.Location = New System.Drawing.Point(289, 144)
+        Me.lst_mail.Location = New System.Drawing.Point(278, 191)
         Me.lst_mail.Name = "lst_mail"
-        Me.lst_mail.Size = New System.Drawing.Size(201, 212)
+        Me.lst_mail.Size = New System.Drawing.Size(201, 134)
         Me.lst_mail.TabIndex = 9
         '
         'lst_telefono
@@ -97,21 +98,21 @@ Partial Class frmProveedorModificacion
         Me.lst_telefono.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lst_telefono.FormattingEnabled = True
-        Me.lst_telefono.Location = New System.Drawing.Point(44, 144)
+        Me.lst_telefono.Location = New System.Drawing.Point(33, 191)
         Me.lst_telefono.Name = "lst_telefono"
-        Me.lst_telefono.Size = New System.Drawing.Size(187, 212)
+        Me.lst_telefono.Size = New System.Drawing.Size(187, 134)
         Me.lst_telefono.TabIndex = 5
         '
         'txt_direccion
         '
-        Me.txt_direccion.Location = New System.Drawing.Point(44, 67)
+        Me.txt_direccion.Location = New System.Drawing.Point(33, 115)
         Me.txt_direccion.Name = "txt_direccion"
         Me.txt_direccion.Size = New System.Drawing.Size(187, 20)
         Me.txt_direccion.TabIndex = 1
         '
         'txt_razon_social
         '
-        Me.txt_razon_social.Location = New System.Drawing.Point(44, 24)
+        Me.txt_razon_social.Location = New System.Drawing.Point(33, 72)
         Me.txt_razon_social.Name = "txt_razon_social"
         Me.txt_razon_social.Size = New System.Drawing.Size(187, 20)
         Me.txt_razon_social.TabIndex = 0
@@ -119,7 +120,7 @@ Partial Class frmProveedorModificacion
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(41, 51)
+        Me.Label5.Location = New System.Drawing.Point(30, 99)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(52, 13)
         Me.Label5.TabIndex = 26
@@ -128,7 +129,7 @@ Partial Class frmProveedorModificacion
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(286, 51)
+        Me.Label4.Location = New System.Drawing.Point(275, 99)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(78, 13)
         Me.Label4.TabIndex = 25
@@ -137,7 +138,7 @@ Partial Class frmProveedorModificacion
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(41, 128)
+        Me.Label3.Location = New System.Drawing.Point(30, 177)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(54, 13)
         Me.Label3.TabIndex = 24
@@ -146,7 +147,7 @@ Partial Class frmProveedorModificacion
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(286, 8)
+        Me.Label2.Location = New System.Drawing.Point(275, 56)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(32, 13)
         Me.Label2.TabIndex = 23
@@ -155,7 +156,7 @@ Partial Class frmProveedorModificacion
         'lbl_razon_social
         '
         Me.lbl_razon_social.AutoSize = True
-        Me.lbl_razon_social.Location = New System.Drawing.Point(41, 9)
+        Me.lbl_razon_social.Location = New System.Drawing.Point(30, 57)
         Me.lbl_razon_social.Name = "lbl_razon_social"
         Me.lbl_razon_social.Size = New System.Drawing.Size(70, 13)
         Me.lbl_razon_social.TabIndex = 22
@@ -164,7 +165,7 @@ Partial Class frmProveedorModificacion
         'btn_cancel
         '
         Me.btn_cancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_cancel.Location = New System.Drawing.Point(480, 439)
+        Me.btn_cancel.Location = New System.Drawing.Point(413, 395)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(75, 23)
         Me.btn_cancel.TabIndex = 14
@@ -174,7 +175,7 @@ Partial Class frmProveedorModificacion
         'btn_accept
         '
         Me.btn_accept.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_accept.Location = New System.Drawing.Point(399, 439)
+        Me.btn_accept.Location = New System.Drawing.Point(332, 395)
         Me.btn_accept.Name = "btn_accept"
         Me.btn_accept.Size = New System.Drawing.Size(75, 23)
         Me.btn_accept.TabIndex = 13
@@ -186,7 +187,7 @@ Partial Class frmProveedorModificacion
         Me.btn_edit_mail.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_edit_mail.BackgroundImage = Global.PagoProveedores.My.Resources.Resources.lapiz
         Me.btn_edit_mail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_edit_mail.Location = New System.Drawing.Point(289, 369)
+        Me.btn_edit_mail.Location = New System.Drawing.Point(278, 359)
         Me.btn_edit_mail.Name = "btn_edit_mail"
         Me.btn_edit_mail.Size = New System.Drawing.Size(33, 23)
         Me.btn_edit_mail.TabIndex = 10
@@ -197,7 +198,7 @@ Partial Class frmProveedorModificacion
         Me.btn_edit_telefono.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_edit_telefono.BackgroundImage = Global.PagoProveedores.My.Resources.Resources.lapiz
         Me.btn_edit_telefono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_edit_telefono.Location = New System.Drawing.Point(131, 370)
+        Me.btn_edit_telefono.Location = New System.Drawing.Point(120, 360)
         Me.btn_edit_telefono.Name = "btn_edit_telefono"
         Me.btn_edit_telefono.Size = New System.Drawing.Size(33, 23)
         Me.btn_edit_telefono.TabIndex = 6
@@ -206,7 +207,7 @@ Partial Class frmProveedorModificacion
         'btn_borrar_telefono
         '
         Me.btn_borrar_telefono.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btn_borrar_telefono.Location = New System.Drawing.Point(204, 370)
+        Me.btn_borrar_telefono.Location = New System.Drawing.Point(193, 360)
         Me.btn_borrar_telefono.Name = "btn_borrar_telefono"
         Me.btn_borrar_telefono.Size = New System.Drawing.Size(28, 23)
         Me.btn_borrar_telefono.TabIndex = 8
@@ -216,7 +217,7 @@ Partial Class frmProveedorModificacion
         'btn_agregar_mail
         '
         Me.btn_agregar_mail.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btn_agregar_mail.Location = New System.Drawing.Point(327, 370)
+        Me.btn_agregar_mail.Location = New System.Drawing.Point(316, 360)
         Me.btn_agregar_mail.Name = "btn_agregar_mail"
         Me.btn_agregar_mail.Size = New System.Drawing.Size(28, 23)
         Me.btn_agregar_mail.TabIndex = 11
@@ -226,7 +227,7 @@ Partial Class frmProveedorModificacion
         'btn_agregar_telefono
         '
         Me.btn_agregar_telefono.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btn_agregar_telefono.Location = New System.Drawing.Point(170, 370)
+        Me.btn_agregar_telefono.Location = New System.Drawing.Point(159, 360)
         Me.btn_agregar_telefono.Name = "btn_agregar_telefono"
         Me.btn_agregar_telefono.Size = New System.Drawing.Size(28, 23)
         Me.btn_agregar_telefono.TabIndex = 7
@@ -235,7 +236,7 @@ Partial Class frmProveedorModificacion
         '
         'txt_altura
         '
-        Me.txt_altura.Location = New System.Drawing.Point(44, 106)
+        Me.txt_altura.Location = New System.Drawing.Point(33, 154)
         Me.txt_altura.Name = "txt_altura"
         Me.txt_altura.Size = New System.Drawing.Size(188, 20)
         Me.txt_altura.TabIndex = 2
@@ -243,17 +244,29 @@ Partial Class frmProveedorModificacion
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(41, 90)
+        Me.Label1.Location = New System.Drawing.Point(30, 138)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(34, 13)
         Me.Label1.TabIndex = 41
         Me.Label1.Text = "Altura"
         '
+        'Label7
+        '
+        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.Label7.Font = New System.Drawing.Font("Palatino Linotype", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(12, 9)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(476, 35)
+        Me.Label7.TabIndex = 42
+        Me.Label7.Text = "Modificación Proveedor"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'frmProveedorModificacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(567, 474)
+        Me.ClientSize = New System.Drawing.Size(500, 430)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txt_altura)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn_edit_mail)
@@ -306,4 +319,5 @@ Partial Class frmProveedorModificacion
     Friend WithEvents btn_edit_telefono As System.Windows.Forms.Button
     Friend WithEvents txt_altura As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class

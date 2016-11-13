@@ -199,4 +199,14 @@ Public Class DBHProveedor
         Return getMailsProveedor(id)
     End Function
 
+    Shared Function getPagos(Optional id_proveedor As Integer = 0) As DataTable
+        Dim q As String
+        q = "Select p.fecha Fecha, p.id_pago ID, p.monto_facturas Monto, pr.razon_social  'Razon Social'"
+        q &= "from Pagos p join Pago_Facturas pf on p.id_pago = pf.id_pago  "
+        q &= "join Proveedores pr on pf.id_proveedor = pr.id_proveedor "
+        q &= " where p.deleted_at is null"
+
+        Return DBConn.executeSQL(q)
+    End Function
+
 End Class

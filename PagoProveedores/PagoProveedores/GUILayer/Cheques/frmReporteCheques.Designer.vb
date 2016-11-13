@@ -23,12 +23,11 @@ Partial Class frmReporteCheques
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource4 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.ChequesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSet_Cheques = New PagoProveedores.DataSet_Cheques()
         Me.btn_generar = New System.Windows.Forms.Button()
         Me.btn_salir = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cbo_cuenta = New System.Windows.Forms.ComboBox()
@@ -38,6 +37,7 @@ Partial Class frmReporteCheques
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dtp_hasta = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.ChequesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet_Cheques, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -74,26 +74,14 @@ Partial Class frmReporteCheques
         Me.btn_salir.Text = "Salir"
         Me.btn_salir.UseVisualStyleBackColor = True
         '
-        'Label1
-        '
-        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.Font = New System.Drawing.Font("Georgia", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(926, 31)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Reporte Cheques Emitidos"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'ReportViewer1
         '
         Me.ReportViewer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        ReportDataSource4.Name = "DataSet1"
-        ReportDataSource4.Value = Me.ChequesBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource4)
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.ChequesBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "PagoProveedores.ReporteChequesEmitidos.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(376, 94)
         Me.ReportViewer1.Name = "ReportViewer1"
@@ -175,6 +163,17 @@ Partial Class frmReporteCheques
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Hasta"
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Palatino Linotype", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(318, 9)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(334, 35)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Reporte Cheques Emitidos"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'frmReporteCheques
         '
         Me.AcceptButton = Me.btn_generar
@@ -182,11 +181,11 @@ Partial Class frmReporteCheques
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btn_salir
         Me.ClientSize = New System.Drawing.Size(962, 440)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.cbo_cuenta)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn_salir)
         Me.Controls.Add(Me.btn_generar)
         Me.Name = "frmReporteCheques"
@@ -202,7 +201,6 @@ Partial Class frmReporteCheques
     End Sub
     Friend WithEvents btn_generar As System.Windows.Forms.Button
     Friend WithEvents btn_salir As System.Windows.Forms.Button
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents ChequesBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents DataSet_Cheques As PagoProveedores.DataSet_Cheques
@@ -214,4 +212,5 @@ Partial Class frmReporteCheques
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents dtp_hasta As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

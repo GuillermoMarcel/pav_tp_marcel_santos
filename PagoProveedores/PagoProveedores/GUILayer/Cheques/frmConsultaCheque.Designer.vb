@@ -24,6 +24,7 @@ Partial Class frmConsultaCheque
     Private Sub InitializeComponent()
         Me.dgv_cheque_consulta = New System.Windows.Forms.DataGridView()
         Me.btn_cerrar = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.dgv_cheque_consulta, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -36,12 +37,12 @@ Partial Class frmConsultaCheque
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_cheque_consulta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgv_cheque_consulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_cheque_consulta.Location = New System.Drawing.Point(12, 12)
+        Me.dgv_cheque_consulta.Location = New System.Drawing.Point(13, 47)
         Me.dgv_cheque_consulta.Name = "dgv_cheque_consulta"
         Me.dgv_cheque_consulta.ReadOnly = True
         Me.dgv_cheque_consulta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_cheque_consulta.ShowEditingIcon = False
-        Me.dgv_cheque_consulta.Size = New System.Drawing.Size(635, 360)
+        Me.dgv_cheque_consulta.Size = New System.Drawing.Size(635, 325)
         Me.dgv_cheque_consulta.TabIndex = 0
         '
         'btn_cerrar
@@ -54,19 +55,34 @@ Partial Class frmConsultaCheque
         Me.btn_cerrar.Text = "Cerrar"
         Me.btn_cerrar.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Palatino Linotype", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(186, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(267, 35)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Consulta de Cheques"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'frmConsultaCheque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(660, 414)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn_cerrar)
         Me.Controls.Add(Me.dgv_cheque_consulta)
         Me.Name = "frmConsultaCheque"
         Me.Text = "Consulta de Cheques"
         CType(Me.dgv_cheque_consulta, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents dgv_cheque_consulta As System.Windows.Forms.DataGridView
     Friend WithEvents btn_cerrar As System.Windows.Forms.Button
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

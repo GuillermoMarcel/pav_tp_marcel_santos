@@ -26,8 +26,6 @@ Partial Class frmNuevoCheque
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cb_bancos = New System.Windows.Forms.ComboBox()
         Me.gp_cuenta = New System.Windows.Forms.GroupBox()
-        Me.btn_new_cuenta = New System.Windows.Forms.Button()
-        Me.btn_new_titular = New System.Windows.Forms.Button()
         Me.btn_confirm_cuenta = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -55,11 +53,10 @@ Partial Class frmNuevoCheque
         'Label1
         '
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Palatino Linotype", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(254, 9)
+        Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(188, 35)
+        Me.Label1.Size = New System.Drawing.Size(673, 35)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nuevo Cheque"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -84,8 +81,6 @@ Partial Class frmNuevoCheque
         '
         'gp_cuenta
         '
-        Me.gp_cuenta.Controls.Add(Me.btn_new_cuenta)
-        Me.gp_cuenta.Controls.Add(Me.btn_new_titular)
         Me.gp_cuenta.Controls.Add(Me.btn_confirm_cuenta)
         Me.gp_cuenta.Controls.Add(Me.Label4)
         Me.gp_cuenta.Controls.Add(Me.Label3)
@@ -95,28 +90,10 @@ Partial Class frmNuevoCheque
         Me.gp_cuenta.Controls.Add(Me.cb_bancos)
         Me.gp_cuenta.Location = New System.Drawing.Point(12, 72)
         Me.gp_cuenta.Name = "gp_cuenta"
-        Me.gp_cuenta.Size = New System.Drawing.Size(442, 136)
+        Me.gp_cuenta.Size = New System.Drawing.Size(325, 136)
         Me.gp_cuenta.TabIndex = 0
         Me.gp_cuenta.TabStop = False
         Me.gp_cuenta.Text = "Seleccion de cuenta"
-        '
-        'btn_new_cuenta
-        '
-        Me.btn_new_cuenta.Location = New System.Drawing.Point(291, 71)
-        Me.btn_new_cuenta.Name = "btn_new_cuenta"
-        Me.btn_new_cuenta.Size = New System.Drawing.Size(145, 23)
-        Me.btn_new_cuenta.TabIndex = 5
-        Me.btn_new_cuenta.Text = "Registrar Nueva Cuenta"
-        Me.btn_new_cuenta.UseVisualStyleBackColor = True
-        '
-        'btn_new_titular
-        '
-        Me.btn_new_titular.Location = New System.Drawing.Point(291, 44)
-        Me.btn_new_titular.Name = "btn_new_titular"
-        Me.btn_new_titular.Size = New System.Drawing.Size(145, 23)
-        Me.btn_new_titular.TabIndex = 4
-        Me.btn_new_titular.Text = "Registrar Nuevo Titular"
-        Me.btn_new_titular.UseVisualStyleBackColor = True
         '
         'btn_confirm_cuenta
         '
@@ -261,7 +238,7 @@ Partial Class frmNuevoCheque
         Me.btn_accept.Name = "btn_accept"
         Me.btn_accept.Size = New System.Drawing.Size(75, 23)
         Me.btn_accept.TabIndex = 3
-        Me.btn_accept.Text = "Dale que va"
+        Me.btn_accept.Text = "Aceptar"
         Me.btn_accept.UseVisualStyleBackColor = True
         '
         'btn_cancel
@@ -298,7 +275,7 @@ Partial Class frmNuevoCheque
         'btn_select_cuenta
         '
         Me.btn_select_cuenta.Enabled = False
-        Me.btn_select_cuenta.Location = New System.Drawing.Point(461, 185)
+        Me.btn_select_cuenta.Location = New System.Drawing.Point(346, 172)
         Me.btn_select_cuenta.Name = "btn_select_cuenta"
         Me.btn_select_cuenta.Size = New System.Drawing.Size(125, 23)
         Me.btn_select_cuenta.TabIndex = 1
@@ -325,7 +302,6 @@ Partial Class frmNuevoCheque
         Me.gp_cheque.ResumeLayout(False)
         Me.gp_cheque.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -336,8 +312,6 @@ Partial Class frmNuevoCheque
     Friend WithEvents cb_titular As System.Windows.Forms.ComboBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents cb_cuenta As System.Windows.Forms.ComboBox
-    Friend WithEvents btn_new_cuenta As System.Windows.Forms.Button
-    Friend WithEvents btn_new_titular As System.Windows.Forms.Button
     Friend WithEvents btn_confirm_cuenta As System.Windows.Forms.Button
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents txt_nro As System.Windows.Forms.TextBox

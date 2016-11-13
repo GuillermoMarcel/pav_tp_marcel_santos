@@ -58,4 +58,9 @@
         Dim f As New frmConsultaCheque
         f.ShowDialog()
     End Sub
+
+    Private Sub btn_consulta_pagos_Click(sender As Object, e As EventArgs) Handles btn_consulta_pagos.Click
+        Dim f As New frmPagosConsulta
+        f.Show()
+    End Sub
 End Class

@@ -6,7 +6,7 @@
     End Sub
 
     Private Sub btn_new_Click(sender As Object, e As EventArgs) Handles btn_new.Click
-        Dim f As New frmBancoModif
+        Dim f As New frmBancoAlta
         If f.ShowDialog() <> Windows.Forms.DialogResult.OK Then Return
         If DBHBanco.insertarBanco(f.txt_nro.Text, f.txt_banco.Text) Then
             MsgBox("Exito")
@@ -32,7 +32,7 @@
     End Sub
 
     Private Sub btn_modify_Click(sender As Object, e As EventArgs) Handles btn_modify.Click
-        Dim f As New frmBancoModif
+        Dim f As New frmBancoAlta
         Dim curid As Integer = dgv_grid.CurrentRow.Cells("nro_banco").Value
         f.txt_banco.Text = dgv_grid.CurrentRow.Cells("nombre").Value
         f.txt_nro.Text = dgv_grid.CurrentRow.Cells("nro_banco").Value
@@ -44,4 +44,5 @@
         End If
         actualizar()
     End Sub
+
 End Class

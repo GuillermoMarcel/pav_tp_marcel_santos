@@ -30,7 +30,6 @@ Partial Class frmReporteFacturas
         Me.btn_generar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtp_desde = New System.Windows.Forms.DateTimePicker()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dtp_hasta = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -40,6 +39,7 @@ Partial Class frmReporteFacturas
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.cb_filtro_proveedor = New System.Windows.Forms.CheckBox()
         Me.btn_exit = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.FacturasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet_Proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -96,17 +96,6 @@ Partial Class frmReporteFacturas
         Me.dtp_desde.Name = "dtp_desde"
         Me.dtp_desde.Size = New System.Drawing.Size(200, 20)
         Me.dtp_desde.TabIndex = 3
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(250, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(285, 26)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Reporte de facturas Pendientes"
         '
         'Label3
         '
@@ -200,6 +189,18 @@ Partial Class frmReporteFacturas
         Me.btn_exit.Text = "Salir"
         Me.btn_exit.UseVisualStyleBackColor = True
         '
+        'Label5
+        '
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Palatino Linotype", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(159, 9)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(395, 35)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Reporte de Facturas Pendientes"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'frmReporteFacturas
         '
         Me.AcceptButton = Me.btn_generar
@@ -207,10 +208,10 @@ Partial Class frmReporteFacturas
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btn_exit
         Me.ClientSize = New System.Drawing.Size(767, 446)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.btn_exit)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btn_generar)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "frmReporteFacturas"
@@ -232,7 +233,6 @@ Partial Class frmReporteFacturas
     Friend WithEvents btn_generar As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents dtp_desde As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents dtp_hasta As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label4 As System.Windows.Forms.Label
@@ -242,4 +242,5 @@ Partial Class frmReporteFacturas
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents cb_filtro_proveedor As System.Windows.Forms.CheckBox
     Friend WithEvents btn_exit As System.Windows.Forms.Button
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

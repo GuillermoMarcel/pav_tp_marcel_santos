@@ -36,6 +36,8 @@ Partial Class frm_principal
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.btn_nuevo_cheque = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btn_consulta_pagos = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -91,7 +93,7 @@ Partial Class frm_principal
         '
         Me.GroupBox1.Controls.Add(Me.btn_banco)
         Me.GroupBox1.Controls.Add(Me.btn_titulares)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 56)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(246, 155)
         Me.GroupBox1.TabIndex = 6
@@ -102,9 +104,8 @@ Partial Class frm_principal
         '
         Me.GroupBox2.Controls.Add(Me.btn_reporte_cheques)
         Me.GroupBox2.Controls.Add(Me.btn_reporte_factura)
-        Me.GroupBox2.Controls.Add(Me.btn_pagar)
         Me.GroupBox2.Controls.Add(Me.btn_reporte_proveedor)
-        Me.GroupBox2.Location = New System.Drawing.Point(264, 173)
+        Me.GroupBox2.Location = New System.Drawing.Point(264, 217)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(246, 155)
         Me.GroupBox2.TabIndex = 7
@@ -113,7 +114,7 @@ Partial Class frm_principal
         '
         'btn_reporte_cheques
         '
-        Me.btn_reporte_cheques.Location = New System.Drawing.Point(6, 105)
+        Me.btn_reporte_cheques.Location = New System.Drawing.Point(6, 76)
         Me.btn_reporte_cheques.Name = "btn_reporte_cheques"
         Me.btn_reporte_cheques.Size = New System.Drawing.Size(138, 23)
         Me.btn_reporte_cheques.TabIndex = 6
@@ -122,7 +123,7 @@ Partial Class frm_principal
         '
         'btn_reporte_factura
         '
-        Me.btn_reporte_factura.Location = New System.Drawing.Point(6, 76)
+        Me.btn_reporte_factura.Location = New System.Drawing.Point(6, 48)
         Me.btn_reporte_factura.Name = "btn_reporte_factura"
         Me.btn_reporte_factura.Size = New System.Drawing.Size(138, 23)
         Me.btn_reporte_factura.TabIndex = 5
@@ -131,7 +132,7 @@ Partial Class frm_principal
         '
         'btn_pagar
         '
-        Me.btn_pagar.Location = New System.Drawing.Point(7, 47)
+        Me.btn_pagar.Location = New System.Drawing.Point(7, 76)
         Me.btn_pagar.Name = "btn_pagar"
         Me.btn_pagar.Size = New System.Drawing.Size(137, 23)
         Me.btn_pagar.TabIndex = 4
@@ -149,9 +150,11 @@ Partial Class frm_principal
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.btn_consulta_pagos)
         Me.GroupBox3.Controls.Add(Me.Button2)
         Me.GroupBox3.Controls.Add(Me.btn_proveedor)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 173)
+        Me.GroupBox3.Controls.Add(Me.btn_pagar)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 217)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(246, 155)
         Me.GroupBox3.TabIndex = 8
@@ -162,7 +165,7 @@ Partial Class frm_principal
         '
         Me.GroupBox4.Controls.Add(Me.btn_nuevo_cheque)
         Me.GroupBox4.Controls.Add(Me.btn_cheques)
-        Me.GroupBox4.Location = New System.Drawing.Point(264, 12)
+        Me.GroupBox4.Location = New System.Drawing.Point(264, 56)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(246, 155)
         Me.GroupBox4.TabIndex = 9
@@ -178,11 +181,33 @@ Partial Class frm_principal
         Me.btn_nuevo_cheque.Text = "Registrar Cheque Nuevo"
         Me.btn_nuevo_cheque.UseVisualStyleBackColor = True
         '
+        'Label2
+        '
+        Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label2.Font = New System.Drawing.Font("Palatino Linotype", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(12, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(502, 35)
+        Me.Label2.TabIndex = 10
+        Me.Label2.Text = "MILMETAL"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btn_consulta_pagos
+        '
+        Me.btn_consulta_pagos.Location = New System.Drawing.Point(7, 105)
+        Me.btn_consulta_pagos.Name = "btn_consulta_pagos"
+        Me.btn_consulta_pagos.Size = New System.Drawing.Size(137, 23)
+        Me.btn_consulta_pagos.TabIndex = 5
+        Me.btn_consulta_pagos.Text = "Consultar Pagos"
+        Me.btn_consulta_pagos.UseVisualStyleBackColor = True
+        '
         'frm_principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(526, 347)
+        Me.ClientSize = New System.Drawing.Size(526, 383)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
@@ -210,4 +235,6 @@ Partial Class frm_principal
     Friend WithEvents btn_pagar As System.Windows.Forms.Button
     Friend WithEvents btn_reporte_factura As System.Windows.Forms.Button
     Friend WithEvents btn_reporte_cheques As System.Windows.Forms.Button
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents btn_consulta_pagos As System.Windows.Forms.Button
 End Class

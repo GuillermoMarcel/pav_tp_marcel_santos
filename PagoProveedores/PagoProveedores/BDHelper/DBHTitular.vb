@@ -182,4 +182,20 @@ Public Class DBHTitular
         Return lista
     End Function
 
+    Shared Function deleteTitular(id As String) As Boolean
+        Dim q As New QueryBuilder
+        Dim comandos As New List(Of String)
+
+        q.table("Cuentas").update({{"deleted_at", "@GETDATE()"}}).
+            where("@id_titular", id).
+            where("@deleted_at", " is ", "@null")
+        comandos.Add(q.build)
+
+        q.table("Titulares").update({{"deleted_at", "@GETDATE()"}}).where("@id_titular", id)
+        comandos.Add(q.build)
+        Return DBConn.executeTransaction(comandos.ToArray)
+    End Function
+
+
+
 End Class
